@@ -86,6 +86,34 @@ def retrieve_event_list() -> list[tuple[int, int]]:
     return out
 
 
+def retrieve_course_info(events: list[tuple[int, int]]) -> list[CourseInfo]:
+    """Retrieve course information.
+
+    Retrieves longitude and latitude for weather data later.
+    """
+    # TODO: this only gets us the current season
+    response_ = SESSION.get(
+        f"{BASE_URL}/get-schedule/tour",
+        params={"tour": "pga", "file_format": "json", "key": os.getenv("API_TOKEN")},
+    )
+    response_.raise_for_status()
+    out: list[CourseInfo] = []
+    event_ids = [event_id for _, event_id in events]
+    for course in response_.json()["schedule"]:
+        if course["event_id"] in event_ids:
+            out += [
+                CourseInfo(
+                    course_name=course["course"],
+                    course_num=int(course["course_key"]),
+                    latitude=course["latitude"],
+                    longitude=course["longitude"],
+                    location=course["location"],
+                )
+            ]
+
+    return out
+
+
 def collect_raw_event_data(events: list[tuple[int, int]]) -> list[ScoreObject]:
     """Collect raw event data.
 
@@ -134,6 +162,32 @@ def collect_raw_event_data(events: list[tuple[int, int]]) -> list[ScoreObject]:
                 ]
 
     return out
+
+
+def retrieve_round_weather_data(course: CourseInfo, date: datetime) -> list[dict]:
+    """Get the weather data for a given day on a given course.
+
+    Parameters
+    ----------
+    course : CourseInfo
+        The course information, specifically the latitude and longitude.
+    date : datetime
+        The day of interest.
+
+    Returns
+    -------
+    list[dict]
+        A list of observations, with the time, temperature, wind direction, wind velocity, etc.
+    """
+    # First, get the stations in the area
+    # e.g. https://api.weather.gov/points/{course["latitude"]},{course["longitude"]}
+    # this gives us obj["properties"]["observationStations"]
+    # Then, get the relevant stations
+    # e.g. obj["properties"]["observationStations"]?limit=1
+    # this gives us obj2["features"][0]["properties"]["stationIdentifier"]
+    # Then, get observations for the entire day
+    # e.g. https://api.weather.gov/stations/{obj2["features"][0]["properties"]["stationIdentifier"]}/observations
+    # with start and end dates in the format YYYY-MM-DDTHH:MM:SSZ
 
 
 if __name__ == "__main__":
