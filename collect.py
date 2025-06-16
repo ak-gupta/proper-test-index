@@ -33,7 +33,10 @@ BASE_URL = "https://feeds.datagolf.com"
 
 
 class ScoreObject(TypedDict):
-    """Scoring object."""
+    """Scoring object.
+
+    Defines the attributes for raw player/round-level scoring.
+    """
 
     year: int
     dg_id: int
@@ -44,6 +47,20 @@ class ScoreObject(TypedDict):
     course_par: int
     score: int
     teetime: datetime
+
+
+class CourseInfo(TypedDict):
+    """Course information.
+
+    Used in conjunction with the NOAA weather service to get approximate weather conditions
+    for a given round.
+    """
+
+    course_name: str
+    course_num: int
+    latitude: float
+    longitude: float
+    location: str
 
 
 def retrieve_event_list() -> list[tuple[int, int]]:
