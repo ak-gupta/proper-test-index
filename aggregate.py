@@ -17,13 +17,15 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
 
     frames: list[pl.DataFrame] = []
-    for file in DATA_DIR.glob("*-scoring-data.json"):
+    for file in DATA_DIR.glob("**/*-scoring-data.json"):
         LOG.info("Reading in '%s'", str(file))
         frames.append(
             pl.read_json(
                 file,
                 schema={
                     "year": pl.Int64,
+                    "event_id": pl.Int32,
+                    "event_name": pl.String,
                     "dg_id": pl.Int64,
                     "player_name": pl.String,
                     "round": pl.Int32,
@@ -38,7 +40,7 @@ if __name__ == "__main__":
 
     res = (
         pl.concat(frames).lazy()
-        .group_by("year", "course_name")
+        .group_by("year", "event_name", "course_name")
         .agg(
             [
                 (pl.col("score") >= 80).sum().alias("over_80"),
@@ -46,6 +48,7 @@ if __name__ == "__main__":
             ]
         )
         .with_columns((pl.col("over_80") / pl.col("sub_70")).round(3).alias("pti"))
+        .drop_nans()
         .sort("pti", descending=True)
         .collect()
     )
