@@ -4,7 +4,7 @@ A very simple implementation of Big Randy's Proper Test Index (PTI) for U.S. Ope
 
 $$PTI = \frac{\text{Number of rounds with a score of 80+}}{\text{Number of rounds with a score of <70}}$$
 
-Data Golf provides us with data going back to 2014 (not sure what happened in 2015...).
+Available results are in `pti.csv`.
 
 # Usage
 
