@@ -45,7 +45,7 @@ if __name__ == "__main__":
                 (pl.col("score") < 70).sum().alias("sub_70")
             ]
         )
-        .with_columns((pl.col("over_80") / pl.col("sub_70")).alias("pti"))
+        .with_columns((pl.col("over_80") / pl.col("sub_70")).round(3).alias("pti"))
         .sort("pti", descending=True)
         .collect()
     )
