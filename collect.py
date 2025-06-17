@@ -1,5 +1,6 @@
 # /// script
 # dependencies = [
+#     "attrs",
 #     "python-dotenv",
 #     "requests",
 #     "urllib3",
@@ -9,11 +10,12 @@
 import json
 import logging
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
-from typing import TypedDict
+from typing import Any
 
 import requests
+from attrs import asdict, Attribute, define
 from dotenv import load_dotenv
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
@@ -32,7 +34,8 @@ SESSION.mount("https://", ADAPTER)
 BASE_URL = "https://feeds.datagolf.com"
 
 
-class ScoreObject(TypedDict):
+@define(auto_attribs=True)
+class ScoreObject:
     """Scoring object.
 
     Defines the attributes for raw player/round-level scoring.
@@ -46,10 +49,11 @@ class ScoreObject(TypedDict):
     course_num: int
     course_par: int
     score: int
-    teetime: datetime
+    teetime: datetime | None = None
 
 
-class CourseInfo(TypedDict):
+@define(auto_attribs=True)
+class CourseInfo:
     """Course information.
 
     Used in conjunction with the NOAA weather service to get approximate weather conditions
@@ -114,14 +118,15 @@ def retrieve_course_info(events: list[tuple[int, int]]) -> list[CourseInfo]:
     return out
 
 
-def collect_raw_event_data(events: list[tuple[int, int]]) -> list[ScoreObject]:
+def collect_raw_event_data(year: int, event_id: int) -> list[ScoreObject]:
     """Collect raw event data.
 
     Parameters
     ----------
-    events : list[tuple[int, int]]
-        The list of events to pull. The first entry in the list is the year of the event,
-        the second entry is the event ID.
+    year : int
+        The year of the event.
+    event_id : int
+        The event identifier.
 
     Returns
     -------
@@ -129,37 +134,49 @@ def collect_raw_event_data(events: list[tuple[int, int]]) -> list[ScoreObject]:
         A list of round-level scores.
     """
     out: list[ScoreObject] = []
-    for year, event_id in events:
-        LOG.info("Retrieving scores for the %i U.S. Open (%i)", year, event_id)
-        response_ = SESSION.get(
-            f"{BASE_URL}/historical-raw-data/rounds",
-            params={
-                "tour": "pga",
-                "event_id": event_id,
-                "year": year,
-                "file_format": "json",
-                "key": os.getenv("API_TOKEN"),
-            },
-        )
-        response_.raise_for_status()
-        LOG.info("Successfully retrieved %i U.S. Open scores")
-        for player in response_.json()["scores"]:
-            for i in range(1, 5):  # Each round
-                out += [
-                    ScoreObject(
-                        year=year,
-                        dg_id=player["dg_id"],
-                        player_name=player["player_name"],
-                        round=i,
-                        course_name=player[f"round_{i!s}"]["course_name"],
-                        course_num=player[f"round_{i!s}"]["course_num"],
-                        course_par=player[f"round_{i!s}"]["course_par"],
-                        score=player[f"round_{i!s}"]["score"],
-                        teetime=datetime.strptime(
-                            player[f"round_{i!s}"]["teetime"], "%I:%M%p"
-                        ),
+    LOG.info("Retrieving scores for the %i U.S. Open (%i)", year, event_id)
+    response_ = SESSION.get(
+        f"{BASE_URL}/historical-raw-data/rounds",
+        params={
+            "tour": "pga",
+            "event_id": event_id,
+            "year": year,
+            "file_format": "json",
+            "key": os.getenv("API_TOKEN"),
+        },
+    )
+    response_.raise_for_status()
+    LOG.info("Successfully retrieved %i U.S. Open scores", year)
+    completion_date = datetime.strptime(response_.json()["event_completed"], "%Y-%m-%d")
+    for player in response_.json()["scores"]:
+        for i in range(1, 5):  # Each round
+            if (round_data := player.get(f"round_{i!s}")) is not None:
+                obj = ScoreObject(
+                    year=year,
+                    dg_id=player["dg_id"],
+                    player_name=player["player_name"],
+                    round=i,
+                    course_name=round_data["course_name"],
+                    course_num=round_data["course_num"],
+                    course_par=round_data["course_par"],
+                    score=round_data["score"],
+                )
+                if (teetime := round_data.get("teetime")) is not None:
+                    # Make the assumption that round 1 is always on a Thursday
+                    # and there are no Monday finishes...
+                    round_date = completion_date + timedelta(days=i - 4)
+                    assert round_date.weekday() == i + 2, "Datetime math is bad"
+
+                    parsed_teetime = datetime.strptime(teetime, "%I:%M%p")
+                    obj.teetime = datetime(
+                        round_date.year,
+                        round_date.month,
+                        round_date.day,
+                        parsed_teetime.hour,
+                        parsed_teetime.minute,
+                        0,
                     )
-                ]
+                out.append(obj)
 
     return out
 
@@ -190,15 +207,30 @@ def retrieve_round_weather_data(course: CourseInfo, date: datetime) -> list[dict
     # with start and end dates in the format YYYY-MM-DDTHH:MM:SSZ
 
 
+def serializer(inst: type, field: Attribute, value: Any) -> Any:
+    """Datetime converter for :py:meth:`attrs.asdict`."""
+    if isinstance(value, datetime):
+        return value.isoformat(timespec="seconds")
+    return value
+
+
 if __name__ == "__main__":
     # Set up logging
     logging.basicConfig(level=logging.INFO)
     # Load the dotenv file
     load_dotenv(CURR_DIR / ".env")
 
-    events = retrieve_event_list()
-    score_data = collect_raw_event_data(events)
-
     DATA_DIR.mkdir(exist_ok=True)
-    with open(DATA_DIR / "scoring-data.json", "w") as outfile:
-        json.dump(score_data, outfile, indent=4)
+    events = retrieve_event_list()
+    for year, event_id in retrieve_event_list():
+        fpath = DATA_DIR / f"{year!s}-scoring-data.json"
+        if fpath.exists():
+            LOG.info("%i U.S. Open data already exists...", year)
+            continue
+        score_data = collect_raw_event_data(year, event_id)
+        with open(fpath, "w") as outfile:
+            json.dump(
+                [asdict(event, value_serializer=serializer) for event in score_data],
+                outfile,
+                indent=4,
+            )
