@@ -13,6 +13,13 @@ LOG = logging.getLogger(__name__)
 CURR_DIR = Path(__file__).resolve().parent
 DATA_DIR = CURR_DIR / "data"
 
+MAJORS: list[str] = [
+    "The Open Championship",
+    "U.S. Open",
+    "PGA Championship",
+    "Masters Tournament",
+]
+
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
 
@@ -33,21 +40,28 @@ if __name__ == "__main__":
                     "course_num": pl.Int32,
                     "course_par": pl.Int32,
                     "score": pl.Int32,
-                    "teetime": pl.String
-                }
+                    "teetime": pl.String,
+                },
             )
         )
 
     res = (
-        pl.concat(frames).lazy()
+        pl.concat(frames)
+        .lazy()
         .group_by("year", "event_name", "course_name")
         .agg(
             [
                 (pl.col("score") >= 80).sum().alias("over_80"),
-                (pl.col("score") < 70).sum().alias("sub_70")
+                (pl.col("score") < 70).sum().alias("sub_70"),
+                pl.len().alias("total_rounds"),
             ]
         )
-        .with_columns((pl.col("over_80") / pl.col("sub_70")).round(3).alias("pti"))
+        .with_columns(
+            (pl.col("over_80") / pl.col("sub_70")).round(3).alias("pti"),
+            (
+                pl.when(pl.col("event_name").is_in(MAJORS)).then(True).otherwise(False)
+            ).alias("major_championship"),
+        )
         .drop_nans()
         .sort("pti", descending=True)
         .collect()

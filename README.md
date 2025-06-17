@@ -1,6 +1,6 @@
 # Overview
 
-A very simple implementation of Big Randy's Proper Test Index (PTI) for U.S. Open golf.
+A very simple implementation of Big Randy's Proper Test Index (PTI) for PGA Tour golf.
 
 $$PTI = \frac{\text{Number of rounds with a score of 80+}}{\text{Number of rounds with a score of <70}}$$
 
