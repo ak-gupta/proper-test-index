@@ -136,7 +136,12 @@ def collect_raw_event_data(event: dict) -> list[ScoreObject]:
         A list of round-level scores.
     """
     out: list[ScoreObject] = []
-    LOG.info("Retrieving scores for the %i %s (%i)", event["calendar_year"], event["event_name"], event["event_id"])
+    LOG.info(
+        "Retrieving scores for the %i %s (%i)",
+        event["calendar_year"],
+        event["event_name"],
+        event["event_id"],
+    )
     response_ = SESSION.get(
         f"{BASE_URL}/historical-raw-data/rounds",
         params={
@@ -148,7 +153,11 @@ def collect_raw_event_data(event: dict) -> list[ScoreObject]:
         },
     )
     response_.raise_for_status()
-    LOG.info("Successfully retrieved %i %s scores", event["calendar_year"], event["event_name"])
+    LOG.info(
+        "Successfully retrieved %i %s scores",
+        event["calendar_year"],
+        event["event_name"],
+    )
     completion_date = datetime.strptime(response_.json()["event_completed"], "%Y-%m-%d")
     for player in response_.json()["scores"]:
         for i in range(1, 5):  # Each round
@@ -244,11 +253,13 @@ if __name__ == "__main__":
             json.dump(events, outfile, indent=4)
 
     for evt in retrieve_event_list():
-        folder = (DATA_DIR / str(evt["calendar_year"]))
+        folder = DATA_DIR / str(evt["calendar_year"])
         folder.mkdir(exist_ok=True)
         fpath = folder / f"{slugify(evt['event_name'])}-scoring-data.json"
         if fpath.exists():
-            LOG.info("%i %s data already exists...", evt["calendar_year"], evt["event_name"])
+            LOG.info(
+                "%i %s data already exists...", evt["calendar_year"], evt["event_name"]
+            )
             continue
         score_data = collect_raw_event_data(evt)
         with open(fpath, "w") as outfile:
