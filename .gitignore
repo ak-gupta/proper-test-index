@@ -2,3 +2,4 @@ data/*
 .ruff_cache/
 .env
 .devcontainer/
+/.quarto/
