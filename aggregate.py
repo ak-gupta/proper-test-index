@@ -48,7 +48,7 @@ if __name__ == "__main__":
     res = (
         pl.concat(frames)
         .lazy()
-        .group_by("year", "event_name", "course_name")
+        .group_by("year", "event_id", "event_name", "course_name")
         .agg(
             [
                 (pl.col("score") >= 80).sum().alias("over_80"),

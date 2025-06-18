@@ -3,3 +3,4 @@ data/*
 .env
 .devcontainer/
 /.quarto/
+/.venv/
