@@ -53,6 +53,12 @@ class ScoreObject:
     course_num: int
     course_par: int
     score: int
+    sg_app: float
+    sg_arg: float
+    sg_ott: float
+    sg_putt: float
+    sg_t2g: float
+    sg_total: float
     teetime: datetime | None = None
 
 
@@ -173,26 +179,31 @@ def collect_raw_event_data(event: dict) -> list[ScoreObject]:
                     course_num=round_data["course_num"],
                     course_par=round_data["course_par"],
                     score=round_data["score"],
+                    sg_app=round_data["sg_app"],
+                    sg_arg=round_data["sg_arg"],
+                    sg_ott=round_data["sg_ott"],
+                    sg_putt=round_data["sg_putt"],
+                    sg_t2g=round_data["sg_t2g"],
+                    sg_total=round_data["sg_total"],
                 )
+                # Make the assumption that round 1 is always on a Thursday
+                # Account for Monday finishes
+                if completion_date.weekday() == 0:
+                    round_date = completion_date + timedelta(days=i - 5)
+                elif completion_date.weekday() == 6:
+                    round_date = completion_date + timedelta(days=i - 4)
+                elif completion_date.weekday() == 5:
+                    # 54-hole tournament
+                    round_date = completion_date + timedelta(days=i - 3)
+                else:
+                    msg = (
+                        f"{event['calendar_year']} {event['event_name']} ({event['event_id']}) "
+                        f"didn't finish on Sunday or Monday... it finished on {completion_date.strftime('%A')}"
+                    )
+                    raise ValueError(msg)
+                assert round_date.weekday() == i + 2, "Datetime math is bad"
+
                 if (teetime := round_data.get("teetime")) is not None:
-                    # Make the assumption that round 1 is always on a Thursday
-                    # Account for Monday finishes
-                    if completion_date.weekday() == 0:
-                        round_date = completion_date + timedelta(days=i - 5)
-                    elif completion_date.weekday() == 6:
-                        round_date = completion_date + timedelta(days=i - 4)
-                    elif completion_date.weekday() == 5:
-                        # 54-hole tournament
-                        round_date = completion_date + timedelta(days=i - 3)
-                    else:
-                        msg = (
-                            f"{event['calendar_year']} {event['event_name']} ({event['event_id']}) "
-                            f"didn't finish on Sunday or Monday... it finished on {completion_date.strftime('%A')}"
-                        )
-                        raise ValueError(msg)
-
-                    assert round_date.weekday() == i + 2, "Datetime math is bad"
-
                     parsed_teetime = datetime.strptime(teetime, "%I:%M%p")
                     obj.teetime = datetime(
                         round_date.year,
@@ -202,6 +213,9 @@ def collect_raw_event_data(event: dict) -> list[ScoreObject]:
                         parsed_teetime.minute,
                         0,
                     )
+                else:
+                    obj.teetime = round_date
+
                 out.append(obj)
 
     return out
