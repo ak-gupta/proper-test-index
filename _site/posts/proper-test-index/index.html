@@ -1,0 +1,1749 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Akshay Gupta">
+<meta name="dcterms.date" content="2025-06-17">
+
+<title>The Proper Test Index – proper-test-index</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-c8e7dacb3e1cda0cdb1957ae6c022dec.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">proper-test-index</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">The Proper Test Index</h1>
+            <p class="subtitle lead">What does Big Randy’s metric tell us about the PGA Tour?</p>
+                                <div class="quarto-categories">
+                <div class="quarto-category">golf</div>
+                <div class="quarto-category">statistics</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Akshay Gupta </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">June 17, 2025</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<div id="bb5501cb" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+
+            <div id="5lUyTF"></div>
+            <script type="text/javascript" data-lets-plot-script="library">
+                if(!window.letsPlotCallQueue) {
+                    window.letsPlotCallQueue = [];
+                }; 
+                window.letsPlotCall = function(f) {
+                    window.letsPlotCallQueue.push(f);
+                };
+                (function() {
+                    var script = document.createElement("script");
+                    script.type = "text/javascript";
+                    script.src = "https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v4.6.2/js-package/distr/lets-plot.min.js";
+                    script.onload = function() {
+                        window.letsPlotCall = function(f) {f();};
+                        window.letsPlotCallQueue.forEach(function(f) {f();});
+                        window.letsPlotCallQueue = [];
+                        
+                    };
+                    script.onerror = function(event) {
+                        window.letsPlotCall = function(f) {};    // noop
+                        window.letsPlotCallQueue = [];
+                        var div = document.createElement("div");
+                        div.style.color = 'darkred';
+                        div.textContent = 'Error loading Lets-Plot JS';
+                        document.getElementById("5lUyTF").appendChild(div);
+                    };
+                    var e = document.getElementById("5lUyTF");
+                    e.appendChild(script);
+                })()
+            </script>
+            
+</div>
+</div>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>In No Laying Up’s coverage of the 125th U.S. Open at Oakmont, the Big Man himself introduced a metric that has lodged itself in my brain: the Proper Test Index (PTI). It’s defined as</p>
+<p><span class="math display">\[
+PTI = \frac{\text{Number of rounds with a score &gt;= 80}}{\text{Number of rounds with a score of &lt; 70}}
+\]</span></p>
+<p>He ran through some of the numbers across past U.S. Opens; what does it look like when we extend the metric to the PGA Tour? Using Data Golf’s API, I pulled the scoring data for their entire archive and calculated the event-level PTI:</p>
+<div id="3ddfbe86" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="159">
+   <div id="LRPKOL"></div>
+   <script type="text/javascript" data-lets-plot-script="plot">
+   
+   (function() {
+   // ----------
+   
+   const forceImmediateRender = false;
+   const responsive = false;
+   
+   let sizing = {
+       width_mode: "MIN",
+       height_mode: "SCALED",
+       width: null, 
+       height: null 
+   };
+   
+   const preferredWidth = document.body.dataset.letsPlotPreferredWidth;
+   if (preferredWidth !== undefined) {
+       sizing = {
+           width_mode: 'FIXED',
+           height_mode: 'SCALED',
+           width: parseFloat(preferredWidth)
+       };
+   }
+   
+   const containerDiv = document.getElementById("LRPKOL");
+   let fig = null;
+   
+   function renderPlot() {
+       if (fig === null) {
+           const plotSpec = {
+"data":{
+"year":["2021","2018","2024","2025","2020","2022","2024","2020","2020","2023","2025","2018","2017","2022","2023","2016","2024","2021","2014","2017","2004","2017","2017","2016","2023","2021","2017","2022","2018","2017","2021","2021","2025","2024","2021","2025","2017","2017","2018","2018","2023","2025","2022","2021","2021","2018","2019","2023","2021","2025","2023","2023","2024","2018","2017","2019","2025","2018","2022","2017","2020","2024","2019","2018","2022","2019","2025","2014","2019","2021","2017","2021","2024","2020","2025","2022","2024","2020","2021","2020","2020","2019","2019","2018","2017","2018","2021","2018","2017","2017","2025","2019","2022","2021","2022","2020","2024","2022","2022","2020","2020","2023","2017","2017","2022","2022","2019","2023","2023","2018","2020","2022","2023","2020","2019","2021","2020","2019","2024","2025","2018","2024","2017","2022","2019","2022","2019","2017","2021","2017","2024","2024","2023","2023","2019","2020","2020","2018","2022","2019","2018","2025","2017","2022","2020","2017","2021","2018","2018","2023","2019","2019","2020","2023","2021","2021","2024","2020","2024","2018","2019","2018","2017","2019","2023","2018","2021","2019","2024","2023","2018","2017","2024","2018","2019","2023","2020","2022","2023","2020","2019","2017","2020","2023","2018","2023","2020","2017","2022","2019","2022","2020","2025","2021","2023","2018","2023","2023","2018","2024","2017","2017","2019","2019","2019","2022","2022","2018","2019","2021","2023","2019","2024","2021","2017","2024","2023","2023","2018","2022","2023","2017","2017","2018","2019","2021","2017","2020","2022","2019","2024","2021","2020","2021","2025","2022","2021","2018","2017","2024","2024","2025","2023","2019","2018","2021","2018","2017","2024","2024","2017","2017","2023","2018","2023","2021","2017","2018","2025","2024","2023","2022","2019","2022","2020","2019","2024","2022","2023","2018","2020","2017","2019","2020","2022","2018","2022","2021","2017","2021","2020","2023","2020","2019","2024","2017","2018","2024","2023","2025","2021","2019","2023","2020","2020","2019","2024","2024","2024","2018","2023","2019","2018","2023","2023","2024","2020","2025","2024","2018","2025","2022","2017","2025","2019","2022","2023","2022","2018","2022","2024","2024","2024","2022","2020","2019","2018","2022","2022","2020","2022","2021","2024","2020","2020","2019","2022","2017","2021","2023","2017","2024","2023","2024","2018","2025","2018","2025","2018","2022","2022","2017","2019","2020","2022","2020","2024","2024","2018","2022","2021","2019","2022","2022","2021","2020","2022","2018","2024","2025","2021","2025","2018","2019","2018","2017","2021","2021","2022","2020","2024","2017","2021","2024","2021","2024","2019","2023","2019","2017","2023","2024","2018","2021","2023","2017","2024","2024","2025","2019","2024","2024","2023","2022","2025","2017","2023","2023","2017","2020","2021","2017","2025","2021","2019","2021","2025","2021","2019","2023","2018","2025","2024","2017","2019","2021","2022","2021","2019","2024","2024","2018","2024","2022","2019","2022","2020","2023","2023","2021","2025","2017","2023","2019","2021","2021","2019"],
+"event_name":["PGA Championship","U.S. Open","Masters Tournament","U.S. Open","Arnold Palmer Invitational presented by Mastercard","The Masters","The Open Championship","U.S. Open","the Memorial Tournament presented by Nationwide","Farmers Insurance Open","Farmers Insurance Open","World Golf Championships-HSBC Champions","PGA Championship","Arnold Palmer Invitational presented by Mastercard","the Memorial Tournament presented by Workday","U.S. Open","the Memorial Tournament presented by Workday","The Masters #2","U.S. Open","THE CJ CUP @ NINE BRIDGES","The Open Championship","Masters Tournament","U.S. Open","The Open Championship","The Open Championship","Farmers Insurance Open","THE PLAYERS Championship","the Memorial Tournament presented by Workday","Farmers Insurance Open","Farmers Insurance Open","AT&T Pebble Beach Pro-Am","U.S. Open #2","the Memorial Tournament presented by Workday","U.S. Open","THE PLAYERS Championship","Farmers Insurance Open","Arnold Palmer Invitational presented by Mastercard","Valero Texas Open","Masters Tournament","The Open Championship","PGA Championship","Arnold Palmer Invitational presented by Mastercard","THE PLAYERS Championship","Arnold Palmer Invitational presented by Mastercard","the Memorial Tournament presented by Nationwide","Valero Texas Open","Arnold Palmer Invitational presented by Mastercard","Arnold Palmer Invitational presented by Mastercard","Valero Texas Open","PGA Championship","Masters Tournament","THE PLAYERS Championship","Arnold Palmer Invitational presented by Mastercard","AT&T Pebble Beach Pro-Am","the Memorial Tournament presented by Nationwide","U.S. Open","THE PLAYERS Championship","The Honda Classic","Farmers Insurance Open","Wells Fargo Championship","AT&T Pebble Beach Pro-Am","PGA TOUR Q-School presented by Korn Ferry","PGA Championship","Wells Fargo Championship","U.S. Open","AT&T Pebble Beach Pro-Am","Masters Tournament","PGA Championship","The Open Championship","Palmetto Championship at Congaree","World Golf Championships-HSBC Champions","Wells Fargo Championship","Valero Texas Open","Bermuda Championship","Valero Texas Open","PGA Championship","Wells Fargo Championship","Workday Charity Open","Corales Puntacana Resort & Club Championship #2","Sentry Tournament of Champions","AT&T Pebble Beach Pro-Am","The Masters","the Memorial Tournament presented by Nationwide","AT&T Pebble Beach Pro-Am","The Open Championship","Arnold Palmer Invitational presented by Mastercard","The RSM Classic","the Memorial Tournament presented by Nationwide","Shell Houston Open","AT&T Pebble Beach Pro-Am","The American Express","Houston Open","Puerto Rico Open","World Golf Championships-Workday Championship at The Concession","AT&T Pebble Beach Pro-Am","The Honda Classic","THE PLAYERS Championship","Fortinet Championship","Genesis Scottish Open","Farmers Insurance Open","Corales Puntacana Resort & Club Championship","Valspar Championship","Quicken Loans National","Safeway Open","The Honda Classic","The Open Championship","The RSM Classic","Valero Texas Open","Farmers Insurance Open","THE PLAYERS Championship","Vivint Houston Open","Corales Puntacana Championship","RBC Canadian Open","The Masters","World Golf Championships-HSBC Champions","Butterfield Bermuda Championship","PGA Championship","Farmers Insurance Open","Valspar Championship","The Genesis Invitational","THE CJ CUP @ NINE BRIDGES","PGA TOUR Q-School presented by Korn Ferry","CareerBuilder Challenge","Wells Fargo Championship","Wells Fargo Championship","Barracuda Championship","Valspar Championship","Sanderson Farms Championship","The American Express","AT&T Pebble Beach Pro-Am","PGA Championship","Procore Championship","PGA TOUR Q-School presented by Korn Ferry","AT&T Pebble Beach Pro-Am","Corales Puntacana Resort & Club Championship","BMW Championship","THE CJ CUP @ SHADOW CREEK","The RSM Classic","RBC Canadian Open","World Golf Championships-Mexico Championship","CareerBuilder Challenge","Valspar Championship","Travelers Championship","3M Open","World Golf Championships-Mexico Championship","Valspar Championship","The American Express","Farmers Insurance Open","Sanderson Farms Championship","Hero World Challenge #2","Valero Texas Open","AT&T Pebble Beach Pro-Am","Sanderson Farms Championship","Wells Fargo Championship","RBC Heritage","Puerto Rico Open","World Wide Technology Championship","Sony Open in Hawaii","Farmers Insurance Open","Valspar Championship","Sentry Tournament of Champions","CareerBuilder Challenge","AT&T Pebble Beach Pro-Am","Sanderson Farms Championship","Barbasol Championship","Genesis Open","The Honda Classic","Puerto Rico Open","Butterfield Bermuda Championship","The Honda Classic","CareerBuilder Challenge","Genesis Open","The RSM Classic","RBC Heritage","THE CJ CUP @ NINE BRIDGES","Barracuda Championship","The RSM Classic","RBC Heritage","Corales Puntacana Championship","3M Open","AT&T Pebble Beach Pro-Am","AT&T Byron Nelson","The Genesis Invitational","U.S. Open","Corales Puntacana Resort & Club Championship","Puerto Rico Open","Barracuda Championship","DEAN & DELUCA Invitational","John Deere Classic","THE PLAYERS Championship","Butterfield Bermuda Championship","Farmers Insurance Open","Corales Puntacana Championship","The Open Championship","Sanderson Farms Championship #2","FedEx St. Jude Classic","ZOZO CHAMPIONSHIP #2","The Genesis Invitational","Travelers Championship","3M Open","Dell Technologies Championship","THE NORTHERN TRUST","3M Open","Genesis Open","RBC Heritage","Charles Schwab Challenge","Sanderson Farms Championship","Fort Worth Invitational","Charles Schwab Challenge","Fortinet Championship","Fortinet Championship #2","The Honda Classic","Charles Schwab Challenge","Hewlett Packard Enterprise Houston Open","RBC Heritage","Corales Puntacana Championship","Shriners Children's Open #2","3M Open","Dell Technologies Championship","World Wide Technology Championship at Mayakoba","The American Express","The Honda Classic","Waste Management Phoenix Open","Waste Management Phoenix Open","THE NORTHERN TRUST","Charles Schwab Challenge","FedEx St. Jude Classic","The American Express","Valero Texas Open","Rocket Mortgage Classic","Cognizant Classic in The Palm Beaches","AT&T Pebble Beach Pro-Am","The American Express","Sanderson Farms Championship","RBC Canadian Open","Mexico Open at Vidanta","The Genesis Invitational","RBC Canadian Open","World Golf Championships-Mexico Championship","John Deere Classic","Texas Children's Houston Open","AT&T Pebble Beach Pro-Am","BMW Championship","Safeway Open","Shriners Hospitals for Children Open","Travelers Championship","PGA Championship","Shriners Hospitals for Children Open","The American Express","Olympic Men's Golf Competition","The Greenbrier Classic","CIMB Classic","WM Phoenix Open","AT&T Byron Nelson","Charles Schwab Challenge","Valspar Championship","World Golf Championships-Bridgestone Invitational","Safeway Open","The Sentry","RBC Heritage","Butterfield Bermuda Championship #2","Cadence Bank Houston Open","Shriners Hospitals for Children Open","The Genesis Invitational","Puerto Rico Open","Barracuda Championship","Puerto Rico Open","WM Phoenix Open","RBC Heritage","Houston Open","ZOZO CHAMPIONSHIP @ SHERWOOD","Puerto Rico Open","ZOZO CHAMPIONSHIP","Mayakoba Golf Classic presented by UNIFIN","Rocket Mortgage Classic","Quicken Loans National","Valspar Championship","Barbasol Championship","John Deere Classic","3M Open","THE NORTHERN TRUST","Mexico Open at Vidanta","Safeway Open","Bermuda Championship","Shriners Children's Open","RBC Canadian Open","The RSM Classic","Sony Open in Hawaii","John Deere Classic","Mexico Open at VidantaWorld","AT&T Byron Nelson","Travelers Championship","Sony Open in Hawaii","Wyndham Championship","RBC Heritage","Sony Open in Hawaii","Barracuda Championship","Wyndham Championship","Black Desert Championship","John Deere Classic","Genesis Scottish Open","AT&T Byron Nelson","Mayakoba Golf Classic","Travelers Championship","AT&T Byron Nelson","THE CJ CUP Byron Nelson","Shriners Hospitals for Children Open","Sony Open in Hawaii","The Genesis Invitational","Barbasol Championship","Charles Schwab Challenge","The RSM Classic","CareerBuilder Challenge","RBC Heritage","TOUR Championship","AT&T Pebble Beach Pro-Am","The RSM Classic #2","AT&T Byron Nelson","CIMB Classic","Hero World Challenge","FedEx St. Jude Championship","BMW Championship","Travelers Championship","Sony Open in Hawaii","The American Express","Waste Management Phoenix Open","THE NORTHERN TRUST","TOUR Championship","THE CJ CUP in South Carolina","Charles Schwab Challenge","Farmers Insurance Open","ZOZO CHAMPIONSHIP","WM Phoenix Open","TOUR Championship","Travelers Championship","Farmers Insurance Open","The American Express","SBS Tournament of Champions","Sony Open in Hawaii","AT&T Pebble Beach Pro-Am","CareerBuilder Challenge","AT&T Pebble Beach Pro-Am","World Wide Technology Championship #2","RBC Canadian Open","A Military Tribute at The Greenbrier","Truist Championship","Sony Open in Hawaii","AT&T Pebble Beach Pro-Am","Sentry Tournament of Champions","ZOZO CHAMPIONSHIP","The American Express","OHL Classic at Mayakoba","A Military Tribute at The Greenbrier","AT&T Pebble Beach Pro-Am","Wyndham Championship","The RSM Classic","The American Express","Mexico Open at Vidanta","Wyndham Championship","FedEx St. Jude Championship","THE CJ CUP @ SUMMIT","Desert Classic","The American Express","Sentry Tournament of Champions","Olympic Men's Golf Competition","Rocket Mortgage Classic","AT&T Pebble Beach Pro-Am","Hero World Challenge","AT&T Pebble Beach Pro-Am","WM Phoenix Open","World Wide Technology Championship at Mayakoba","Puerto Rico Open","BMW Championship","Barbasol Championship","World Golf Championships-Bridgestone Invitational","Farmers Insurance Open","Rocket Mortgage Classic","Shriners Children's Open","The RSM Classic","World Golf Championships-FedEx St. Jude Invitational","Hero World Challenge","Hero World Challenge","World Golf Championships-FedEx St. Jude Invitational","Farmers Insurance Open","BMW Championship","The RSM Classic","Hero World Challenge","The American Express","World Golf Championships-FedEx St. Jude Invitational","Wyndham Championship","The American Express","ZOZO CHAMPIONSHIP","World Golf Championships-Mexico Championship","The RSM Classic","PGA TOUR Q-School presented by Korn Ferry","Barbasol Championship","The Sentry","TOUR Championship","The American Express","BMW Championship","ISCO Championship","Genesis Scottish Open","Rocket Mortgage Classic","Barbasol Championship","ONEflight Myrtle Beach Classic","BMW Championship","Wyndham Championship","TOUR Championship","The RSM Classic","THE PLAYERS Championship","Barracuda Championship","The RSM Classic","Texas Children's Houston Open","Waste Management Phoenix Open","Wyndham Championship","Farmers Insurance Open","THE CJ CUP Byron Nelson","Hero World Challenge","Mayakoba Golf Classic","Sentry Tournament of Champions","AT&T Pebble Beach Pro-Am","Cognizant Classic in The Palm Beaches","The American Express","Sony Open in Hawaii","The RSM Classic","TOUR Championship","BMW Championship","THE NORTHERN TRUST","John Deere Classic","Sanderson Farms Championship","Rocket Mortgage Classic","TOUR Championship","Myrtle Beach Classic","Travelers Championship","Desert Classic","Shriners Children's Open","Waste Management Phoenix Open","FedEx St. Jude Championship","AT&T Pebble Beach Pro-Am","Sentry Tournament of Champions","The American Express","TOUR Championship","The RSM Classic #2","RBC Canadian Open","Wyndham Championship","John Deere Classic","Desert Classic"],
+"course_name":["Ocean Course at Kiawah Island","Shinnecock Hills GC","Augusta National Golf Club","Oakmont Country Club","Bay Hill Club & Lodge","Augusta National Golf Club","Royal Troon","Winged Foot GC","Muirfield Village Golf Club","Torrey Pines Golf Course (South Course)","Torrey Pines Golf Course (South Course)","Sheshan International GC","Quail Hollow-PGA Championship","Bay Hill Club & Lodge","Muirfield Village Golf Club","Oakmont CC","Muirfield Village Golf Club","Augusta National Golf Club","Pinehurst Resort (No. 2)","Club at Nine Bridges","Royal Troon GC","Augusta National GC","Erin Hills","Royal Troon GC","Royal Liverpool","Torrey Pines GC (South)","TPC Sawgrass","Muirfield Village Golf Club","Torrey Pines GC (South)","Torrey Pines GC (South)","Spyglass Hill Golf Course","Torrey Pines (South)","Muirfield Village Golf Club","Pinehurst Resort & Country Club (Course No. 2)","TPC Sawgrass","Torrey Pines Golf Course (North Course)","Bay Hill Club & Lodge","TPC San Antonio - AT&T Oaks","Augusta National GC","Carnoustie GC","Oak Hill Country Club","Arnold Palmer's Bay Hill Club & Lodge","TPC Sawgrass","Bay Hill Club & Lodge","Muirfield Village Golf Club","TPC San Antonio - AT&T Oaks","Bay Hill Club & Lodge","Arnold Palmer's Bay Hill Club & Lodge","TPC San Antonio (Oaks Course)","Quail Hollow-PGA Championship","Augusta National Golf Club","TPC Sawgrass (THE PLAYERS Stadium Course)","Arnold Palmer's Bay Hill Club & Lodge","Pebble Beach GL","Muirfield Village GC","Pebble Beach Golf Links","TPC Sawgrass (THE PLAYERS Stadium Course)","PGA National (Champion)","Torrey Pines (South)","Eagle Point Golf Club","Pebble Beach Golf Links","Sawgrass Country Club","Bethpage Black","Quail Hollow Club","The Country Club","Pebble Beach Golf Links","Augusta National Golf Club","Valhalla GC","Royal Portrush Golf Club","Congaree Golf Club","Sheshan International GC","Quail Hollow Club","TPC San Antonio (Oaks Course)","Port Royal Golf Course","TPC San Antonio (Oaks Course)","Southern Hills Country Club","Quail Hollow Club","Muirfield Village Golf Club","Corales Golf Club","Plantation Course at Kapalua","Spyglass Hill Golf Course","Augusta National GC","Muirfield Village Golf Club","Spyglass Hill GC","Royal Birkdale GC","Bay Hill Club & Lodge","Sea Island GC (Plantation)","Muirfield Village GC","GC of Houston","Pebble Beach GL","Pete Dye Stadium Course","Golf Club of Houston","Grand Reserve Golf Club","The Concession Golf Club","Spyglass Hill Golf Course","PGA National (Champion)","TPC Sawgrass (THE PLAYERS Stadium Course)","Silverado Resort and Spa (North Course)","The Renaissance Club","Torrey Pines GC (South)","Corales Golf Club","Innisbrook Resort (Copperhead Course)","TPC Potomac at Avenel Farm","Silverado Resort and Spa North","PGA National (Champion)","St. Andrews Links (Old Course)","Sea Island GC (Plantation)","TPC San Antonio (Oaks Course)","Torrey Pines Golf Course (North Course)","TPC Sawgrass","Memorial Park Golf Course","Corales Golf Club","Oakdale Golf & Country Club","Augusta National Golf Club","Sheshan International GC","Port Royal Golf Course","TPC Harding Park","Torrey Pines GC (South)","Innisbrook Resort (Copperhead Course)","Torrey Pines Golf Course (South Course)","Nine Bridges","Dye's Valley Course","Nicklaus Tournament Course","TPC Potomac at Avenel Farm","Quail Hollow Club","Tahoe Mt. Club (Old Greenwood)","Innisbrook Resort (Copperhead)","CC of Jackson","Nicklaus Tournament Course","Spyglass Hill GC","Valhalla Golf Club","Silverado Resort (North Course)","Sawgrass Country Club","Pebble Beach Golf Links","Corales Golf Club","Olympia Fields CC (North)","Shadow Creek Golf Course","Sea Island GC (Plantation)","St. George's G&CC","Club de Golf Chapultepec","Stadium Course","Innisbrook Resort (Copperhead Course)","TPC River Highlands","TPC Twin Cities","Club de Golf Chapultepec","Innisbrook Resort (Copperhead)","Stadium Course","Torrey Pines (North)","CC of Jackson","Albany GC","TPC San Antonio (Oaks Course)","Spyglass Hill Golf Course","Country Club of Jackson","Quail Hollow Club","Harbour Town Golf Links","Grand Reserve Country Club","El Cardonal at Diamante","Waialae Country Club","Torrey Pines Golf Course (South Course)","Innisbrook Resort (Copperhead)","Plantation Course at Kapalua","Nicklaus Tournament Course","Monterey Peninsula CC","Country Club of Jackson","Keene Trace Golf Club (Champions Course)","Riviera CC","PGA National (Champion)","Coco Beach Golf & CC","Port Royal Golf Course","PGA National Resort (The Champion)","La Quinta CC","Riviera CC","Sea Island Golf Club (Plantation Course)","Harbour Town GL","Nine Bridges","Tahoe Mountain Club (Old Greenwood)","Sea Island GC (Plantation)","Harbour Town Golf Links","Puntacana Resort & Club (Corales Golf Course)","TPC Twin Cities","Monterey Peninsula CC","TPC Four Seasons Resort","Riviera Country Club","The Los Angeles Country Club (North Course)","Corales Golf Club","Grand Reserve Golf Club","Old Greenwood Golf Course at Tahoe Mountain Club","Colonial CC","TPC Deere Run","TPC Sawgrass","Port Royal Golf Course","Torrey Pines GC (North)","Puntacana Resort (Corales Golf Course)","Royal St. George's GC","The Country Club of Jackson","TPC Southwind","Accordia Golf Narashino Country Club","The Riviera Country Club","TPC River Highlands","TPC Twin Cities","TPC Boston","Glen Oaks Club","TPC Twin Cities","Riviera Country Club","Harbour Town Golf Links","Colonial Country Club","The Country Club of Jackson","Colonial CC","Colonial Country Club","Silverado Resort & Spa (North)","Silverado Resort (North Course)","PGA National (Champion)","Colonial Country Club","Memorial Park Golf Course","Harbour Town GL","Puntacana Resort & Club (Corales Golf Course)","TPC Summerlin","TPC Twin Cities","TPC Boston","El Camaleón Golf Course at Mayakoba","La Quinta Country Club","PGA National (Champion)","TPC Scottsdale","TPC Scottsdale","Liberty National Golf Club","Colonial Country Club","TPC Southwind","Stadium Course","TPC San Antonio (Oaks Course)","Detroit Golf Club","PGA National Resort (The Champion)","Pebble Beach Golf Links","Nicklaus Tournament Course","Country Club of Jackson","TPC Toronto at Osprey Valley (North Course)","Vidanta Vallarta","The Riviera Country Club","Glen Abbey GC","Club de Golf Chapultepec","TPC Deere Run","Memorial Park Golf Course","Pebble Beach Golf Links","Olympia Fields Country Club (North Course)","Silverado Resort & Spa (North)","TPC Summerlin","TPC River Highlands","Bellerive CC","TPC Summerlin","Nicklaus Tournament Course","Le Golf National","The Old White TPC","TPC Kuala Lumpur","TPC Scottsdale (Stadium Course)","Trinity Forest Golf Club","Colonial Country Club","Innisbrook Resort (Copperhead)","Firestone CC (South)","Silverado Resort and Spa North","Plantation Course at Kapalua","Harbour Town Golf Links","Port Royal Golf Course","Memorial Park Golf Course","TPC Summerlin","The Riviera Country Club","Grand Reserve Country Club","Montreux Golf & Country Club","Grand Reserve Golf Club","TPC Scottsdale","Harbour Town Golf Links","GC of Houston","Sherwood Country Club","Coco Beach Golf & CC","Accordia Golf Narashino CC","El Camaleon Golf Club","Detroit Golf Club","TPC Potomac at Avenel Farm","Innisbrook Resort (Copperhead)","Keene Trace Golf Club","TPC Deere Run","TPC Twin Cities","TPC Boston","Vidanta Vallarta","Silverado Resort and Spa North","Port Royal Golf Course","TPC Summerlin","Glen Abbey GC","Sea Island GC (Seaside)","Waialae Country Club","TPC Deere Run","Vidanta Vallarta","TPC Craig Ranch","TPC River Highlands","Waialae Country Club","Sedgefield Country Club","Harbour Town Golf Links","Waialae Country Club","Tahoe Mountain Club (Old Greenwood)","Sedgefield Country Club","Black Desert Resort","TPC Deere Run","The Renaissance Club","Trinity Forest Golf Club","El Camaleon GC","TPC River Highlands","TPC Craig Ranch","TPC Craig Ranch","TPC Summerlin","Waialae Country Club","The Riviera Country Club","Keene Trace Golf Club","Colonial Country Club","Sea Island Golf Club (Plantation)","Stadium Course","Harbour Town Golf Links","East Lake Golf Club","Pebble Beach Golf Links","Sea Island Golf Club (Plantation Course)","TPC Craig Ranch","TPC Kuala Lumpur","Albany, Bahamas","TPC Southwind","Castle Pines Golf Club","TPC River Highlands","Waialae Country Club","La Quinta Country Club","TPC Scottsdale","Ridgewood CC","East Lake Golf Club","Congaree Golf Club","Colonial Country Club","Torrey Pines (North)","Accordia Golf Narashino CC","TPC Scottsdale (Stadium Course)","East Lake Golf Club","TPC River Highlands","Torrey Pines GC (North)","La Quinta Country Club","Plantation Course at Kapalua","Waialae Country Club","Monterey Peninsula CC","La Quinta CC","Spyglass Hill Golf Course","El Cardonal at Diamante","Hamilton Golf & Country Club","The Old White TPC","The Philadelphia Cricket Club (Wissahickon Course)","Waialae CC","Spyglass Hill Golf Course","Plantation Course at Kapalua","Accordia Golf Narashino Country Club","Nicklaus Tournament Course","El Camaleon GC","The Old White TPC","Monterey Peninsula CC","Sedgefield Country Club","Sea Island GC (Seaside)","La Quinta Country Club","Vidanta Vallarta","Sedgefield CC","TPC Southwind","The Summit Club","La Quinta Country Club","Pete Dye Stadium Course","Plantation Course at Kapalua","Kasumigaseki Country Club","Detroit Golf Club","Monterey Peninsula CC","Albany","Pebble Beach Golf Links","TPC Scottsdale (Stadium Course)","El Camaleon Golf Club","Grand Reserve Golf Club","Aronimink GC","Keene Trace Golf Club","Firestone CC (South)","Torrey Pines (North)","Detroit Golf Club","TPC Summerlin","Sea Island Golf Club (Seaside)","TPC Southwind","Albany GC","Albany","TPC Southwind","Torrey Pines Golf Course (North Course)","Caves Valley Golf Club","Sea Island Golf Club (Seaside Course)","Albany","Nicklaus Tournament Course","TPC Southwind","Sedgefield CC","Pete Dye Stadium Course","ACCORDIA GOLF Narashino Country Club","Club de Golf Chapultepec","Sea Island GC (Seaside)","Dye's Valley Course","RTJ Trail (Grand National)","Plantation Course at Kapalua","East Lake Golf Club","La Quinta Country Club","Medinah Country Club (No. 3)","Keene Trace Golf Club (Champion Trace)","The Renaissance Club","Detroit Golf Club","Keene Trace Golf Club","Dunes Golf and Beach Club","Conway Farms GC","Sedgefield Country Club","East Lake Golf Club","Sea Island Resort (Plantation)","TPC Sawgrass","Tahoe Mt. Club (Old Greenwood)","Sea Island Resort (Seaside)","Memorial Park Golf Course","TPC Scottsdale","Sedgefield Country Club","Torrey Pines GC (North)","TPC Craig Ranch","Albany","El Camaleon Golf Club","Plantation Course at Kapalua","Monterey Peninsula CC","PGA National Resort (The Champion Course)","Pete Dye Stadium Course","Waialae CC","Sea Island GC (Seaside)","East Lake Golf Club","Wilmington Country Club","Liberty National Golf Club","TPC Deere Run","The Country Club of Jackson","Detroit Golf Club","East Lake GC","The Dunes Golf and Beach Club","TPC River Highlands","Nicklaus Tournament Course","TPC Summerlin","TPC Scottsdale","TPC Southwind","Spyglass Hill Golf Course","Plantation Course at Kapalua","Nicklaus Tournament Course","East Lake GC","Sea Island Golf Club (Seaside Course)","Hamilton Golf & Country Club","Sedgefield Country Club","TPC Deere Run","Stadium Course"],
+"over_80":[39.0,45.0,20.0,34.0,21.0,16.0,30.0,19.0,21.0,17.0,12.0,18.0,26.0,16.0,14.0,18.0,9.0,10.0,16.0,14.0,18.0,10.0,17.0,17.0,19.0,8.0,12.0,13.0,10.0,11.0,5.0,11.0,6.0,13.0,16.0,8.0,10.0,13.0,9.0,14.0,14.0,8.0,13.0,9.0,9.0,13.0,10.0,8.0,10.0,13.0,5.0,13.0,6.0,6.0,8.0,11.0,11.0,10.0,7.0,6.0,5.0,9.0,10.0,10.0,9.0,5.0,4.0,13.0,9.0,11.0,6.0,8.0,6.0,12.0,5.0,7.0,4.0,9.0,5.0,2.0,2.0,5.0,6.0,3.0,8.0,5.0,4.0,8.0,6.0,3.0,4.0,6.0,7.0,5.0,2.0,5.0,7.0,6.0,6.0,3.0,7.0,4.0,5.0,5.0,6.0,7.0,3.0,4.0,2.0,6.0,7.0,5.0,5.0,3.0,4.0,7.0,7.0,3.0,5.0,2.0,4.0,4.0,2.0,5.0,4.0,5.0,3.0,3.0,2.0,1.0,7.0,4.0,3.0,2.0,4.0,2.0,3.0,2.0,5.0,3.0,2.0,3.0,6.0,4.0,3.0,3.0,3.0,1.0,3.0,1.0,3.0,1.0,3.0,3.0,4.0,3.0,4.0,4.0,1.0,2.0,1.0,2.0,1.0,3.0,4.0,2.0,3.0,2.0,4.0,4.0,2.0,3.0,1.0,3.0,2.0,4.0,1.0,3.0,2.0,4.0,1.0,3.0,2.0,2.0,2.0,2.0,3.0,2.0,4.0,2.0,4.0,1.0,2.0,3.0,3.0,3.0,2.0,2.0,4.0,3.0,2.0,2.0,4.0,2.0,2.0,2.0,2.0,3.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,3.0,3.0,2.0,3.0,1.0,2.0,2.0,2.0,2.0,2.0,2.0,1.0,1.0,2.0,2.0,1.0,1.0,2.0,3.0,2.0,1.0,2.0,1.0,3.0,2.0,1.0,1.0,1.0,2.0,2.0,2.0,1.0,1.0,1.0,2.0,1.0,1.0,2.0,1.0,1.0,1.0,1.0,1.0,1.0,2.0,1.0,2.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],
+"sub_70":[30.0,36.0,21.0,36.0,26.0,21.0,48.0,32.0,36.0,30.0,23.0,38.0,56.0,36.0,37.0,52.0,26.0,30.0,49.0,44.0,59.0,33.0,57.0,64.0,73.0,31.0,48.0,52.0,41.0,46.0,21.0,48.0,27.0,59.0,76.0,39.0,49.0,65.0,47.0,74.0,78.0,45.0,74.0,51.0,51.0,76.0,64.0,52.0,66.0,87.0,34.0,89.0,41.0,44.0,59.0,81.0,83.0,76.0,54.0,46.0,41.0,74.0,88.0,90.0,81.0,49.0,40.0,131.0,93.0,115.0,64.0,85.0,69.0,138.0,58.0,84.0,49.0,111.0,62.0,25.0,25.0,63.0,77.0,39.0,115.0,73.0,60.0,119.0,91.0,48.0,64.0,97.0,115.0,83.0,34.0,85.0,120.0,106.0,108.0,55.0,128.0,76.0,99.0,98.0,120.0,139.0,61.0,81.0,42.0,126.0,150.0,107.0,109.0,65.0,93.0,161.0,161.0,69.0,117.0,48.0,99.0,102.0,52.0,133.0,106.0,132.0,82.0,82.0,54.0,27.0,193.0,113.0,92.0,60.0,122.0,63.0,95.0,64.0,161.0,100.0,66.0,101.0,204.0,136.0,104.0,103.0,103.0,36.0,112.0,39.0,115.0,39.0,120.0,122.0,160.0,118.0,168.0,170.0,42.0,83.0,44.0,88.0,43.0,131.0,186.0,93.0,136.0,89.0,185.0,183.0,97.0,143.0,48.0,140.0,102.0,202.0,50.0,151.0,104.0,209.0,52.0,162.0,104.0,103.0,106.0,104.0,154.0,113.0,219.0,113.0,222.0,55.0,110.0,169.0,178.0,173.0,116.0,115.0,238.0,178.0,122.0,122.0,255.0,129.0,125.0,126.0,122.0,191.0,128.0,124.0,132.0,136.0,135.0,132.0,141.0,148.0,217.0,223.0,155.0,229.0,83.0,161.0,164.0,167.0,168.0,161.0,175.0,89.0,88.0,186.0,182.0,89.0,93.0,187.0,280.0,180.0,102.0,196.0,99.0,287.0,193.0,103.0,104.0,109.0,220.0,233.0,214.0,108.0,115.0,112.0,213.0,111.0,119.0,248.0,132.0,131.0,126.0,133.0,146.0,151.0,275.0,148.0,277.0,145.0,137.0,142.0,167.0,169.0,171.0,169.0,173.0,165.0,165.0,175.0,177.0,166.0,180.0,196.0,222.0,185.0,205.0,195.0,189.0,182.0,203.0,195.0,186.0,271.0,231.0,223.0,223.0,233.0,279.0,285.0,264.0,271.0,229.0,265.0,243.0,240.0,225.0,236.0,228.0,295.0,288.0,292.0,287.0,289.0,98.0,196.0,170.0,74.0,50.0,154.0,43.0,68.0,54.0,255.0,161.0,25.0,153.0,46.0,205.0,297.0,82.0,160.0,167.0,84.0,131.0,223.0,93.0,116.0,197.0,65.0,297.0,73.0,66.0,44.0,324.0,64.0,72.0,27.0,238.0,172.0,253.0,159.0,258.0,35.0,32.0,181.0,68.0,175.0,262.0,79.0,258.0,179.0,109.0,167.0,287.0,215.0,201.0,101.0,87.0,112.0,135.0,196.0,73.0,35.0,84.0,185.0,243.0,210.0,205.0,208.0,130.0,34.0,167.0,255.0,177.0,160.0,33.0,27.0,156.0,79.0,152.0,134.0,35.0,95.0,134.0,279.0,121.0,201.0,105.0,171.0,133.0,234.0,156.0,77.0,108.0,122.0,236.0,281.0,216.0,216.0,168.0,150.0,234.0,67.0,60.0,36.0,176.0,165.0,264.0,201.0,332.0,59.0,262.0,40.0,174.0,86.0,75.0,234.0,125.0,300.0,179.0,75.0,122.0,173.0,235.0,209.0,164.0,64.0,187.0,232.0,93.0,261.0,162.0,185.0,16.0,96.0,108.0,66.0,241.0,220.0,280.0,226.0,93.0],
+"pti":[1.3,1.25,0.952,0.944,0.808,0.762,0.625,0.594,0.583,0.567,0.522,0.474,0.464,0.444,0.378,0.346,0.346,0.333,0.327,0.318,0.305,0.303,0.298,0.266,0.26,0.258,0.25,0.25,0.244,0.239,0.238,0.229,0.222,0.22,0.211,0.205,0.204,0.2,0.191,0.189,0.179,0.178,0.176,0.176,0.176,0.171,0.156,0.154,0.152,0.149,0.147,0.146,0.146,0.136,0.136,0.136,0.133,0.132,0.13,0.13,0.122,0.122,0.114,0.111,0.111,0.102,0.1,0.099,0.097,0.096,0.094,0.094,0.087,0.087,0.086,0.083,0.082,0.081,0.081,0.08,0.08,0.079,0.078,0.077,0.07,0.068,0.067,0.067,0.066,0.062,0.062,0.062,0.061,0.06,0.059,0.059,0.058,0.057,0.056,0.055,0.055,0.053,0.051,0.051,0.05,0.05,0.049,0.049,0.048,0.048,0.047,0.047,0.046,0.046,0.043,0.043,0.043,0.043,0.043,0.042,0.04,0.039,0.038,0.038,0.038,0.038,0.037,0.037,0.037,0.037,0.036,0.035,0.033,0.033,0.033,0.032,0.032,0.031,0.031,0.03,0.03,0.03,0.029,0.029,0.029,0.029,0.029,0.028,0.027,0.026,0.026,0.026,0.025,0.025,0.025,0.025,0.024,0.024,0.024,0.024,0.023,0.023,0.023,0.023,0.022,0.022,0.022,0.022,0.022,0.022,0.021,0.021,0.021,0.021,0.02,0.02,0.02,0.02,0.019,0.019,0.019,0.019,0.019,0.019,0.019,0.019,0.019,0.018,0.018,0.018,0.018,0.018,0.018,0.018,0.017,0.017,0.017,0.017,0.017,0.017,0.016,0.016,0.016,0.016,0.016,0.016,0.016,0.016,0.016,0.016,0.015,0.015,0.015,0.015,0.014,0.014,0.014,0.013,0.013,0.013,0.012,0.012,0.012,0.012,0.012,0.012,0.011,0.011,0.011,0.011,0.011,0.011,0.011,0.011,0.011,0.011,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.009,0.009,0.009,0.009,0.009,0.009,0.009,0.009,0.009,0.008,0.008,0.008,0.008,0.008,0.008,0.007,0.007,0.007,0.007,0.007,0.007,0.007,0.007,0.006,0.006,0.006,0.006,0.006,0.006,0.006,0.006,0.006,0.006,0.006,0.005,0.005,0.005,0.005,0.005,0.005,0.005,0.005,0.005,0.005,0.004,0.004,0.004,0.004,0.004,0.004,0.004,0.004,0.004,0.004,0.004,0.004,0.004,0.004,0.004,0.004,0.003,0.003,0.003,0.003,0.003,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],
+"major_championship":[true,true,true,true,false,true,true,true,false,false,false,false,true,false,false,true,false,true,true,false,true,true,true,true,true,false,false,false,false,false,false,false,false,true,false,false,false,false,true,true,true,false,false,false,false,false,false,false,false,true,true,false,false,false,false,true,false,false,false,false,false,false,true,false,true,false,true,true,true,false,false,false,false,false,false,true,false,false,false,false,false,true,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,true,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
+},
+"mapping":{
+},
+"data_meta":{
+"series_annotations":[{
+"type":"str",
+"column":"year"
+},{
+"type":"int",
+"column":"event_id"
+},{
+"type":"str",
+"column":"event_name"
+},{
+"type":"str",
+"column":"course_name"
+},{
+"type":"int",
+"column":"course_num"
+},{
+"type":"int",
+"column":"over_80"
+},{
+"type":"int",
+"column":"sub_70"
+},{
+"type":"int",
+"column":"total_rounds"
+},{
+"type":"float",
+"column":"scoring_average"
+},{
+"type":"float",
+"column":"pti"
+},{
+"type":"bool",
+"column":"major_championship"
+}]
+},
+"ggsize":{
+"width":800.0,
+"height":600.0
+},
+"theme":{
+"legend_position":"top",
+"panel_grid_minor":"blank",
+"panel_grid_major_x":"blank",
+"plot_title":{
+"family":"Arial",
+"face":"bold",
+"size":33.0,
+"blank":false
+},
+"plot_subtitle":{
+"family":"Arial",
+"size":26.0,
+"blank":false
+}
+},
+"ggtitle":{
+"text":"Rounds over 80 against sub-70 rounds",
+"subtitle":"All available events in Data Golf's archives"
+},
+"guides":{
+"x":{
+"title":"Count of rounds with a score of 80+"
+},
+"y":{
+"title":"Count of rounds with a score of <70"
+},
+"color":{
+"title":"Is it a major championship?"
+},
+"size":{
+"title":"Proper Test Index"
+}
+},
+"kind":"plot",
+"scales":[],
+"layers":[{
+"geom":"point",
+"mapping":{
+"x":"over_80",
+"y":"sub_70",
+"color":"major_championship",
+"size":"pti"
+},
+"tooltips":{
+"formats":[],
+"lines":["@year @event_name","Venue|@course_name","PTI|@pti"]
+},
+"data_meta":{
+},
+"alpha":0.2,
+"data":{
+}
+}],
+"metainfo_list":[],
+"spec_id":"115"
+};
+           window.letsPlotCall(function() { fig = LetsPlot.buildPlotFromProcessedSpecs(plotSpec, containerDiv, sizing); });
+       } else {
+           fig.updateView({});
+       }
+   }
+   
+   const renderImmediately = 
+       forceImmediateRender || (
+           sizing.width_mode === 'FIXED' && 
+           (sizing.height_mode === 'FIXED' || sizing.height_mode === 'SCALED')
+       );
+   
+   if (renderImmediately) {
+       renderPlot();
+   }
+   
+   if (!renderImmediately || responsive) {
+       // Set up observer for initial sizing or continuous monitoring
+       var observer = new ResizeObserver(function(entries) {
+           for (let entry of entries) {
+               if (entry.contentBoxSize && 
+                   entry.contentBoxSize[0].inlineSize > 0) {
+                   if (!responsive && observer) {
+                       observer.disconnect();
+                       observer = null;
+                   }
+                   renderPlot();
+                   if (!responsive) {
+                       break;
+                   }
+               }
+           }
+       });
+       
+       observer.observe(containerDiv);
+   }
+   
+   // ----------
+   })();
+   
+   </script>
+</div>
+</div>
+<p>Some miscellaneous notes.</p>
+<ul>
+<li>There are 139 events that had <strong>0 rounds of 80 or over</strong>.</li>
+<li>What were we doing at the 2019 Wyndham Championship? 332 rounds below 70 and 0 above 80. Not Proper.</li>
+</ul>
+<p>Now when it comes to majors…</p>
+<div id="42028d0a" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="160">
+   <div id="cKz50n"></div>
+   <script type="text/javascript" data-lets-plot-script="plot">
+   
+   (function() {
+   // ----------
+   
+   const forceImmediateRender = false;
+   const responsive = false;
+   
+   let sizing = {
+       width_mode: "MIN",
+       height_mode: "SCALED",
+       width: null, 
+       height: null 
+   };
+   
+   const preferredWidth = document.body.dataset.letsPlotPreferredWidth;
+   if (preferredWidth !== undefined) {
+       sizing = {
+           width_mode: 'FIXED',
+           height_mode: 'SCALED',
+           width: parseFloat(preferredWidth)
+       };
+   }
+   
+   const containerDiv = document.getElementById("cKz50n");
+   let fig = null;
+   
+   function renderPlot() {
+       if (fig === null) {
+           const plotSpec = {
+"data":{
+"year":["2021","2018","2024","2025","2022","2024","2020","2017","2016","2021","2014","2004","2017","2017","2016","2023","2024","2018","2018","2023","2025","2023","2019","2019","2022","2025","2014","2019","2022","2019","2017","2022","2020","2020","2024","2023","2021","2018"],
+"event_name":["PGA Championship","U.S. Open","Masters Tournament","U.S. Open","The Masters","The Open Championship","U.S. Open","PGA Championship","U.S. Open","The Masters #2","U.S. Open","The Open Championship","Masters Tournament","U.S. Open","The Open Championship","The Open Championship","U.S. Open","Masters Tournament","The Open Championship","PGA Championship","PGA Championship","Masters Tournament","U.S. Open","PGA Championship","U.S. Open","Masters Tournament","PGA Championship","The Open Championship","PGA Championship","The Masters","The Open Championship","The Open Championship","The Masters","PGA Championship","PGA Championship","U.S. Open","The Open Championship","PGA Championship"],
+"course_name":["Ocean Course at Kiawah Island","Shinnecock Hills GC","Augusta National Golf Club","Oakmont Country Club","Augusta National Golf Club","Royal Troon","Winged Foot GC","Quail Hollow-PGA Championship","Oakmont CC","Augusta National Golf Club","Pinehurst Resort (No. 2)","Royal Troon GC","Augusta National GC","Erin Hills","Royal Troon GC","Royal Liverpool","Pinehurst Resort & Country Club (Course No. 2)","Augusta National GC","Carnoustie GC","Oak Hill Country Club","Quail Hollow-PGA Championship","Augusta National Golf Club","Pebble Beach Golf Links","Bethpage Black","The Country Club","Augusta National Golf Club","Valhalla GC","Royal Portrush Golf Club","Southern Hills Country Club","Augusta National GC","Royal Birkdale GC","St. Andrews Links (Old Course)","Augusta National Golf Club","TPC Harding Park","Valhalla Golf Club","The Los Angeles Country Club (North Course)","Royal St. George's GC","Bellerive CC"],
+"over_80":[39.0,45.0,20.0,34.0,16.0,30.0,19.0,26.0,18.0,10.0,16.0,18.0,10.0,17.0,17.0,19.0,13.0,9.0,14.0,14.0,13.0,5.0,11.0,10.0,9.0,4.0,13.0,9.0,7.0,5.0,8.0,7.0,3.0,7.0,7.0,2.0,3.0,2.0],
+"sub_70":[30.0,36.0,21.0,36.0,21.0,48.0,32.0,56.0,52.0,30.0,49.0,59.0,33.0,57.0,64.0,73.0,59.0,47.0,74.0,78.0,87.0,34.0,81.0,88.0,81.0,40.0,131.0,93.0,84.0,63.0,115.0,139.0,65.0,161.0,193.0,103.0,169.0,214.0],
+"pti":[1.3,1.25,0.952,0.944,0.762,0.625,0.594,0.464,0.346,0.333,0.327,0.305,0.303,0.298,0.266,0.26,0.22,0.191,0.189,0.179,0.149,0.147,0.136,0.114,0.111,0.1,0.099,0.097,0.083,0.079,0.07,0.05,0.046,0.043,0.036,0.019,0.018,0.009]
+},
+"mapping":{
+},
+"data_meta":{
+"series_annotations":[{
+"type":"str",
+"column":"year"
+},{
+"type":"int",
+"column":"event_id"
+},{
+"type":"str",
+"column":"event_name"
+},{
+"type":"str",
+"column":"course_name"
+},{
+"type":"int",
+"column":"course_num"
+},{
+"type":"int",
+"column":"over_80"
+},{
+"type":"int",
+"column":"sub_70"
+},{
+"type":"int",
+"column":"total_rounds"
+},{
+"type":"float",
+"column":"scoring_average"
+},{
+"type":"float",
+"column":"pti"
+},{
+"type":"bool",
+"column":"major_championship"
+}]
+},
+"ggsize":{
+"width":800.0,
+"height":600.0
+},
+"theme":{
+"legend_position":"top",
+"panel_grid_minor":"blank",
+"panel_grid_major_x":"blank",
+"plot_title":{
+"family":"Arial",
+"face":"bold",
+"size":33.0,
+"blank":false
+},
+"plot_subtitle":{
+"family":"Arial",
+"size":26.0,
+"blank":false
+}
+},
+"ggtitle":{
+"text":"Rounds over 80 against sub-70 rounds",
+"subtitle":"Major championships in Data Golf's archives"
+},
+"guides":{
+"x":{
+"title":"Count of rounds with a score of 80+"
+},
+"y":{
+"title":"Count of rounds with a score of <70"
+},
+"size":{
+"title":"Proper Test Index"
+}
+},
+"kind":"plot",
+"scales":[],
+"layers":[{
+"geom":"point",
+"mapping":{
+"x":"over_80",
+"y":"sub_70",
+"size":"pti"
+},
+"tooltips":{
+"formats":[],
+"lines":["@year @event_name","Venue|@course_name","PTI|@pti"]
+},
+"data_meta":{
+},
+"alpha":0.5,
+"data":{
+}
+}],
+"metainfo_list":[],
+"spec_id":"116"
+};
+           window.letsPlotCall(function() { fig = LetsPlot.buildPlotFromProcessedSpecs(plotSpec, containerDiv, sizing); });
+       } else {
+           fig.updateView({});
+       }
+   }
+   
+   const renderImmediately = 
+       forceImmediateRender || (
+           sizing.width_mode === 'FIXED' && 
+           (sizing.height_mode === 'FIXED' || sizing.height_mode === 'SCALED')
+       );
+   
+   if (renderImmediately) {
+       renderPlot();
+   }
+   
+   if (!renderImmediately || responsive) {
+       // Set up observer for initial sizing or continuous monitoring
+       var observer = new ResizeObserver(function(entries) {
+           for (let entry of entries) {
+               if (entry.contentBoxSize && 
+                   entry.contentBoxSize[0].inlineSize > 0) {
+                   if (!responsive && observer) {
+                       observer.disconnect();
+                       observer = null;
+                   }
+                   renderPlot();
+                   if (!responsive) {
+                       break;
+                   }
+               }
+           }
+       });
+       
+       observer.observe(containerDiv);
+   }
+   
+   // ----------
+   })();
+   
+   </script>
+</div>
+</div>
+<p>As much as I like Brooks Koepka…, the 2018 PGA Championship at Bellerive CC wasn’t particularly <em>proper</em>. But good news for Big! Phil the Thrill’s unbelievable performance in the 2021 PGA Championship at Ocean Course at Kiawah Island was undeniable. Proper.</p>
+</section>
+<section id="sabermetrics-can-help-us-identify-proper-players" class="level2">
+<h2 class="anchored" data-anchor-id="sabermetrics-can-help-us-identify-proper-players">Sabermetrics can help us identify <em>Proper Players</em></h2>
+<p>PTI tells us something about the balance of extreme rounds at the event level. What if we adopt Baseball’s <em>park factor</em> to figure out if a low round really matters?</p>
+<p><span class="math display">\[
+\text{Course Factor} = \frac{\frac{\text{Total scores &gt;= 80 at the course}}{\text{Total scores &lt; 70 at the course}}}{\frac{\text{Total scores &gt;= 80 at all other courses}}{\text{Total scores &lt; 70 at all other courses}}}
+\]</span></p>
+<p>The larger the <em>course factor</em>, the more impressive a 65 is! Let’s plot out the <em>course factor</em> across the available venues.</p>
+<div id="e6f3373a" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="161">
+   <div id="5vseG3"></div>
+   <script type="text/javascript" data-lets-plot-script="plot">
+   
+   (function() {
+   // ----------
+   
+   const forceImmediateRender = false;
+   const responsive = false;
+   
+   let sizing = {
+       width_mode: "MIN",
+       height_mode: "SCALED",
+       width: null, 
+       height: null 
+   };
+   
+   const preferredWidth = document.body.dataset.letsPlotPreferredWidth;
+   if (preferredWidth !== undefined) {
+       sizing = {
+           width_mode: 'FIXED',
+           height_mode: 'SCALED',
+           width: parseFloat(preferredWidth)
+       };
+   }
+   
+   const containerDiv = document.getElementById("5vseG3");
+   let fig = null;
+   
+   function renderPlot() {
+       if (fig === null) {
+           const plotSpec = {
+"data":{
+"course_name":["Ocean Course at Kiawah Island","Shinnecock Hills GC","Oakmont Country Club","Winged Foot GC","Royal Troon","Erin Hills","Quail Hollow-PGA Championship","Pinehurst Resort (No. 2)","Royal Liverpool","Augusta National Golf Club","Torrey Pines (South)","Bay Hill Club & Lodge","Muirfield Village Golf Club","Torrey Pines Golf Course (South Course)","Carnoustie GC","Oak Hill Country Club","Sheshan International GC","Pebble Beach Golf Links","Eagle Point Golf Club","Bethpage Black","The Country Club","TPC Sawgrass","Royal Portrush Golf Club","TPC San Antonio - AT&T Oaks","Southern Hills Country Club","Club at Nine Bridges","Muirfield Village Golf Club","Sawgrass Country Club","Royal Birkdale GC","Quail Hollow Club","Valhalla GC","The Concession Golf Club","Spyglass Hill Golf Course","St. Andrews Links (Old Course)","Oakdale Golf & Country Club","Congaree Golf Club","TPC Harding Park","Torrey Pines Golf Course (South Course)","Pebble Beach GL","GC of Houston","PGA National (Champion)","Corales Golf Club","Shadow Creek Golf Course","St. George's G&CC","TPC Potomac at Avenel Farm","Sea Island GC (Plantation)","Port Royal Golf Course","Innisbrook Resort (Copperhead Course)","Silverado Resort (North Course)","Torrey Pines Golf Course (North Course)","Silverado Resort and Spa (North Course)","The Los Angeles Country Club (North Course)","Grand Reserve Golf Club","TPC Four Seasons Resort","Tahoe Mt. Club (Old Greenwood)","Olympia Fields CC (North)","Royal St. George's GC","Club de Golf Chapultepec","Dye's Valley Course","CC of Jackson","Glen Oaks Club","Sea Island GC (Plantation)","TPC Twin Cities","Riviera CC","Memorial Park Golf Course","Pete Dye Stadium Course","Harbour Town Golf Links","The Renaissance Club","TPC Toronto at Osprey Valley (North Course)","Nicklaus Tournament Course","TPC Boston","Colonial CC","El Cardonal at Diamante","Bellerive CC","Le Golf National","Glen Abbey GC","TPC River Highlands","Montreux Golf & Country Club","Trinity Forest Golf Club","TPC Deere Run","Liberty National Golf Club","Sherwood Country Club","Plantation Course at Kapalua","TPC Summerlin","Vidanta Vallarta","Monterey Peninsula CC","PGA National Resort (The Champion)","Keene Trace Golf Club (Champions Course)","Tahoe Mountain Club (Old Greenwood)","Albany GC","La Quinta CC","Black Desert Resort","El Camaleón Golf Course at Mayakoba","Firestone CC (South)","TPC Scottsdale","Accordia Golf Narashino Country Club","TPC Kuala Lumpur","TPC Southwind","Waialae Country Club","The Old White TPC","Detroit Golf Club","TPC Craig Ranch","TPC Craig Ranch","Sedgefield Country Club","Sea Island GC (Seaside)","Dunes Golf and Beach Club","The Summit Club","Kasumigaseki Country Club","East Lake Golf Club","East Lake Golf Club","Medinah Country Club (No. 3)","Hamilton Golf & Country Club","Wilmington Country Club","Aronimink GC","Keene Trace Golf Club","Conway Farms GC","RTJ Trail (Grand National)","Ridgewood CC","Grand Reserve Golf Club","Caves Valley Golf Club","Castle Pines Golf Club","The Philadelphia Cricket Club (Wissahickon Course)"],
+"total_over_80":[39.0,45.0,52.0,19.0,65.0,17.0,39.0,29.0,19.0,82.0,11.0,93.0,94.0,72.0,14.0,14.0,28.0,11.0,6.0,10.0,9.0,80.0,9.0,55.0,7.0,20.0,9.0,12.0,8.0,29.0,20.0,5.0,14.0,7.0,5.0,11.0,7.0,2.0,23.0,13.0,32.0,29.0,3.0,5.0,11.0,9.0,30.0,22.0,6.0,12.0,16.0,2.0,17.0,3.0,12.0,3.0,3.0,7.0,4.0,19.0,2.0,2.0,19.0,13.0,12.0,10.0,17.0,7.0,3.0,8.0,5.0,14.0,4.0,2.0,1.0,3.0,14.0,1.0,3.0,10.0,2.0,1.0,4.0,10.0,4.0,2.0,2.0,5.0,1.0,1.0,3.0,1.0,5.0,1.0,6.0,3.0,1.0,5.0,8.0,2.0,3.0,2.0,1.0,2.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],
+"total_sub_70":[30.0,36.0,88.0,32.0,171.0,57.0,143.0,108.0,73.0,354.0,48.0,437.0,484.0,391.0,74.0,78.0,195.0,81.0,46.0,88.0,81.0,765.0,93.0,618.0,84.0,245.0,111.0,166.0,115.0,452.0,324.0,83.0,263.0,139.0,109.0,246.0,161.0,48.0,586.0,357.0,897.0,887.0,95.0,161.0,398.0,347.0,1163.0,873.0,245.0,510.0,759.0,103.0,895.0,162.0,664.0,167.0,169.0,408.0,235.0,1141.0,122.0,124.0,1186.0,929.0,887.0,798.0,1457.0,614.0,280.0,766.0,482.0,1379.0,406.0,214.0,112.0,391.0,1937.0,142.0,484.0,1660.0,341.0,173.0,741.0,1828.0,765.0,386.0,416.0,1042.0,229.0,234.0,718.0,243.0,1224.0,256.0,1524.0,779.0,272.0,1351.0,2459.0,728.0,1106.0,842.0,478.0,2220.0,1432.0,355.0,201.0,135.0,77.0,464.0,122.0,392.0,122.0,205.0,196.0,150.0,234.0,167.0,210.0,152.0,46.0,159.0],
+"scoring_average":[74.37711864406779,74.65022421524664,73.87034949267193,74.0,73.409578270193,73.20357941834452,72.98692810457516,72.9823399558499,72.74568965517241,73.0045871559633,73.45033112582782,72.91445519825164,72.9296435272045,72.7956020187455,72.55863539445629,72.72198275862068,72.32112068965517,72.3531914893617,72.82429501084599,72.54315789473684,72.50681818181818,72.16092587489666,72.17467248908297,72.2351945854484,72.45842217484008,71.65913978494623,71.8529411764706,71.88801261829653,71.8519313304721,71.83720930232558,71.05010893246187,71.62105263157895,72.06941081517353,71.61924686192468,71.76521739130435,71.2127659574468,70.7547974413646,72.21428571428571,71.35101636093208,71.52036199095022,71.22384105960265,71.30303970223325,71.32797427652733,70.77852348993288,70.96274834437088,70.57451403887688,69.9259882253995,71.48423743254757,71.19582850521437,70.60215827338129,71.14071856287426,71.77601809954751,70.95831836148042,70.81739130434782,70.45793838862559,70.79492600422833,70.52688172043011,70.70484581497797,70.69544740973312,70.7206142941524,70.99472295514512,70.49354838709678,70.23372348207754,71.07589576547231,70.26609029779058,70.51250589900897,70.25180063382311,70.0643994211288,68.74549549549549,69.41845493562232,70.08271375464685,70.44805376645198,69.59617834394905,70.12526539278132,69.90336134453781,70.4060475161987,69.24332088480321,70.97512437810946,69.53362255965294,69.46700188560654,70.03117206982543,69.25974025974025,69.59823848238483,69.3633669235329,70.00238521168754,70.30184581976113,69.6788665879575,69.81805682859762,69.48181818181818,70.00746268656717,69.04593070104754,69.06060606060606,69.66965742251223,70.21088435374149,70.21269579554823,69.65847347994826,70.03205128205128,69.63548266865449,68.77672875733606,69.41232575201761,70.26068066618393,68.84912536443149,69.39079229122056,68.87632221318145,68.89431913116124,70.05955334987593,68.43408360128618,69.06666666666666,68.61666666666666,69.06594724220624,69.92753623188406,69.97339246119734,70.24814814814815,67.88,69.90547263681592,69.1159420289855,69.29496402877697,70.42569269521411,69.61575178997613,69.20289855072464,71.37435897435897,69.00353356890459],
+"course_factor":[4896.412760416667,4726.062091503268,2242.389422789948,2207.5212885604114,1452.8019828821502,1106.9544850573159,1025.2130681818182,1003.4707249293278,966.9947529668627,892.5603853765784,847.43313086104,824.9224098796542,752.7170607306879,704.3753924376311,700.6302266391953,664.6544785558239,535.4495881192713,501.8960563291339,480.8130351650179,419.655823409817,410.1177806158649,399.540079130872,357.12520084044,335.2894523931187,307.1800595238095,302.5815342214056,299.1198094646371,266.94262655227436,256.45459337976195,238.33973485672422,228.49033384939062,221.77883508556516,196.4909887636618,185.4573484069887,168.80149593876,164.7867153223962,160.05434782608697,153.19718160627252,144.90066764012525,134.10911099394946,131.7527785785556,120.53391594265888,116.08678184009642,114.17889781224038,101.58448894086804,95.29298751200768,94.69984723138185,92.50985971799031,89.96449057634526,86.36935004328026,77.24150053960133,71.32496805930167,69.47712652663134,67.99665441522947,66.15984089910506,65.95511267541254,65.17232033967207,62.88843662464987,62.45974240556902,60.72436797199047,60.19717986931102,59.224206878165816,58.37399263905807,51.02356973822582,49.33362473951965,45.70932122638865,42.25724513503488,41.6392798976268,39.26049618320611,38.06778514431961,37.92650051536855,36.74853747922879,36.045567286375906,34.26335771280546,32.770806861499366,28.06075633041136,25.90386409569604,25.833974622832294,22.63224717683427,21.641710612417725,21.455164403711457,21.193380878583337,19.63455374959948,19.594032480197985,19.010579831338433,18.939091996086816,17.564122939997066,17.372580901500054,15.995183744583096,15.652048784196182,15.194082374704971,15.069990221762072,14.742048624120564,14.301491026048286,14.141862764286394,13.98935805348411,13.456489647955753,13.326292861621727,11.506952696851206,9.982150716416452,9.79684027442265,8.61343364042565,7.62986926679887,3.187975006156824,2.5045164793821386,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+},
+"mapping":{
+},
+"data_meta":{
+"series_annotations":[{
+"type":"int",
+"column":"course_num"
+},{
+"type":"str",
+"column":"course_name"
+},{
+"type":"int",
+"column":"total_over_80"
+},{
+"type":"int",
+"column":"total_sub_70"
+},{
+"type":"float",
+"column":"scoring_average"
+},{
+"type":"int",
+"column":"other_over_80"
+},{
+"type":"int",
+"column":"other_sub_70"
+},{
+"type":"float",
+"column":"course_factor"
+}]
+},
+"ggtitle":{
+"text":"Venue scoring average by \"course factor\""
+},
+"guides":{
+"x":{
+"title":"Course Factor"
+},
+"y":{
+"title":"Scoring average"
+}
+},
+"ggsize":{
+"width":800.0,
+"height":600.0
+},
+"theme":{
+"legend_position":"top",
+"panel_grid_minor":"blank",
+"panel_grid_major_x":"blank",
+"plot_title":{
+"family":"Arial",
+"face":"bold",
+"size":33.0,
+"blank":false
+},
+"plot_subtitle":{
+"family":"Arial",
+"size":26.0,
+"blank":false
+}
+},
+"kind":"plot",
+"scales":[],
+"layers":[{
+"geom":"point",
+"mapping":{
+"x":"course_factor",
+"y":"scoring_average"
+},
+"tooltips":{
+"formats":[],
+"lines":["@course_name","Total 80+ rounds|@total_over_80","Total <70 rounds|@total_sub_70"]
+},
+"data_meta":{
+},
+"data":{
+}
+}],
+"metainfo_list":[],
+"spec_id":"117"
+};
+           window.letsPlotCall(function() { fig = LetsPlot.buildPlotFromProcessedSpecs(plotSpec, containerDiv, sizing); });
+       } else {
+           fig.updateView({});
+       }
+   }
+   
+   const renderImmediately = 
+       forceImmediateRender || (
+           sizing.width_mode === 'FIXED' && 
+           (sizing.height_mode === 'FIXED' || sizing.height_mode === 'SCALED')
+       );
+   
+   if (renderImmediately) {
+       renderPlot();
+   }
+   
+   if (!renderImmediately || responsive) {
+       // Set up observer for initial sizing or continuous monitoring
+       var observer = new ResizeObserver(function(entries) {
+           for (let entry of entries) {
+               if (entry.contentBoxSize && 
+                   entry.contentBoxSize[0].inlineSize > 0) {
+                   if (!responsive && observer) {
+                       observer.disconnect();
+                       observer = null;
+                   }
+                   renderPlot();
+                   if (!responsive) {
+                       break;
+                   }
+               }
+           }
+       });
+       
+       observer.observe(containerDiv);
+   }
+   
+   // ----------
+   })();
+   
+   </script>
+</div>
+</div>
+<p>Wow. The scale of course factor is pretty intense. An above average round at Ocean Course at Kiawah Island is worth 1955 times more than a similarly above average round at Sea Island GC (Seaside). A logarithmic scale gives us a bit more insight into how the course factor relates to pure scoring average.</p>
+<div id="b50f339a" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="162">
+   <div id="5GIoOI"></div>
+   <script type="text/javascript" data-lets-plot-script="plot">
+   
+   (function() {
+   // ----------
+   
+   const forceImmediateRender = false;
+   const responsive = false;
+   
+   let sizing = {
+       width_mode: "MIN",
+       height_mode: "SCALED",
+       width: null, 
+       height: null 
+   };
+   
+   const preferredWidth = document.body.dataset.letsPlotPreferredWidth;
+   if (preferredWidth !== undefined) {
+       sizing = {
+           width_mode: 'FIXED',
+           height_mode: 'SCALED',
+           width: parseFloat(preferredWidth)
+       };
+   }
+   
+   const containerDiv = document.getElementById("5GIoOI");
+   let fig = null;
+   
+   function renderPlot() {
+       if (fig === null) {
+           const plotSpec = {
+"data":{
+"course_name":["Ocean Course at Kiawah Island","Shinnecock Hills GC","Oakmont Country Club","Winged Foot GC","Royal Troon","Erin Hills","Quail Hollow-PGA Championship","Pinehurst Resort (No. 2)","Royal Liverpool","Augusta National Golf Club","Torrey Pines (South)","Bay Hill Club & Lodge","Muirfield Village Golf Club","Torrey Pines Golf Course (South Course)","Carnoustie GC","Oak Hill Country Club","Sheshan International GC","Pebble Beach Golf Links","Eagle Point Golf Club","Bethpage Black","The Country Club","TPC Sawgrass","Royal Portrush Golf Club","TPC San Antonio - AT&T Oaks","Southern Hills Country Club","Club at Nine Bridges","Muirfield Village Golf Club","Sawgrass Country Club","Royal Birkdale GC","Quail Hollow Club","Valhalla GC","The Concession Golf Club","Spyglass Hill Golf Course","St. Andrews Links (Old Course)","Oakdale Golf & Country Club","Congaree Golf Club","TPC Harding Park","Torrey Pines Golf Course (South Course)","Pebble Beach GL","GC of Houston","PGA National (Champion)","Corales Golf Club","Shadow Creek Golf Course","St. George's G&CC","TPC Potomac at Avenel Farm","Sea Island GC (Plantation)","Port Royal Golf Course","Innisbrook Resort (Copperhead Course)","Silverado Resort (North Course)","Torrey Pines Golf Course (North Course)","Silverado Resort and Spa (North Course)","The Los Angeles Country Club (North Course)","Grand Reserve Golf Club","TPC Four Seasons Resort","Tahoe Mt. Club (Old Greenwood)","Olympia Fields CC (North)","Royal St. George's GC","Club de Golf Chapultepec","Dye's Valley Course","CC of Jackson","Glen Oaks Club","Sea Island GC (Plantation)","TPC Twin Cities","Riviera CC","Memorial Park Golf Course","Pete Dye Stadium Course","Harbour Town Golf Links","The Renaissance Club","TPC Toronto at Osprey Valley (North Course)","Nicklaus Tournament Course","TPC Boston","Colonial CC","El Cardonal at Diamante","Bellerive CC","Le Golf National","Glen Abbey GC","TPC River Highlands","Montreux Golf & Country Club","Trinity Forest Golf Club","TPC Deere Run","Liberty National Golf Club","Sherwood Country Club","Plantation Course at Kapalua","TPC Summerlin","Vidanta Vallarta","Monterey Peninsula CC","PGA National Resort (The Champion)","Keene Trace Golf Club (Champions Course)","Tahoe Mountain Club (Old Greenwood)","Albany GC","La Quinta CC","Black Desert Resort","El Camaleón Golf Course at Mayakoba","Firestone CC (South)","TPC Scottsdale","Accordia Golf Narashino Country Club","TPC Kuala Lumpur","TPC Southwind","Waialae Country Club","The Old White TPC","Detroit Golf Club","TPC Craig Ranch","TPC Craig Ranch","Sedgefield Country Club","Sea Island GC (Seaside)","Dunes Golf and Beach Club","The Summit Club","Kasumigaseki Country Club","East Lake Golf Club","East Lake Golf Club","Medinah Country Club (No. 3)","Hamilton Golf & Country Club","Wilmington Country Club","Aronimink GC","Keene Trace Golf Club","Conway Farms GC","RTJ Trail (Grand National)","Ridgewood CC","Grand Reserve Golf Club","Caves Valley Golf Club","Castle Pines Golf Club","The Philadelphia Cricket Club (Wissahickon Course)"],
+"total_over_80":[39.0,45.0,52.0,19.0,65.0,17.0,39.0,29.0,19.0,82.0,11.0,93.0,94.0,72.0,14.0,14.0,28.0,11.0,6.0,10.0,9.0,80.0,9.0,55.0,7.0,20.0,9.0,12.0,8.0,29.0,20.0,5.0,14.0,7.0,5.0,11.0,7.0,2.0,23.0,13.0,32.0,29.0,3.0,5.0,11.0,9.0,30.0,22.0,6.0,12.0,16.0,2.0,17.0,3.0,12.0,3.0,3.0,7.0,4.0,19.0,2.0,2.0,19.0,13.0,12.0,10.0,17.0,7.0,3.0,8.0,5.0,14.0,4.0,2.0,1.0,3.0,14.0,1.0,3.0,10.0,2.0,1.0,4.0,10.0,4.0,2.0,2.0,5.0,1.0,1.0,3.0,1.0,5.0,1.0,6.0,3.0,1.0,5.0,8.0,2.0,3.0,2.0,1.0,2.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],
+"total_sub_70":[30.0,36.0,88.0,32.0,171.0,57.0,143.0,108.0,73.0,354.0,48.0,437.0,484.0,391.0,74.0,78.0,195.0,81.0,46.0,88.0,81.0,765.0,93.0,618.0,84.0,245.0,111.0,166.0,115.0,452.0,324.0,83.0,263.0,139.0,109.0,246.0,161.0,48.0,586.0,357.0,897.0,887.0,95.0,161.0,398.0,347.0,1163.0,873.0,245.0,510.0,759.0,103.0,895.0,162.0,664.0,167.0,169.0,408.0,235.0,1141.0,122.0,124.0,1186.0,929.0,887.0,798.0,1457.0,614.0,280.0,766.0,482.0,1379.0,406.0,214.0,112.0,391.0,1937.0,142.0,484.0,1660.0,341.0,173.0,741.0,1828.0,765.0,386.0,416.0,1042.0,229.0,234.0,718.0,243.0,1224.0,256.0,1524.0,779.0,272.0,1351.0,2459.0,728.0,1106.0,842.0,478.0,2220.0,1432.0,355.0,201.0,135.0,77.0,464.0,122.0,392.0,122.0,205.0,196.0,150.0,234.0,167.0,210.0,152.0,46.0,159.0],
+"scoring_average":[74.37711864406779,74.65022421524664,73.87034949267193,74.0,73.409578270193,73.20357941834452,72.98692810457516,72.9823399558499,72.74568965517241,73.0045871559633,73.45033112582782,72.91445519825164,72.9296435272045,72.7956020187455,72.55863539445629,72.72198275862068,72.32112068965517,72.3531914893617,72.82429501084599,72.54315789473684,72.50681818181818,72.16092587489666,72.17467248908297,72.2351945854484,72.45842217484008,71.65913978494623,71.8529411764706,71.88801261829653,71.8519313304721,71.83720930232558,71.05010893246187,71.62105263157895,72.06941081517353,71.61924686192468,71.76521739130435,71.2127659574468,70.7547974413646,72.21428571428571,71.35101636093208,71.52036199095022,71.22384105960265,71.30303970223325,71.32797427652733,70.77852348993288,70.96274834437088,70.57451403887688,69.9259882253995,71.48423743254757,71.19582850521437,70.60215827338129,71.14071856287426,71.77601809954751,70.95831836148042,70.81739130434782,70.45793838862559,70.79492600422833,70.52688172043011,70.70484581497797,70.69544740973312,70.7206142941524,70.99472295514512,70.49354838709678,70.23372348207754,71.07589576547231,70.26609029779058,70.51250589900897,70.25180063382311,70.0643994211288,68.74549549549549,69.41845493562232,70.08271375464685,70.44805376645198,69.59617834394905,70.12526539278132,69.90336134453781,70.4060475161987,69.24332088480321,70.97512437810946,69.53362255965294,69.46700188560654,70.03117206982543,69.25974025974025,69.59823848238483,69.3633669235329,70.00238521168754,70.30184581976113,69.6788665879575,69.81805682859762,69.48181818181818,70.00746268656717,69.04593070104754,69.06060606060606,69.66965742251223,70.21088435374149,70.21269579554823,69.65847347994826,70.03205128205128,69.63548266865449,68.77672875733606,69.41232575201761,70.26068066618393,68.84912536443149,69.39079229122056,68.87632221318145,68.89431913116124,70.05955334987593,68.43408360128618,69.06666666666666,68.61666666666666,69.06594724220624,69.92753623188406,69.97339246119734,70.24814814814815,67.88,69.90547263681592,69.1159420289855,69.29496402877697,70.42569269521411,69.61575178997613,69.20289855072464,71.37435897435897,69.00353356890459],
+"course_factor":[4896.412760416667,4726.062091503268,2242.389422789948,2207.5212885604114,1452.8019828821502,1106.9544850573159,1025.2130681818182,1003.4707249293278,966.9947529668627,892.5603853765784,847.43313086104,824.9224098796542,752.7170607306879,704.3753924376311,700.6302266391953,664.6544785558239,535.4495881192713,501.8960563291339,480.8130351650179,419.655823409817,410.1177806158649,399.540079130872,357.12520084044,335.2894523931187,307.1800595238095,302.5815342214056,299.1198094646371,266.94262655227436,256.45459337976195,238.33973485672422,228.49033384939062,221.77883508556516,196.4909887636618,185.4573484069887,168.80149593876,164.7867153223962,160.05434782608697,153.19718160627252,144.90066764012525,134.10911099394946,131.7527785785556,120.53391594265888,116.08678184009642,114.17889781224038,101.58448894086804,95.29298751200768,94.69984723138185,92.50985971799031,89.96449057634526,86.36935004328026,77.24150053960133,71.32496805930167,69.47712652663134,67.99665441522947,66.15984089910506,65.95511267541254,65.17232033967207,62.88843662464987,62.45974240556902,60.72436797199047,60.19717986931102,59.224206878165816,58.37399263905807,51.02356973822582,49.33362473951965,45.70932122638865,42.25724513503488,41.6392798976268,39.26049618320611,38.06778514431961,37.92650051536855,36.74853747922879,36.045567286375906,34.26335771280546,32.770806861499366,28.06075633041136,25.90386409569604,25.833974622832294,22.63224717683427,21.641710612417725,21.455164403711457,21.193380878583337,19.63455374959948,19.594032480197985,19.010579831338433,18.939091996086816,17.564122939997066,17.372580901500054,15.995183744583096,15.652048784196182,15.194082374704971,15.069990221762072,14.742048624120564,14.301491026048286,14.141862764286394,13.98935805348411,13.456489647955753,13.326292861621727,11.506952696851206,9.982150716416452,9.79684027442265,8.61343364042565,7.62986926679887,3.187975006156824,2.5045164793821386,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+},
+"mapping":{
+},
+"data_meta":{
+"series_annotations":[{
+"type":"int",
+"column":"course_num"
+},{
+"type":"str",
+"column":"course_name"
+},{
+"type":"int",
+"column":"total_over_80"
+},{
+"type":"int",
+"column":"total_sub_70"
+},{
+"type":"float",
+"column":"scoring_average"
+},{
+"type":"int",
+"column":"other_over_80"
+},{
+"type":"int",
+"column":"other_sub_70"
+},{
+"type":"float",
+"column":"course_factor"
+}]
+},
+"ggtitle":{
+"text":"Venue scoring average by \"course factor\""
+},
+"guides":{
+"x":{
+"title":"Course Factor"
+},
+"y":{
+"title":"Scoring average"
+}
+},
+"ggsize":{
+"width":800.0,
+"height":600.0
+},
+"theme":{
+"legend_position":"top",
+"panel_grid_minor":"blank",
+"panel_grid_major_x":"blank",
+"plot_title":{
+"family":"Arial",
+"face":"bold",
+"size":33.0,
+"blank":false
+},
+"plot_subtitle":{
+"family":"Arial",
+"size":26.0,
+"blank":false
+}
+},
+"kind":"plot",
+"scales":[{
+"aesthetic":"x",
+"trans":"log10"
+}],
+"layers":[{
+"geom":"point",
+"mapping":{
+"x":"course_factor",
+"y":"scoring_average"
+},
+"tooltips":{
+"formats":[],
+"lines":["@course_name","Total 80+ rounds|@total_over_80","Total <70 rounds|@total_sub_70"]
+},
+"data_meta":{
+},
+"data":{
+}
+},{
+"geom":"label",
+"mapping":{
+},
+"data_meta":{
+},
+"label_size":0.0,
+"x":60.0,
+"y":68.0,
+"hjust":0.0,
+"label":"Yikes... maybe TC\nwas right about\nTPC Toronto",
+"family":"Helvetica",
+"data":{
+}
+},{
+"geom":"curve",
+"mapping":{
+},
+"data_meta":{
+},
+"arrow":{
+"name":"arrow"
+},
+"curvature":-0.2,
+"x":60.0,
+"y":68.0,
+"xend":40.0,
+"yend":68.5,
+"data":{
+}
+}],
+"metainfo_list":[],
+"spec_id":"118"
+};
+           window.letsPlotCall(function() { fig = LetsPlot.buildPlotFromProcessedSpecs(plotSpec, containerDiv, sizing); });
+       } else {
+           fig.updateView({});
+       }
+   }
+   
+   const renderImmediately = 
+       forceImmediateRender || (
+           sizing.width_mode === 'FIXED' && 
+           (sizing.height_mode === 'FIXED' || sizing.height_mode === 'SCALED')
+       );
+   
+   if (renderImmediately) {
+       renderPlot();
+   }
+   
+   if (!renderImmediately || responsive) {
+       // Set up observer for initial sizing or continuous monitoring
+       var observer = new ResizeObserver(function(entries) {
+           for (let entry of entries) {
+               if (entry.contentBoxSize && 
+                   entry.contentBoxSize[0].inlineSize > 0) {
+                   if (!responsive && observer) {
+                       observer.disconnect();
+                       observer = null;
+                   }
+                   renderPlot();
+                   if (!responsive) {
+                       break;
+                   }
+               }
+           }
+       });
+       
+       observer.observe(containerDiv);
+   }
+   
+   // ----------
+   })();
+   
+   </script>
+</div>
+</div>
+<p>Ok, enough about venues. How do we convert this into a measure of player performance? Simple, a weighted average of a player’s score against the round average.</p>
+<p><span class="math display">\[
+\text{Proper Player Index} = \frac{\sum (\text{Score} - \text{Round Scoring Average}) \times \text{Course Factor}}{\sum \text{Course Factor}}
+\]</span></p>
+<div id="035c4446" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="163">
+   <div id="tCFRsp"></div>
+   <script type="text/javascript" data-lets-plot-script="plot">
+   
+   (function() {
+   // ----------
+   
+   const forceImmediateRender = false;
+   const responsive = false;
+   
+   let sizing = {
+       width_mode: "MIN",
+       height_mode: "SCALED",
+       width: null, 
+       height: null 
+   };
+   
+   const preferredWidth = document.body.dataset.letsPlotPreferredWidth;
+   if (preferredWidth !== undefined) {
+       sizing = {
+           width_mode: 'FIXED',
+           height_mode: 'SCALED',
+           width: parseFloat(preferredWidth)
+       };
+   }
+   
+   const containerDiv = document.getElementById("tCFRsp");
+   let fig = null;
+   
+   function renderPlot() {
+       if (fig === null) {
+           const plotSpec = {
+"data":{
+"player_name":["Scheffler, Scottie","Koepka, Brooks","Schauffele, Xander","McIlroy, Rory","Reed, Patrick","Rahm, Jon","Morikawa, Collin","Johnson, Dustin","DeChambeau, Bryson","Hovland, Viktor","Casey, Paul","Finau, Tony","Stenson, Henrik","Oosthuizen, Louis","Rose, Justin","Cantlay, Patrick","Matsuyama, Hideki","Hatton, Tyrrell","Fleetwood, Tommy","Zalatoris, Will","Spieth, Jordan","Thomas, Justin","Conners, Corey","Day, Jason","Aberg, Ludvig","Im, Sungjae","Simpson, Webb","Fitzpatrick, Matt","Fowler, Rickie","Stricker, Steve","Fitzpatrick, Matthew","Poulter, Ian","Henley, Russell","Leishman, Marc","Hoffman, Charley","Mickelson, Phil","Griffin, Ben","Scott, Adam","Niemann, Joaquin","Furyk, Jim","Lowry, Shane","Pereira, Mito","Stevens, Sam","Bradley, Keegan","Streelman, Kevin","Bezuidenhout, Christiaan","Westwood, Lee","MacIntyre, Robert","Gerard, Ryan","Greyserman, Max","DeLaet, Graham","Berger, Daniel","Moore, Ryan","Molinari, Francesco","Perez, Pat","Howell III, Charles","Young, Cameron","Pendrith, Taylor","Johnson, Zach","Kuchar, Matt","Noren, Alex","Ancer, Abraham","Grace, Branden","Gooch, Talor","Wise, Aaron","Bhatia, Akshay","Woods, Tiger","Kokrak, Jason","Woodland, Gary","Cabrera Bello, Rafa","Burns, Sam","Harman, Brian","Springer, Hayden","Garcia, Sergio","Grillo, Emiliano","Horschel, Billy","Wallace, Matt","English, Harris","Fox, Ryan","Detry, Thomas","Baddeley, Aaron","Kim, Si Woo","Kirk, Chris","Goosen, Retief","Aphibarnrat, Kiradech","Harrington, Padraig","Knox, Russell","Straka, Sepp","Kim, Chan","McCarthy, Denny","Homa, Max","Smith, Cameron","Haas, Bill","Cauley, Bud","Todd, Brendon","Higgs, Harry","Spaun, J.J.","Gotterup, Chris","Putnam, Andrew","Dufner, Jason","Wu, Dylan","Laird, Martin","Steele, Brendan","Theegala, Sahith","Jones, Matt","An, Byeong Hun","Vegas, Jhonattan","Lovemark, Jamie","Olesen, Thorbjorn","Kim, Tom","Cink, Stewart","Mitchell, Keith","Martin, Ben","Perez, Victor","Montgomery, Taylor","Glover, Lucas","Chappell, Kevin","Taylor, Nick","Na, Kevin","List, Luke","Snedeker, Brandt","Summerhays, Daniel","McDowell, Graeme","Reavie, Chez","Uihlein, Peter","Wolff, Matthew","Griffin, Lanto","McNealy, Maverick","Rodgers, Patrick","Fishburn, Patrick","Lashley, Nate","Palmer, Ryan","Hoge, Tom","Bramlett, Joseph","Varner III, Harold","Davis, Cameron","Kaymer, Martin","Hossler, Beau","Thompson, Davis","Bridgeman, Jacob","Hojgaard, Nicolai","Novak, Andrew","Thompson, Michael","Pavon, Matthieu","Hall, Harry","Watson, Bubba","Tringale, Cameron","Holmes, J.B.","Rai, Aaron","Suh, Justin","Ortiz, Carlos","Schenk, Adam","Schniederjans, Ollie","Dahmen, Joel","Kim, S.H.","van Rooyen, Erik","Schwartzel, Charl","Coody, Pierceson","Stanley, Kyle","Piercy, Scott","Taylor, Vaughn","Cole, Eric","Hughes, Mackenzie","Willett, Danny","Smalley, Alex","Lee, Min Woo","Smotherman, Austin","Clark, Wyndham","Ryder, Sam","Seiffert, Chase","Lipsky, David","Power, Seamus","Lingmerth, David","NeSmith, Matthew","Meissner, Mac","Poston, J.T.","Whaley, Vince","Daffue, MJ","Etulain, Julian","Lee, Kyoung-Hoon","Percy, Cameron","Higgo, Garrick","Noh, S.Y.","Barnes, Erik","Zhang, Xinjun","Moore, Taylor","Schmid, Matti","Ventura, Kristoffer","Hadley, Chesson","Randolph, Jonathan","Long, Adam","Walker, Jimmy","Wiesberger, Bernd","Jaeger, Stephan","Lovelady, Tom","Wilkinson, Tim","Hubbard, Mark","Highsmith, Joe","Hisatsune, Ryo","Norlander, Henrik","Donald, Luke","Sloan, Roger","Anderson, Mark","Cone, Trevor","Yu, Kevin","Hadwin, Adam","Sabbatini, Rory","Gordon, Will","Roy, Kevin","Garnett, Brice","Riley, Davis","Kitayama, Kurt","Hahn, James","Huh, John","Munoz, Sebastian","Hardy, Nick","Pan, C.T.","Blair, Zac","Blaum, Ryan","Tway, Kevin","Norrman, Vincent","Flores, Martin","Armour, Ryan","Streb, Robert","Kisner, Kevin","Tosti, Alejandro","Lewis, Tom","Lebioda, Hank","Stefani, Shawn","Endycott, Harrison","Teater, Josh","Hodges, Lee","Barnes, Ricky","Whaley, Vincent","Malnati, Peter","Duncan, Tyler","Kim, Michael","Cook, Austin","Stroud, Chris","Harkins, Brandon","Stallings, Scott","Redman, Doc","Hoey, Rico","Kang, Sung","Barber, Blayne","Herbert, Lucas","Eckroat, Austin","Love III, Davis","Ghim, Doug","McGirt, William","Merritt, Troy","Werenski, Richy","Mullinax, Trey","Svensson, Adam","Shelton, Robby","Van Pelt, Bo","O'Hair, Sean","Knous, Jim","Lahiri, Anirban","Baker, Chris","Knapp, Jake","Pieters, Thomas","Burgoon, Bronson","Mahan, Hunter","Brown, Scott","Wagner, Johnson","Sucher, Zack","Hickok, Kramer","Campos, Rafael","Young, Carson","Gay, Brian","Wu, Brandon","Westmoreland, Kyle","Frittelli, Dylan","NeSmith, Matt","Watney, Nick","Tarren, Callum","Yuan, Carl","Cappelen, Sebastian","Van Aswegen, Tyrone","Hoag, Bo","Fathauer, Derek","Schwab, Matthias","Sigg, Greyson","Stuard, Brian","Gribble, Cody","Murray, Grayson","Trahan, D.J.","Saunders, Sam","Lee, Danny","Davis, Cam","Roach, Wes","Harrington, Scott","Ramey, Chad","Goya, Tano","Castro, Roberto","Gutschewski, Scott","Byrd, Jonathan","Oppenheim, Rob","Taylor, Ben","Skinns, David","Silverman, Ben","Swafford, Hudson","Crane, Ben","Hojgaard, Rasmus","Blixt, Jonas","Kim, Whee","Hearn, David","Lee, K.H.","Noh, Seung-Yul","McGreevy, Max","Landry, Andrew","Henry, J.J.","Buckley, Hayden","Gomez, Fabian","Echavarria, Nico","Kraft, Kelly","Campbell, Chad","Hurley III, Billy","Lindheim, Nicholas","Phillips, Chandler","Els, Ernie","Pampling, Rod","Bryan, Wesley","McCumber, Tyler","Cejka, Alex","Herman, Jim","Collins, Chad","Alexander, Tyson","Ogilvy, Geoff","Kizzire, Patton","Drewitt, Brett","Haley II, Paul","Hagy, Brandon","Hoffmann, Morgan","Gibson, Rhein","Villegas, Camilo","Duke, Ken","Points, D.A.","Lower, Justin","Champ, Cameron","McNeill, George","Kohles, Ben","Garrigus, Robert","Brehm, Ryan","Luck, Curtis","Choi, K.J.","Valimaki, Sami","Dou, Zecheng","Kodaira, Satoshi","Chalmers, Greg","Bae, Sangmoon","Weekley, Boo","Singh, Vijay","Gligic, Michael","Dunlap, Nick","Diaz, Roberto","Albertson, Anders","Barjon, Paul","Senden, John","Potter, Jr., Ted","Bohn, Jason","Gainey, Tommy","Trainer, Martin","Merrick, John","Reeves, Seth","Atwal, Arjun","Stegmaier, Brett","Bozzelli, Dominic","Kanaya, Takumi","Piller, Martin","Kaufman, Smylie","Every, Matt","Stadler, Kevin","McLachlin, Parker"],
+"ppi":[2.2786651764737287,1.9618593455284914,1.7169324417489704,1.7152572789719176,1.6754179615182747,1.5998138002198352,1.5791205947282003,1.5703779182380564,1.3540446695498018,1.3495003031919304,1.3423534807892095,1.332161161953676,1.3042144721788254,1.2990216020200482,1.2597803406104124,1.2250451673197598,1.2202419137662548,1.217365408806577,1.2036591670135586,1.1671785502488923,1.113296244683573,1.0936205224295188,1.0868070218411026,1.0810735216059166,1.0801467406709824,1.0720979413031937,1.0608594499066042,1.0259171060952315,1.0113973306250912,1.0046048846296303,0.9540379842174187,0.9233865624712667,0.9140735451760609,0.8572617956620959,0.8480810720916907,0.8295876078505496,0.8257596928586308,0.8238476847360036,0.8051281122231115,0.8018922221613893,0.8000533184681116,0.7929007790523789,0.7589090026438285,0.7583299485989142,0.7427162458912894,0.7341424934317077,0.7254398052343887,0.7228484283117067,0.7170435497396168,0.700780969913681,0.6927336355111783,0.6883720687324079,0.6818252518837957,0.6814778374888547,0.6665358657447648,0.6527259545783608,0.6469314322398185,0.6409431682674588,0.6284480879950651,0.6127272136334726,0.5983791622288691,0.5777626558022761,0.573179849164965,0.5518284185009787,0.5491947431478293,0.5393695576305034,0.5342949075504054,0.5342833088562667,0.5333822818252386,0.5306311814734151,0.5243519082379503,0.5115266620592838,0.5070485009292602,0.49445396461959457,0.4936168976209466,0.4714550278386381,0.4634547671605044,0.46314640718174666,0.46230899703228384,0.45608796094092874,0.4491438277429561,0.44227088888419197,0.4404533712917705,0.43872644229251606,0.43797181615984154,0.4194792080574919,0.41766505107778346,0.41200961491729066,0.40036252504815834,0.39651863710824237,0.3903795021962679,0.3796748009611099,0.3648617289781933,0.3538181823151184,0.34287279085148054,0.3426136226955204,0.34199454907508686,0.33608777036703325,0.3342989521459927,0.3283538008714238,0.3247180204125422,0.3150132187313191,0.31373167191080564,0.3070724245921749,0.296459697255972,0.26811296809494034,0.26349466530842786,0.26092455017529087,0.24037696239406225,0.2380681975777786,0.23527276389510493,0.23348602377763378,0.22743190709185304,0.22629739569852,0.21707871849428237,0.2101644280222675,0.20948580173602716,0.20257077664525722,0.1959598385776304,0.19414325482294315,0.17220161801532285,0.16503066148743514,0.16203321599997095,0.15715784014556883,0.15497594767588246,0.15010200298294107,0.1472330382778099,0.13578982075558518,0.12360411832412684,0.11542661909774035,0.11221557551506009,0.10673438228510998,0.10117412427511706,0.09924048776720434,0.09700014728676762,0.09235327088797747,0.08832041958829452,0.08623907962647602,0.07625108059437181,0.07566930129849224,0.07055124318753847,0.07022637450415671,0.07015654938860488,0.0680096931612904,0.06518951073638493,0.05448962158846002,0.05329166520612023,0.04639783365559933,0.0447418464261378,0.042558387346430804,0.040265422660079084,0.03062478993723829,0.030345087842719973,0.025367863411170883,0.018610144411462075,0.01673483173133499,0.011644376027051467,0.0023997847651163117,7.73117450509043E-4,-0.008006969803140694,-0.01187380632752985,-0.018028435622900775,-0.01912037264694909,-0.020735140173326658,-0.02298226614065057,-0.027617420651070868,-0.037077461976836985,-0.04576114572609726,-0.04993901590291015,-0.056166306962597105,-0.05754177663844124,-0.07103956697857314,-0.07188870120851827,-0.09318500148882751,-0.09436628067928549,-0.10874294113892445,-0.11442894174576478,-0.11676354346664655,-0.11847847832418207,-0.11888861273630075,-0.12523428671965142,-0.12852273877724085,-0.1290810764768425,-0.1384694969797611,-0.14781144078417782,-0.14917377565749376,-0.1496141933919515,-0.1519822211279485,-0.15397786324526302,-0.1549771499831231,-0.15531131589422964,-0.15622017121863604,-0.15700995428951947,-0.16424452380856724,-0.1713887366372418,-0.17462697321816537,-0.17641021064651172,-0.18441558992013712,-0.18557655082222455,-0.19374458989503351,-0.1982854640549669,-0.20221989602695856,-0.2030499496111021,-0.20455419605044506,-0.2077629969771147,-0.20978770761328647,-0.21309576035266173,-0.22049438350499245,-0.22620107732248199,-0.22948672850521623,-0.231711855721667,-0.23709859886534723,-0.23769111785617744,-0.2396484198097496,-0.25946306314575557,-0.2753639717667832,-0.2846083648550282,-0.2941050663098857,-0.3038667064139667,-0.31209425295334825,-0.3122009681285576,-0.3143722890167863,-0.3166451067904357,-0.3207039206193016,-0.3208828346514498,-0.33159942969784073,-0.3325956892023537,-0.33848947254699224,-0.33965499046606634,-0.34553209268850293,-0.3507114353022514,-0.3521022635115088,-0.3525591986052561,-0.36633892847812866,-0.36734434915576103,-0.37344007605297963,-0.37430868090169855,-0.3749947612511773,-0.3811489645672233,-0.3817606649750431,-0.3890507937590441,-0.39196054093448685,-0.3941532061571459,-0.4007432638300848,-0.4060947585818523,-0.4066956977582953,-0.4135343302780303,-0.4136437761659175,-0.41854139589359884,-0.4191746300005438,-0.4360813084545974,-0.44416243217914964,-0.44653852460989685,-0.46645247678601853,-0.47338853765723676,-0.47655272135191795,-0.4824999168538098,-0.4852333032574866,-0.48807150893650647,-0.4953635706186509,-0.49566195048991984,-0.49578015733138514,-0.4974616427650965,-0.4997103058716543,-0.5016153382678499,-0.5022991898104062,-0.5091649143522716,-0.5123312738830407,-0.5130797699057555,-0.5181730704972262,-0.5221480600683849,-0.5463209804613292,-0.5480381716082229,-0.5533762573957685,-0.556814708799058,-0.55921175422381,-0.5613625511130477,-0.5627501317507903,-0.566318556786216,-0.5674837036195627,-0.5705294028043519,-0.572655014840454,-0.5754791324328477,-0.5825648003289337,-0.5949213987792068,-0.5963017328002634,-0.6038939603939664,-0.604548385591303,-0.6156069212988395,-0.616813340106998,-0.6170799034994716,-0.6244793710810606,-0.6274552248899786,-0.6329189452072681,-0.6512741391509831,-0.6525190489651808,-0.6593157321569971,-0.6596987785356866,-0.7016008712644312,-0.7066483480617187,-0.7074626562021297,-0.7129762780620674,-0.7210271807005153,-0.7223910970626632,-0.7227872289230673,-0.7241708190913011,-0.7263123370945233,-0.7267456459181638,-0.7420307507350209,-0.7431640234266528,-0.7437841389845066,-0.7558338071187909,-0.7670291346809555,-0.7728943764081055,-0.7791483471598135,-0.7827764927018562,-0.7955883035957121,-0.816605732351857,-0.8271517441104848,-0.8317892053093705,-0.8323692020416795,-0.8413941557138658,-0.8496782856253187,-0.8516486695345101,-0.8544921846717145,-0.8583917643416874,-0.8749626029738778,-0.8976330023624024,-0.9041614772302278,-0.90613289346001,-0.9177180532696346,-0.9248341811478554,-0.9260547340160384,-0.9277460387847725,-0.9293976383686672,-0.9329759535281622,-0.9445955486998808,-1.0067522309081032,-1.0167858820972877,-1.0239613868571908,-1.0243021250619158,-1.0281446750662784,-1.0363307496012109,-1.0722006965747537,-1.1046936314944071,-1.1370191117965749,-1.1503303495256758,-1.1747184938026263,-1.1748466006115992,-1.1901651946395215,-1.2050865029290727,-1.224667523082529,-1.232112718676577,-1.271766473717805,-1.2877965665065776,-1.315587126650367,-1.317396873181637,-1.3673878282818726,-1.3812420584332363,-1.402428739222877,-1.4743988949881304,-1.4956917845853017,-1.4994294894319562,-1.518069086252892,-1.5226136877409224,-1.5296123783776152,-1.5434840969544548,-1.6158624194331743,-1.7378167468347332,-1.8540314377533371,-1.8669670308859059,-2.0408352777115786,-2.082649081156473,-2.263164927193704,-2.6492607973300792],
+"rounds":[526.0,421.0,688.0,565.0,557.0,528.0,483.0,422.0,459.0,471.0,393.0,767.0,268.0,355.0,540.0,594.0,711.0,427.0,534.0,313.0,691.0,685.0,693.0,601.0,186.0,699.0,587.0,291.0,669.0,186.0,240.0,355.0,678.0,474.0,706.0,414.0,315.0,575.0,447.0,251.0,530.0,145.0,282.0,735.0,692.0,393.0,163.0,205.0,140.0,150.0,105.0,564.0,543.0,434.0,445.0,455.0,324.0,343.0,603.0,665.0,557.0,445.0,382.0,387.0,434.0,276.0,193.0,486.0,687.0,364.0,580.0,788.0,131.0,329.0,763.0,685.0,396.0,705.0,238.0,283.0,528.0,782.0,654.0,115.0,237.0,222.0,633.0,586.0,207.0,673.0,564.0,471.0,506.0,381.0,541.0,401.0,718.0,157.0,648.0,544.0,292.0,595.0,466.0,405.0,444.0,639.0,605.0,262.0,182.0,239.0,569.0,654.0,449.0,211.0,208.0,738.0,444.0,742.0,429.0,697.0,575.0,147.0,325.0,712.0,308.0,207.0,523.0,514.0,771.0,126.0,552.0,566.0,769.0,425.0,506.0,229.0,163.0,706.0,286.0,150.0,153.0,330.0,449.0,151.0,263.0,384.0,448.0,356.0,363.0,268.0,328.0,714.0,251.0,703.0,217.0,379.0,333.0,133.0,495.0,612.0,444.0,317.0,729.0,376.0,361.0,205.0,245.0,586.0,657.0,207.0,357.0,609.0,380.0,311.0,137.0,742.0,251.0,180.0,122.0,241.0,353.0,296.0,100.0,115.0,226.0,342.0,221.0,104.0,598.0,122.0,487.0,496.0,133.0,536.0,124.0,180.0,602.0,130.0,162.0,480.0,341.0,395.0,159.0,125.0,225.0,723.0,483.0,319.0,137.0,602.0,358.0,309.0,528.0,385.0,431.0,341.0,612.0,420.0,300.0,646.0,162.0,153.0,547.0,566.0,617.0,144.0,142.0,352.0,279.0,136.0,245.0,356.0,303.0,142.0,700.0,622.0,564.0,526.0,345.0,199.0,591.0,369.0,153.0,585.0,130.0,176.0,281.0,151.0,489.0,324.0,663.0,589.0,421.0,455.0,382.0,190.0,357.0,128.0,400.0,121.0,143.0,152.0,328.0,267.0,500.0,267.0,128.0,399.0,254.0,241.0,484.0,312.0,111.0,459.0,138.0,547.0,254.0,177.0,113.0,220.0,225.0,179.0,223.0,354.0,636.0,318.0,378.0,240.0,237.0,464.0,319.0,149.0,237.0,323.0,100.0,181.0,119.0,352.0,231.0,277.0,196.0,299.0,377.0,266.0,114.0,317.0,224.0,362.0,327.0,199.0,234.0,420.0,284.0,297.0,363.0,211.0,485.0,214.0,182.0,210.0,150.0,162.0,194.0,371.0,169.0,246.0,415.0,101.0,185.0,153.0,692.0,119.0,106.0,318.0,153.0,123.0,406.0,106.0,268.0,340.0,457.0,159.0,206.0,264.0,380.0,102.0,209.0,140.0,186.0,367.0,239.0,206.0,112.0,128.0,300.0,135.0,183.0,125.0,162.0,175.0,332.0,119.0,171.0,377.0,100.0,146.0,132.0,131.0,257.0,103.0,122.0,145.0,296.0,125.0,111.0]
+},
+"mapping":{
+},
+"data_meta":{
+"series_annotations":[{
+"type":"int",
+"column":"dg_id"
+},{
+"type":"str",
+"column":"player_name"
+},{
+"type":"float",
+"column":"ppi"
+},{
+"type":"int",
+"column":"rounds"
+}]
+},
+"ggsize":{
+"width":800.0,
+"height":600.0
+},
+"ggtitle":{
+"text":"Proper Player Index by number of rounds",
+"subtitle":"Min. 100 rounds"
+},
+"guides":{
+"x":{
+"title":"Number of rounds"
+},
+"y":{
+"title":"Proper Player Index"
+}
+},
+"theme":{
+"legend_position":"top",
+"panel_grid_minor":"blank",
+"panel_grid_major_x":"blank",
+"plot_title":{
+"family":"Arial",
+"face":"bold",
+"size":33.0,
+"blank":false
+},
+"plot_subtitle":{
+"family":"Arial",
+"size":26.0,
+"blank":false
+}
+},
+"kind":"plot",
+"scales":[],
+"layers":[{
+"geom":"point",
+"mapping":{
+"x":"rounds",
+"y":"ppi"
+},
+"tooltips":{
+"formats":[],
+"lines":["@player_name","Rounds|@rounds","PPI|@ppi"]
+},
+"data_meta":{
+},
+"data":{
+}
+},{
+"geom":"hline",
+"mapping":{
+},
+"data_meta":{
+},
+"yintercept":-0.1151363452195125,
+"linetype":"longdash",
+"data":{
+}
+}],
+"metainfo_list":[],
+"spec_id":"119"
+};
+           window.letsPlotCall(function() { fig = LetsPlot.buildPlotFromProcessedSpecs(plotSpec, containerDiv, sizing); });
+       } else {
+           fig.updateView({});
+       }
+   }
+   
+   const renderImmediately = 
+       forceImmediateRender || (
+           sizing.width_mode === 'FIXED' && 
+           (sizing.height_mode === 'FIXED' || sizing.height_mode === 'SCALED')
+       );
+   
+   if (renderImmediately) {
+       renderPlot();
+   }
+   
+   if (!renderImmediately || responsive) {
+       // Set up observer for initial sizing or continuous monitoring
+       var observer = new ResizeObserver(function(entries) {
+           for (let entry of entries) {
+               if (entry.contentBoxSize && 
+                   entry.contentBoxSize[0].inlineSize > 0) {
+                   if (!responsive && observer) {
+                       observer.disconnect();
+                       observer = null;
+                   }
+                   renderPlot();
+                   if (!responsive) {
+                       break;
+                   }
+               }
+           }
+       });
+       
+       observer.observe(containerDiv);
+   }
+   
+   // ----------
+   })();
+   
+   </script>
+</div>
+</div>
+<div id="6fe3bd54" class="cell" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="164">
+<div><style>
+.dataframe > thead > tr,
+.dataframe > tbody > tr {
+  text-align: right;
+  white-space: pre-wrap;
+}
+</style>
+<small>shape: (10, 4)</small>
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">dg_id</th>
+<th data-quarto-table-cell-role="th">player_name</th>
+<th data-quarto-table-cell-role="th">ppi</th>
+<th data-quarto-table-cell-role="th">rounds</th>
+</tr>
+<tr class="even">
+<th>i64</th>
+<th>str</th>
+<th>f64</th>
+<th>i64</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>18417</td>
+<td>"Scheffler, Scottie"</td>
+<td>2.278665</td>
+<td>526</td>
+</tr>
+<tr class="even">
+<td>16243</td>
+<td>"Koepka, Brooks"</td>
+<td>1.961859</td>
+<td>421</td>
+</tr>
+<tr class="odd">
+<td>19895</td>
+<td>"Schauffele, Xander"</td>
+<td>1.716932</td>
+<td>688</td>
+</tr>
+<tr class="even">
+<td>10091</td>
+<td>"McIlroy, Rory"</td>
+<td>1.715257</td>
+<td>565</td>
+</tr>
+<tr class="odd">
+<td>14838</td>
+<td>"Reed, Patrick"</td>
+<td>1.675418</td>
+<td>557</td>
+</tr>
+<tr class="even">
+<td>19195</td>
+<td>"Rahm, Jon"</td>
+<td>1.599814</td>
+<td>528</td>
+</tr>
+<tr class="odd">
+<td>22085</td>
+<td>"Morikawa, Collin"</td>
+<td>1.579121</td>
+<td>483</td>
+</tr>
+<tr class="even">
+<td>12422</td>
+<td>"Johnson, Dustin"</td>
+<td>1.570378</td>
+<td>422</td>
+</tr>
+<tr class="odd">
+<td>19841</td>
+<td>"DeChambeau, Bryson"</td>
+<td>1.354045</td>
+<td>459</td>
+</tr>
+<tr class="even">
+<td>18841</td>
+<td>"Hovland, Viktor"</td>
+<td>1.3495</td>
+<td>471</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="c96f513e" class="cell" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="165">
+   <div id="DXCmf6"></div>
+   <script type="text/javascript" data-lets-plot-script="plot">
+   
+   (function() {
+   // ----------
+   
+   const forceImmediateRender = false;
+   const responsive = false;
+   
+   let sizing = {
+       width_mode: "MIN",
+       height_mode: "SCALED",
+       width: null, 
+       height: null 
+   };
+   
+   const preferredWidth = document.body.dataset.letsPlotPreferredWidth;
+   if (preferredWidth !== undefined) {
+       sizing = {
+           width_mode: 'FIXED',
+           height_mode: 'SCALED',
+           width: parseFloat(preferredWidth)
+       };
+   }
+   
+   const containerDiv = document.getElementById("DXCmf6");
+   let fig = null;
+   
+   function renderPlot() {
+       if (fig === null) {
+           const plotSpec = {
+"data":{
+},
+"mapping":{
+},
+"data_meta":{
+"series_annotations":[{
+"type":"int",
+"column":"dg_id"
+},{
+"type":"str",
+"column":"player_name"
+},{
+"type":"float",
+"column":"ppi"
+},{
+"type":"int",
+"column":"rounds"
+}]
+},
+"kind":"plot",
+"scales":[],
+"layers":[{
+"geom":"histogram",
+"mapping":{
+"x":"ppi"
+},
+"data_meta":{
+},
+"data":{
+"..count..":[1.0,0.0,1.0,1.0,1.0,3.0,1.0,8.0,8.0,8.0,17.0,28.0,27.0,38.0,35.0,37.0,38.0,24.0,26.0,19.0,19.0,7.0,9.0,11.0,0.0,4.0,2.0,1.0,0.0,1.0],
+"ppi":[-2.6782808058424794,-2.506350944089769,-2.3344210823370584,-2.1624912205843474,-1.9905613588316369,-1.8186314970789264,-1.6467016353262158,-1.474771773573505,-1.3028419118207946,-1.130912050068084,-0.9589821883153733,-0.7870523265626628,-0.6151224648099523,-0.44319260305724173,-0.27126274130453076,-0.09933287955182024,0.07259698220089028,0.2445268439536008,0.4164567057063113,0.5883865674590223,0.7603164292117328,0.9322462909644433,1.1041761527171539,1.2761060144698644,1.448035876222575,1.6199657379752854,1.791895599727996,1.9638254614807074,2.135755323233418,2.3076851849861284]
+}
+}],
+"metainfo_list":[],
+"spec_id":"120"
+};
+           window.letsPlotCall(function() { fig = LetsPlot.buildPlotFromProcessedSpecs(plotSpec, containerDiv, sizing); });
+       } else {
+           fig.updateView({});
+       }
+   }
+   
+   const renderImmediately = 
+       forceImmediateRender || (
+           sizing.width_mode === 'FIXED' && 
+           (sizing.height_mode === 'FIXED' || sizing.height_mode === 'SCALED')
+       );
+   
+   if (renderImmediately) {
+       renderPlot();
+   }
+   
+   if (!renderImmediately || responsive) {
+       // Set up observer for initial sizing or continuous monitoring
+       var observer = new ResizeObserver(function(entries) {
+           for (let entry of entries) {
+               if (entry.contentBoxSize && 
+                   entry.contentBoxSize[0].inlineSize > 0) {
+                   if (!responsive && observer) {
+                       observer.disconnect();
+                       observer = null;
+                   }
+                   renderPlot();
+                   if (!responsive) {
+                       break;
+                   }
+               }
+           }
+       });
+       
+       observer.observe(containerDiv);
+   }
+   
+   // ----------
+   })();
+   
+   </script>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -1,0 +1,250 @@
+---
+title: "The Proper Test Index"
+author: "Akshay Gupta"
+date: "2025-06-17"
+categories: [golf, statistics]
+jupyter: python3
+execute:
+    echo: false
+subtitle: What does Big Randy's metric tell us about the PGA Tour?
+---
+
+```{python}
+from pathlib import Path
+
+import polars as pl
+from lets_plot import *
+
+LetsPlot.setup_html()
+
+def article_theme():
+    return theme(
+        plot_title=element_text(family="Arial", face="bold", size=33),
+        plot_subtitle=element_text(family="Arial", size=26),
+        legend_position="top",
+        panel_grid_minor="blank",
+        panel_grid_major_x="blank",
+    )
+```
+
+## Introduction
+
+In No Laying Up's coverage of the 125th U.S. Open at Oakmont, the Big Man himself
+introduced a metric that has lodged itself in my brain: the Proper Test Index (PTI).
+It's defined as
+
+$$
+PTI = \frac{\text{Number of rounds with a score >= 80}}{\text{Number of rounds with a score of < 70}}
+$$
+
+He ran through some of the numbers across past U.S. Opens; what does it look like when we
+extend the metric to the PGA Tour? Using Data Golf's API, I pulled the scoring data for
+their entire archive and calculated the event-level PTI:
+
+```{python}
+pti = (
+    pl.read_csv("../../pti.csv")
+    .with_columns([pl.col("year").cast(pl.String)])
+)
+
+easiest_event = (
+    pti.filter(
+        pl.col("over_80") == pl.lit(0)
+    )
+    .sort("sub_70", descending=True)
+    .head(n=1)
+)
+
+plot_def_ = (
+    geom_point(
+        aes(x="over_80", y="sub_70", color="major_championship", size="pti"),
+        alpha=0.2,
+        tooltips=(
+            layer_tooltips()
+            .line("@year @event_name")
+            .line("Venue|@course_name")
+            .line("PTI|@pti")
+        )
+    ) +
+    ggsize(800, 600) +
+    article_theme()
+)
+initial_plot = (
+    ggplot(pti) +
+    plot_def_ +
+    labs(
+        title="Rounds over 80 against sub-70 rounds",
+        subtitle="All available events in Data Golf's archives",
+        x="Count of rounds with a score of 80+",
+        y="Count of rounds with a score of <70",
+        color="Is it a major championship?",
+        size="Proper Test Index"
+    )
+)
+initial_plot
+```
+
+Some miscellaneous notes.
+
+* There are `{python} pti.filter(pl.col("over_80") == pl.lit(0)).shape[0]` events that had **0 rounds of 80 or over**.
+* What were we doing at the `{python} easiest_event["year"][0]` `{python} easiest_event["event_name"][0]`?
+  `{python} easiest_event["sub_70"][0]` rounds below 70 and 0 above 80. Not Proper.
+
+Now when it comes to majors...
+
+```{python}
+# Let's get the easiest and hardest majors
+majors = (
+    pti.filter(pl.col("major_championship"))
+    .sort("pti", descending=True)
+)
+easiest_major = majors.tail(n=1)
+hardest_major = majors.head(n=1)
+
+(
+    ggplot(majors) +
+    geom_point(
+        aes(x="over_80", y="sub_70", size="pti"),
+        alpha=0.5,
+        tooltips=(
+            layer_tooltips()
+            .line("@year @event_name")
+            .line("Venue|@course_name")
+            .line("PTI|@pti")
+        )
+    ) +
+    ggsize(800, 600) +
+    article_theme() +
+    labs(
+        title="Rounds over 80 against sub-70 rounds",
+        subtitle="Major championships in Data Golf's archives",
+        x="Count of rounds with a score of 80+",
+        y="Count of rounds with a score of <70",
+        size="Proper Test Index"
+    )
+)
+```
+
+As much as I like Brooks Koepka..., the `{python} easiest_major["year"][0]` `{python} easiest_major["event_name"][0]`
+at `{python} easiest_major["course_name"][0]` wasn't particularly *proper*. But good news for Big! Phil the Thrill's
+unbelievable performance in the `{python} hardest_major["year"][0]` `{python} hardest_major["event_name"][0]`
+at `{python} hardest_major["course_name"][0]` was undeniable. Proper.
+
+
+## Sabermetrics can help us identify *Proper Players*
+
+PTI tells us something about the balance of extreme rounds at the event level. What if we adopt
+Baseball's *park factor* to figure out if a low round really matters?
+
+$$
+\text{Course Factor} = \frac{\frac{\text{Total scores >= 80 at the course}}{\text{Total scores < 70 at the course}}}{\frac{\text{Total scores >= 80 at all other courses}}{\text{Total scores < 70 at all other courses}}}
+$$
+
+The larger the *course factor*, the more impressive a 65 is! Let's plot out the *course factor* across the available
+venues.
+
+```{python}
+course_factor = pl.read_csv("../../course_factor.csv")
+hardest_course = course_factor.sort("course_factor", descending=True).head(n=1)
+easiest_course = (
+    course_factor.sort("course_factor", descending=False)
+    .filter(pl.col("course_factor") > 0)
+    .head(n=1)
+)
+
+course_factor_plot = (
+    ggplot(course_factor) +
+    geom_point(
+        aes(x="course_factor", y="scoring_average"),
+        tooltips=(
+            layer_tooltips()
+            .line("@course_name")
+            .line("Total 80+ rounds|@total_over_80")
+            .line("Total <70 rounds|@total_sub_70")
+        )
+    ) +
+    labs(
+        title='Venue scoring average by "course factor"',
+        x="Course Factor",
+        y="Scoring average"
+    ) +
+    ggsize(800, 600) +
+    article_theme()
+)
+course_factor_plot
+```
+
+Wow. The scale of course factor is pretty intense. An above average round at `{python} hardest_course["course_name"][0]`
+is worth `{python} int(hardest_course["course_factor"][0] / easiest_course["course_factor"][0])` times more than a
+similarly above average round at `{python} easiest_course["course_name"][0]`. A logarithmic scale gives us a bit
+more insight into how the course factor relates to pure scoring average.
+
+```{python}
+(
+    course_factor_plot +
+    scale_x_log10() +
+    geom_label(
+        x=60,
+        y=68,
+        hjust=0,
+        label="Yikes... maybe TC\nwas right about\nTPC Toronto",
+        label_size=0,
+        family="Helvetica"
+    ) +
+    geom_curve(
+        x=60,
+        y=68,
+        xend=40,
+        yend=68.5,
+        curvature=-0.2,
+        arrow=arrow()
+    )
+)
+```
+
+Ok, enough about venues. How do we convert this into a measure of player performance? Simple,
+a weighted average of a player's score against the round average.
+
+$$
+\text{Proper Player Index} = \frac{\sum (\text{Score} - \text{Round Scoring Average}) \times \text{Course Factor}}{\sum \text{Course Factor}}
+$$
+
+```{python}
+ppi = (
+    pl.read_csv("../../data/ppi-static.csv")
+)
+
+ppi_plot = (
+    ggplot(ppi) +
+    geom_point(
+        aes(x="rounds", y="ppi"),
+        tooltips=(
+            layer_tooltips()
+            .line("@player_name")
+            .line("Rounds|@rounds")
+            .line("PPI|@ppi")
+        )
+    ) +
+    geom_hline(
+        yintercept=ppi["ppi"].mean(),
+        linetype="longdash"
+    ) +
+    ggsize(800, 600) +
+    labs(
+        title="Proper Player Index by number of rounds",
+        subtitle="Min. 100 rounds",
+        x="Number of rounds",
+        y="Proper Player Index"
+    ) +
+    article_theme()
+)
+ppi_plot
+```
+
+```{python}
+ppi.head(n=10)
+```
+
+```{python}
+ggplot(ppi) + geom_histogram(aes(x="ppi"))
+```

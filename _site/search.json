@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "posts/proper-test-index/index.html#introduction",
+    "href": "posts/proper-test-index/index.html#introduction",
+    "title": "The Proper Test Index",
+    "section": "Introduction",
+    "text": "Introduction\nIn No Laying Up’s coverage of the 125th U.S. Open at Oakmont, the Big Man himself introduced a metric that has lodged itself in my brain: the Proper Test Index (PTI). It’s defined as\n\\[\nPTI = \\frac{\\text{Number of rounds with a score &gt;= 80}}{\\text{Number of rounds with a score of &lt; 70}}\n\\]\nHe ran through some of the numbers across past U.S. Opens; what does it look like when we extend the metric to the PGA Tour? Using Data Golf’s API, I pulled the scoring data for their entire archive and calculated the event-level PTI:\n\n\n   \n   \n\n\nSome miscellaneous notes.\n\nThere are 139 events that had 0 rounds of 80 or over.\nWhat were we doing at the 2019 Wyndham Championship? 332 rounds below 70 and 0 above 80. Not Proper.\n\nNow when it comes to majors…\n\n\n   \n   \n\n\nAs much as I like Brooks Koepka…, the 2018 PGA Championship at Bellerive CC wasn’t particularly proper. But good news for Big! Phil the Thrill’s unbelievable performance in the 2021 PGA Championship at Ocean Course at Kiawah Island was undeniable. Proper."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "proper-test-index",
+    "section": "",
+    "text": "The Proper Test Index\n\n\nWhat does Big Randy’s metric tell us about the PGA Tour?\n\n\n\ngolf\n\nstatistics\n\n\n\n\n\n\n\n\n\nJun 17, 2025\n\n\nAkshay Gupta\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  },
+  {
+    "objectID": "posts/proper-test-index/index.html#sabermetrics-can-help-us-identify-proper-players",
+    "href": "posts/proper-test-index/index.html#sabermetrics-can-help-us-identify-proper-players",
+    "title": "The Proper Test Index",
+    "section": "Sabermetrics can help us identify Proper Players",
+    "text": "Sabermetrics can help us identify Proper Players\nPTI tells us something about the balance of extreme rounds at the event level. What if we adopt Baseball’s park factor to figure out if a low round really matters?\n\\[\n\\text{Course Factor} = \\frac{\\frac{\\text{Total scores &gt;= 80 at the course}}{\\text{Total scores &lt; 70 at the course}}}{\\frac{\\text{Total scores &gt;= 80 at all other courses}}{\\text{Total scores &lt; 70 at all other courses}}}\n\\]\nThe larger the course factor, the more impressive a 65 is! Let’s plot out the course factor across the available venues.\n\n\n   \n   \n\n\nWow. The scale of course factor is pretty intense. An above average round at Ocean Course at Kiawah Island is worth 1955 times more than a similarly above average round at Sea Island GC (Seaside). A logarithmic scale gives us a bit more insight into how the course factor relates to pure scoring average.\n\n\n   \n   \n\n\nOk, enough about venues. How do we convert this into a measure of player performance? Simple, a weighted average of a player’s score against the round average.\n\\[\n\\text{Proper Player Index} = \\frac{\\sum (\\text{Score} - \\text{Round Scoring Average}) \\times \\text{Course Factor}}{\\sum \\text{Course Factor}}\n\\]\n\n\n   \n   \n\n\n\n\n\nshape: (10, 4)\n\n\n\ndg_id\nplayer_name\nppi\nrounds\n\n\ni64\nstr\nf64\ni64\n\n\n\n\n18417\n\"Scheffler, Scottie\"\n2.278665\n526\n\n\n16243\n\"Koepka, Brooks\"\n1.961859\n421\n\n\n19895\n\"Schauffele, Xander\"\n1.716932\n688\n\n\n10091\n\"McIlroy, Rory\"\n1.715257\n565\n\n\n14838\n\"Reed, Patrick\"\n1.675418\n557\n\n\n19195\n\"Rahm, Jon\"\n1.599814\n528\n\n\n22085\n\"Morikawa, Collin\"\n1.579121\n483\n\n\n12422\n\"Johnson, Dustin\"\n1.570378\n422\n\n\n19841\n\"DeChambeau, Bryson\"\n1.354045\n459\n\n\n18841\n\"Hovland, Viktor\"\n1.3495\n471"
+  }
+]
