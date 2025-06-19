@@ -1,448 +1,448 @@
-year,event_id,event_name,course_name,over_80,sub_70,total_rounds,pti,major_championship
-2021,33,PGA Championship,Ocean Course at Kiawah Island,39,30,472,1.3,true
-2018,26,U.S. Open,Shinnecock Hills GC,45,36,446,1.25,true
-2024,14,Masters Tournament,Augusta National Golf Club,20,21,298,0.952,true
-2025,26,U.S. Open,Oakmont Country Club,34,36,444,0.944,true
-2020,9,Arnold Palmer Invitational presented by Mastercard,Bay Hill Club & Lodge,21,26,378,0.808,false
-2022,14,The Masters,Augusta National Golf Club,16,21,283,0.762,false
-2024,100,The Open Championship,Royal Troon,30,48,470,0.625,true
-2020,26,U.S. Open,Winged Foot GC,19,32,409,0.594,true
-2020,23,the Memorial Tournament presented by Nationwide,Muirfield Village Golf Club,21,36,406,0.583,false
-2023,4,Farmers Insurance Open,Torrey Pines Golf Course (South Course),17,30,302,0.567,false
-2025,4,Farmers Insurance Open,Torrey Pines Golf Course (South Course),12,23,292,0.522,false
-2018,489,World Golf Championships-HSBC Champions,Sheshan International GC,18,38,308,0.474,false
-2017,33,PGA Championship,Quail Hollow-PGA Championship,26,56,459,0.464,true
-2022,9,Arnold Palmer Invitational presented by Mastercard,Bay Hill Club & Lodge,16,36,394,0.444,false
-2023,23,the Memorial Tournament presented by Workday,Muirfield Village Golf Club,14,37,368,0.378,false
-2024,23,the Memorial Tournament presented by Workday,Muirfield Village Golf Club,9,26,250,0.346,false
-2016,26,U.S. Open,Oakmont CC,18,52,443,0.346,true
-2021,536,The Masters #2,Augusta National Golf Club,10,30,284,0.333,false
-2014,26,U.S. Open,Pinehurst Resort (No. 2),16,49,446,0.327,true
-2017,521,THE CJ CUP @ NINE BRIDGES,Club at Nine Bridges,14,44,310,0.318,false
-2004,100,The Open Championship,Royal Troon GC,18,59,458,0.305,true
-2017,14,Masters Tournament,Augusta National GC,10,33,292,0.303,true
-2017,26,U.S. Open,Erin Hills,17,57,447,0.298,true
-2016,100,The Open Championship,Royal Troon GC,17,64,471,0.266,true
-2023,100,The Open Championship,Royal Liverpool,19,73,464,0.26,true
-2021,4,Farmers Insurance Open,Torrey Pines GC (South),8,31,312,0.258,false
-2022,23,the Memorial Tournament presented by Workday,Muirfield Village Golf Club,13,52,377,0.25,false
-2017,11,THE PLAYERS Championship,TPC Sawgrass,12,48,440,0.25,false
-2018,4,Farmers Insurance Open,Torrey Pines GC (South),10,41,310,0.244,false
-2017,4,Farmers Insurance Open,Torrey Pines GC (South),11,46,308,0.239,false
-2021,5,AT&T Pebble Beach Pro-Am,Spyglass Hill Golf Course,5,21,156,0.238,false
-2021,535,U.S. Open #2,Torrey Pines (South),11,48,453,0.229,false
-2025,23,the Memorial Tournament presented by Workday,Muirfield Village Golf Club,6,27,257,0.222,false
-2024,26,U.S. Open,Pinehurst Resort & Country Club (Course No. 2),13,59,460,0.22,true
-2021,11,THE PLAYERS Championship,TPC Sawgrass,16,76,449,0.211,false
-2025,4,Farmers Insurance Open,Torrey Pines Golf Course (North Course),8,39,147,0.205,false
-2017,9,Arnold Palmer Invitational presented by Mastercard,Bay Hill Club & Lodge,10,49,382,0.204,false
-2017,41,Valero Texas Open,TPC San Antonio - AT&T Oaks,13,65,462,0.2,false
-2018,14,Masters Tournament,Augusta National GC,9,47,280,0.191,true
-2018,100,The Open Championship,Carnoustie GC,14,74,469,0.189,true
-2023,33,PGA Championship,Oak Hill Country Club,14,78,464,0.179,true
-2025,9,Arnold Palmer Invitational presented by Mastercard,Arnold Palmer's Bay Hill Club & Lodge,8,45,246,0.178,false
-2021,23,the Memorial Tournament presented by Nationwide,Muirfield Village Golf Club,9,51,372,0.176,false
-2022,11,THE PLAYERS Championship,TPC Sawgrass,13,74,423,0.176,false
-2021,9,Arnold Palmer Invitational presented by Mastercard,Bay Hill Club & Lodge,9,51,389,0.176,false
-2018,41,Valero Texas Open,TPC San Antonio - AT&T Oaks,13,76,463,0.171,false
-2019,9,Arnold Palmer Invitational presented by Mastercard,Bay Hill Club & Lodge,10,64,384,0.156,false
-2023,9,Arnold Palmer Invitational presented by Mastercard,Arnold Palmer's Bay Hill Club & Lodge,8,52,383,0.154,false
-2021,41,Valero Texas Open,TPC San Antonio (Oaks Course),10,66,443,0.152,false
-2025,33,PGA Championship,Quail Hollow-PGA Championship,13,87,459,0.149,true
-2023,14,Masters Tournament,Augusta National Golf Club,5,34,277,0.147,true
-2023,11,THE PLAYERS Championship,TPC Sawgrass (THE PLAYERS Stadium Course),13,89,437,0.146,false
-2024,9,Arnold Palmer Invitational presented by Mastercard,Arnold Palmer's Bay Hill Club & Lodge,6,41,254,0.146,false
-2017,23,the Memorial Tournament presented by Nationwide,Muirfield Village GC,8,59,390,0.136,false
-2019,26,U.S. Open,Pebble Beach Golf Links,11,81,470,0.136,true
-2018,5,AT&T Pebble Beach Pro-Am,Pebble Beach GL,6,44,231,0.136,false
-2025,11,THE PLAYERS Championship,TPC Sawgrass (THE PLAYERS Stadium Course),11,83,431,0.133,false
-2018,10,The Honda Classic,PGA National (Champion),10,76,435,0.132,false
-2022,4,Farmers Insurance Open,Torrey Pines (South),7,54,314,0.13,false
-2017,480,Wells Fargo Championship,Eagle Point Golf Club,6,46,461,0.13,false
-2024,88,PGA TOUR Q-School presented by Korn Ferry,Sawgrass Country Club,9,74,326,0.122,false
-2020,5,AT&T Pebble Beach Pro-Am,Pebble Beach Golf Links,5,41,223,0.122,false
-2019,33,PGA Championship,Bethpage Black,10,88,475,0.114,true
-2018,480,Wells Fargo Championship,Quail Hollow Club,10,90,470,0.111,false
-2022,26,U.S. Open,The Country Club,9,81,440,0.111,true
-2019,5,AT&T Pebble Beach Pro-Am,Pebble Beach Golf Links,5,49,215,0.102,false
-2025,14,Masters Tournament,Augusta National Golf Club,4,40,296,0.1,true
-2014,33,PGA Championship,Valhalla GC,13,131,453,0.099,true
-2019,100,The Open Championship,Royal Portrush Golf Club,9,93,458,0.097,true
-2021,538,Palmetto Championship at Congaree,Congaree Golf Club,11,115,440,0.096,false
-2021,480,Wells Fargo Championship,Quail Hollow Club,8,85,463,0.094,false
-2017,489,World Golf Championships-HSBC Champions,Sheshan International GC,6,64,310,0.094,false
-2020,528,Bermuda Championship,Port Royal Golf Course,12,138,398,0.087,false
-2024,41,Valero Texas Open,TPC San Antonio (Oaks Course),6,69,473,0.087,false
-2025,41,Valero Texas Open,TPC San Antonio (Oaks Course),5,58,420,0.086,false
-2022,33,PGA Championship,Southern Hills Country Club,7,84,469,0.083,true
-2024,480,Wells Fargo Championship,Quail Hollow Club,4,49,272,0.082,false
-2020,533,Workday Charity Open,Muirfield Village Golf Club,9,111,442,0.081,false
-2021,534,Corales Puntacana Resort & Club Championship #2,Corales Golf Club,5,62,403,0.081,false
-2020,5,AT&T Pebble Beach Pro-Am,Spyglass Hill Golf Course,2,25,154,0.08,false
-2020,16,Sentry Tournament of Champions,Plantation Course at Kapalua,2,25,136,0.08,false
-2019,14,The Masters,Augusta National GC,5,63,304,0.079,false
-2019,23,the Memorial Tournament presented by Nationwide,Muirfield Village Golf Club,6,77,384,0.078,false
-2018,5,AT&T Pebble Beach Pro-Am,Spyglass Hill GC,3,39,154,0.077,false
-2017,100,The Open Championship,Royal Birkdale GC,8,115,466,0.07,true
-2018,9,Arnold Palmer Invitational presented by Mastercard,Bay Hill Club & Lodge,5,73,393,0.068,false
-2021,493,The RSM Classic,Sea Island GC (Plantation),4,60,155,0.067,false
-2018,23,the Memorial Tournament presented by Nationwide,Muirfield Village GC,8,119,394,0.067,false
-2017,20,Shell Houston Open,GC of Houston,6,91,437,0.066,false
-2025,2,The American Express,Pete Dye Stadium Course,4,64,227,0.062,false
-2017,5,AT&T Pebble Beach Pro-Am,Pebble Beach GL,3,48,220,0.062,false
-2019,20,Houston Open,Golf Club of Houston,6,97,437,0.062,false
-2022,483,Puerto Rico Open,Grand Reserve Golf Club,7,115,380,0.061,false
-2021,473,World Golf Championships-Workday Championship at The Concession,The Concession Golf Club,5,83,285,0.06,false
-2020,10,The Honda Classic,PGA National (Champion),5,85,425,0.059,false
-2022,5,AT&T Pebble Beach Pro-Am,Spyglass Hill Golf Course,2,34,156,0.059,false
-2024,11,THE PLAYERS Championship,TPC Sawgrass (THE PLAYERS Stadium Course),7,120,431,0.058,false
-2022,464,Fortinet Championship,Silverado Resort and Spa (North Course),6,106,456,0.057,false
-2022,541,Genesis Scottish Open,The Renaissance Club,6,108,463,0.056,false
-2020,4,Farmers Insurance Open,Torrey Pines GC (South),3,55,313,0.055,false
-2020,522,Corales Puntacana Resort & Club Championship,Corales Golf Club,7,128,434,0.055,false
-2023,475,Valspar Championship,Innisbrook Resort (Copperhead Course),4,76,432,0.053,false
-2017,464,Safeway Open,Silverado Resort and Spa North,5,98,436,0.051,false
-2017,471,Quicken Loans National,TPC Potomac at Avenel Farm,5,99,382,0.051,false
-2022,100,The Open Championship,St. Andrews Links (Old Course),7,139,478,0.05,true
-2022,10,The Honda Classic,PGA National (Champion),6,120,434,0.05,false
-2023,41,Valero Texas Open,TPC San Antonio (Oaks Course),4,81,425,0.049,false
-2019,493,The RSM Classic,Sea Island GC (Plantation),3,61,155,0.049,false
-2023,4,Farmers Insurance Open,Torrey Pines Golf Course (North Course),2,42,156,0.048,false
-2018,11,THE PLAYERS Championship,TPC Sawgrass,6,126,438,0.048,false
-2020,20,Vivint Houston Open,Memorial Park Golf Course,7,150,397,0.047,false
-2022,522,Corales Puntacana Championship,Corales Golf Club,5,107,368,0.047,false
-2023,32,RBC Canadian Open,Oakdale Golf & Country Club,5,109,460,0.046,false
-2020,14,The Masters,Augusta National Golf Club,3,65,302,0.046,false
-2020,33,PGA Championship,TPC Harding Park,7,161,469,0.043,true
-2019,4,Farmers Insurance Open,Torrey Pines GC (South),3,69,310,0.043,false
-2024,475,Valspar Championship,Innisbrook Resort (Copperhead Course),5,117,453,0.043,false
-2021,528,Butterfield Bermuda Championship,Port Royal Golf Course,7,161,400,0.043,false
-2019,489,World Golf Championships-HSBC Champions,Sheshan International GC,4,93,310,0.043,false
-2025,7,The Genesis Invitational,Torrey Pines Golf Course (South Course),2,48,252,0.042,false
-2018,521,THE CJ CUP @ NINE BRIDGES,Nine Bridges,4,99,312,0.04,false
-2024,88,PGA TOUR Q-School presented by Korn Ferry,Dye's Valley Course,4,102,327,0.039,false
-2022,472,Barracuda Championship,Tahoe Mt. Club (Old Greenwood),5,132,449,0.038,false
-2022,480,Wells Fargo Championship,TPC Potomac at Avenel Farm,5,133,438,0.038,false
-2017,2,CareerBuilder Challenge,Nicklaus Tournament Course,2,52,156,0.038,false
-2019,480,Wells Fargo Championship,Quail Hollow Club,4,106,458,0.038,false
-2021,2,The American Express,Nicklaus Tournament Course,2,54,156,0.037,false
-2019,475,Valspar Championship,Innisbrook Resort (Copperhead),3,82,427,0.037,false
-2017,5,AT&T Pebble Beach Pro-Am,Spyglass Hill GC,1,27,153,0.037,false
-2017,54,Sanderson Farms Championship,CC of Jackson,3,82,408,0.037,false
-2024,33,PGA Championship,Valhalla Golf Club,7,193,465,0.036,true
-2024,464,Procore Championship,Silverado Resort (North Course),4,113,416,0.035,false
-2019,522,Corales Puntacana Resort & Club Championship,Corales Golf Club,4,122,408,0.033,false
-2023,5,AT&T Pebble Beach Pro-Am,Pebble Beach Golf Links,2,60,226,0.033,false
-2023,88,PGA TOUR Q-School presented by Korn Ferry,Sawgrass Country Club,3,92,308,0.033,false
-2020,28,BMW Championship,Olympia Fields CC (North),2,63,276,0.032,false
-2020,521,THE CJ CUP @ SHADOW CREEK,Shadow Creek Golf Course,3,95,311,0.032,false
-2022,32,RBC Canadian Open,St. George's G&CC,5,161,447,0.031,false
-2018,493,The RSM Classic,Sea Island GC (Plantation),2,64,155,0.031,false
-2019,473,World Golf Championships-Mexico Championship,Club de Golf Chapultepec,3,100,287,0.03,false
-2018,2,CareerBuilder Challenge,Stadium Course,2,66,232,0.03,false
-2025,475,Valspar Championship,Innisbrook Resort (Copperhead Course),3,101,460,0.03,false
-2021,2,The American Express,Stadium Course,3,103,298,0.029,false
-2022,525,3M Open,TPC Twin Cities,4,136,458,0.029,false
-2017,34,Travelers Championship,TPC River Highlands,6,204,468,0.029,false
-2017,475,Valspar Championship,Innisbrook Resort (Copperhead),3,103,424,0.029,false
-2020,473,World Golf Championships-Mexico Championship,Club de Golf Chapultepec,3,104,288,0.029,false
-2018,4,Farmers Insurance Open,Torrey Pines (North),1,36,156,0.028,false
-2018,54,Sanderson Farms Championship,CC of Jackson,3,112,407,0.027,false
-2019,5,AT&T Pebble Beach Pro-Am,Spyglass Hill Golf Course,1,39,155,0.026,false
-2023,550,Hero World Challenge #2,Albany GC,1,39,80,0.026,false
-2019,41,Valero Texas Open,TPC San Antonio (Oaks Course),3,115,434,0.026,false
-2021,483,Puerto Rico Open,Grand Reserve Country Club,3,118,414,0.025,false
-2021,12,RBC Heritage,Harbour Town Golf Links,4,160,397,0.025,false
-2023,480,Wells Fargo Championship,Quail Hollow Club,3,122,444,0.025,false
-2020,54,Sanderson Farms Championship,Country Club of Jackson,3,120,420,0.025,false
-2024,4,Farmers Insurance Open,Torrey Pines Golf Course (South Course),1,42,313,0.024,false
-2018,475,Valspar Championship,Innisbrook Resort (Copperhead),2,83,443,0.024,false
-2024,457,World Wide Technology Championship,El Cardonal at Diamante,4,168,375,0.024,false
-2020,6,Sony Open in Hawaii,Waialae Country Club,4,170,419,0.024,false
-2019,54,Sanderson Farms Championship,Country Club of Jackson,3,131,444,0.023,false
-2018,2,CareerBuilder Challenge,Nicklaus Tournament Course,2,88,155,0.023,false
-2019,16,Sentry Tournament of Champions,Plantation Course at Kapalua,1,44,132,0.023,false
-2017,5,AT&T Pebble Beach Pro-Am,Monterey Peninsula CC,1,43,154,0.023,false
-2019,483,Puerto Rico Open,Coco Beach Golf & CC,2,89,411,0.022,false
-2018,7,Genesis Open,Riviera CC,2,93,436,0.022,false
-2024,528,Butterfield Bermuda Championship,Port Royal Golf Course,4,185,385,0.022,false
-2021,10,The Honda Classic,PGA National (Champion),3,136,421,0.022,false
-2023,10,The Honda Classic,PGA National Resort (The Champion),4,183,446,0.022,false
-2023,518,Barbasol Championship,Keene Trace Golf Club (Champions Course),4,186,444,0.022,false
-2018,12,RBC Heritage,Harbour Town GL,3,140,417,0.021,false
-2017,7,Genesis Open,Riviera CC,3,143,424,0.021,false
-2024,493,The RSM Classic,Sea Island Golf Club (Plantation Course),1,48,156,0.021,false
-2018,2,CareerBuilder Challenge,La Quinta CC,2,97,154,0.021,false
-2022,12,RBC Heritage,Harbour Town Golf Links,3,151,403,0.02,false
-2020,493,The RSM Classic,Sea Island GC (Plantation),1,50,154,0.02,false
-2023,472,Barracuda Championship,Tahoe Mountain Club (Old Greenwood),4,202,444,0.02,false
-2019,521,THE CJ CUP @ NINE BRIDGES,Nine Bridges,2,102,308,0.02,false
-2018,522,Corales Puntacana Resort & Club Championship,Corales Golf Club,2,106,421,0.019,false
-2020,525,3M Open,TPC Twin Cities,4,209,443,0.019,false
-2020,7,The Genesis Invitational,Riviera Country Club,2,104,376,0.019,false
-2019,5,AT&T Pebble Beach Pro-Am,Monterey Peninsula CC,1,52,155,0.019,false
-2020,472,Barracuda Championship,Old Greenwood Golf Course at Tahoe Mountain Club,3,154,392,0.019,false
-2023,483,Puerto Rico Open,Grand Reserve Golf Club,2,104,378,0.019,false
-2023,26,U.S. Open,The Los Angeles Country Club (North Course),2,103,442,0.019,true
-2023,522,Corales Puntacana Championship,Puntacana Resort & Club (Corales Golf Course),2,104,383,0.019,false
-2017,19,AT&T Byron Nelson,TPC Four Seasons Resort,3,162,460,0.019,false
-2017,21,DEAN & DELUCA Invitational,Colonial CC,2,113,383,0.018,false
-2022,30,John Deere Classic,TPC Deere Run,4,219,446,0.018,false
-2019,11,THE PLAYERS Championship,TPC Sawgrass,2,113,437,0.018,false
-2021,100,The Open Championship,Royal St. George's GC,3,169,465,0.018,true
-2025,522,Corales Puntacana Championship,Puntacana Resort (Corales Golf Course),2,110,403,0.018,false
-2022,528,Butterfield Bermuda Championship,Port Royal Golf Course,4,222,397,0.018,false
-2020,4,Farmers Insurance Open,Torrey Pines GC (North),1,55,155,0.018,false
-2018,34,Travelers Championship,TPC River Highlands,4,238,460,0.017,false
-2018,25,FedEx St. Jude Classic,TPC Southwind,3,173,454,0.017,false
-2023,7,The Genesis Invitational,The Riviera Country Club,2,115,393,0.017,false
-2023,546,ZOZO CHAMPIONSHIP #2,Accordia Golf Narashino Country Club,2,116,309,0.017,false
-2024,525,3M Open,TPC Twin Cities,3,178,460,0.017,false
-2023,544,Sanderson Farms Championship #2,The Country Club of Jackson,3,178,444,0.017,false
-2022,21,Charles Schwab Challenge,Colonial Country Club,2,126,377,0.016,false
-2019,12,RBC Heritage,Harbour Town Golf Links,2,125,400,0.016,false
-2018,21,Fort Worth Invitational,Colonial CC,3,191,395,0.016,false
-2017,505,Dell Technologies Championship,TPC Boston,2,122,347,0.016,false
-2019,21,Charles Schwab Challenge,Colonial Country Club,2,128,385,0.016,false
-2019,7,Genesis Open,Riviera Country Club,2,129,438,0.016,false
-2022,54,Sanderson Farms Championship,The Country Club of Jackson,2,122,444,0.016,false
-2017,27,THE NORTHERN TRUST,Glen Oaks Club,2,122,379,0.016,false
-2021,464,Fortinet Championship,Silverado Resort & Spa (North),2,124,452,0.016,false
-2019,525,3M Open,TPC Twin Cities,4,255,466,0.016,false
-2021,20,Hewlett Packard Enterprise Houston Open,Memorial Park Golf Course,2,132,394,0.015,false
-2023,543,Fortinet Championship #2,Silverado Resort (North Course),2,132,447,0.015,false
-2024,21,Charles Schwab Challenge,Colonial Country Club,2,135,403,0.015,false
-2019,10,The Honda Classic,PGA National (Champion),2,136,438,0.015,false
-2017,12,RBC Heritage,Harbour Town GL,2,141,411,0.014,false
-2023,545,Shriners Children's Open #2,TPC Summerlin,3,217,396,0.014,false
-2024,522,Corales Puntacana Championship,Puntacana Resort & Club (Corales Golf Course),2,148,404,0.014,false
-2018,505,Dell Technologies Championship,TPC Boston,2,155,346,0.013,false
-2022,457,World Wide Technology Championship at Mayakoba,El Camaleón Golf Course at Mayakoba,3,229,398,0.013,false
-2023,525,3M Open,TPC Twin Cities,3,223,455,0.013,false
-2019,27,THE NORTHERN TRUST,Liberty National Golf Club,2,168,407,0.012,false
-2017,3,Waste Management Phoenix Open,TPC Scottsdale,2,164,412,0.012,false
-2018,3,Waste Management Phoenix Open,TPC Scottsdale,2,167,404,0.012,false
-2021,21,Charles Schwab Challenge,Colonial Country Club,2,161,390,0.012,false
-2023,2,The American Express,La Quinta Country Club,1,83,156,0.012,false
-2017,10,The Honda Classic,PGA National (Champion),2,161,421,0.012,false
-2022,540,Mexico Open at Vidanta,Vidanta Vallarta,2,180,435,0.011,false
-2025,32,RBC Canadian Open,TPC Toronto at Osprey Valley (North Course),3,280,444,0.011,false
-2019,524,Rocket Mortgage Classic,Detroit Golf Club,2,186,452,0.011,false
-2024,10,Cognizant Classic in The Palm Beaches,PGA National Resort (The Champion),2,182,423,0.011,false
-2020,2,The American Express,Nicklaus Tournament Course,1,93,154,0.011,false
-2020,2,The American Express,Stadium Course,1,89,228,0.011,false
-2017,25,FedEx St. Jude Classic,TPC Southwind,2,175,467,0.011,false
-2021,54,Sanderson Farms Championship,Country Club of Jackson,2,187,424,0.011,false
-2022,41,Valero Texas Open,TPC San Antonio (Oaks Course),1,88,426,0.011,false
-2021,5,AT&T Pebble Beach Pro-Am,Pebble Beach Golf Links,1,89,289,0.011,false
-2023,28,BMW Championship,Olympia Fields Country Club (North Course),1,104,197,0.01,false
-2017,473,World Golf Championships-Mexico Championship,Club de Golf Chapultepec,1,99,304,0.01,false
-2025,5,AT&T Pebble Beach Pro-Am,Pebble Beach Golf Links,1,103,236,0.01,false
-2024,20,Texas Children's Houston Open,Memorial Park Golf Course,2,193,453,0.01,false
-2021,7,The Genesis Invitational,The Riviera Country Club,1,102,373,0.01,false
-2018,32,RBC Canadian Open,Glen Abbey GC,2,196,463,0.01,false
-2024,30,John Deere Classic,TPC Deere Run,3,287,465,0.01,false
-2024,519,Olympic Men's Golf Competition,Le Golf National,1,112,238,0.009,false
-2018,33,PGA Championship,Bellerive CC,2,214,471,0.009,true
-2017,47,Shriners Hospitals for Children Open,TPC Summerlin,1,108,441,0.009,false
-2021,34,Travelers Championship,TPC River Highlands,2,233,470,0.009,false
-2017,494,CIMB Classic,TPC Kuala Lumpur,1,111,312,0.009,false
-2019,464,Safeway Open,Silverado Resort & Spa (North),1,109,422,0.009,false
-2018,47,Shriners Hospitals for Children Open,TPC Summerlin,2,220,412,0.009,false
-2017,490,The Greenbrier Classic,The Old White TPC,2,213,454,0.009,false
-2024,2,The American Express,Nicklaus Tournament Course,1,115,155,0.009,false
-2017,476,World Golf Championships-Bridgestone Invitational,Firestone CC (South),1,126,304,0.008,false
-2023,21,Charles Schwab Challenge,Colonial Country Club,1,132,384,0.008,false
-2018,19,AT&T Byron Nelson,Trinity Forest Golf Club,2,248,460,0.008,false
-2018,464,Safeway Open,Silverado Resort and Spa North,1,133,448,0.008,false
-2023,3,WM Phoenix Open,TPC Scottsdale (Stadium Course),1,119,398,0.008,false
-2021,475,Valspar Championship,Innisbrook Resort (Copperhead),1,131,450,0.008,false
-2019,47,Shriners Hospitals for Children Open,TPC Summerlin,2,277,440,0.007,false
-2022,20,Cadence Bank Houston Open,Memorial Park Golf Course,1,148,395,0.007,false
-2022,7,The Genesis Invitational,The Riviera Country Club,1,145,389,0.007,false
-2025,16,The Sentry,Plantation Course at Kapalua,1,146,235,0.007,false
-2019,472,Barracuda Championship,Montreux Golf & Country Club,1,142,402,0.007,false
-2020,483,Puerto Rico Open,Grand Reserve Country Club,1,137,377,0.007,false
-2024,12,RBC Heritage,Harbour Town Golf Links,1,151,276,0.007,false
-2023,548,Butterfield Bermuda Championship #2,Port Royal Golf Course,2,275,426,0.007,false
-2017,483,Puerto Rico Open,Coco Beach Golf & CC,1,165,415,0.006,false
-2018,471,Quicken Loans National,TPC Potomac at Avenel Farm,1,166,388,0.006,false
-2022,524,Rocket Mortgage Classic,Detroit Golf Club,1,177,458,0.006,false
-2022,3,WM Phoenix Open,TPC Scottsdale,1,169,398,0.006,false
-2019,527,ZOZO CHAMPIONSHIP,Accordia Golf Narashino CC,1,165,306,0.006,false
-2018,20,Houston Open,GC of Houston,1,169,452,0.006,false
-2023,12,RBC Heritage,Harbour Town Golf Links,1,171,428,0.006,false
-2020,457,Mayakoba Golf Classic presented by UNIFIN,El Camaleon Golf Club,1,175,404,0.006,false
-2022,475,Valspar Championship,Innisbrook Resort (Copperhead),1,180,432,0.006,false
-2024,483,Puerto Rico Open,Grand Reserve Golf Club,1,167,408,0.006,false
-2020,527,ZOZO CHAMPIONSHIP @ SHERWOOD,Sherwood Country Club,1,173,308,0.006,false
-2017,32,RBC Canadian Open,Glen Abbey GC,1,195,463,0.005,false
-2024,47,Shriners Children's Open,TPC Summerlin,1,203,394,0.005,false
-2023,540,Mexico Open at Vidanta,Vidanta Vallarta,1,195,434,0.005,false
-2021,518,Barbasol Championship,Keene Trace Golf Club,1,196,410,0.005,false
-2017,30,John Deere Classic,TPC Deere Run,1,222,462,0.005,false
-2020,464,Safeway Open,Silverado Resort and Spa North,1,189,458,0.005,false
-2019,528,Bermuda Championship,Port Royal Golf Course,1,182,372,0.005,false
-2021,525,3M Open,TPC Twin Cities,1,185,452,0.005,false
-2018,493,The RSM Classic,Sea Island GC (Seaside),1,186,311,0.005,false
-2020,27,THE NORTHERN TRUST,TPC Boston,1,205,383,0.005,false
-2024,554,Black Desert Championship,Black Desert Resort,1,243,396,0.004,false
-2023,6,Sony Open in Hawaii,Waialae Country Club,1,279,440,0.004,false
-2019,34,Travelers Championship,TPC River Highlands,1,233,464,0.004,false
-2018,457,Mayakoba Golf Classic,El Camaleon GC,1,228,405,0.004,false
-2020,12,RBC Heritage,Harbour Town Golf Links,1,264,451,0.004,false
-2025,540,Mexico Open at VidantaWorld,Vidanta Vallarta,1,223,418,0.004,false
-2023,30,John Deere Classic,TPC Deere Run,1,231,449,0.004,false
-2020,13,Wyndham Championship,Sedgefield Country Club,1,285,462,0.004,false
-2021,19,AT&T Byron Nelson,TPC Craig Ranch,1,223,455,0.004,false
-2019,6,Sony Open in Hawaii,Waialae Country Club,1,271,440,0.004,false
-2024,6,Sony Open in Hawaii,Waialae Country Club,1,271,451,0.004,false
-2024,13,Wyndham Championship,Sedgefield Country Club,1,265,442,0.004,false
-2018,30,John Deere Classic,TPC Deere Run,1,240,453,0.004,false
-2019,19,AT&T Byron Nelson,Trinity Forest Golf Club,1,236,462,0.004,false
-2023,541,Genesis Scottish Open,The Renaissance Club,1,225,462,0.004,false
-2024,472,Barracuda Championship,Tahoe Mountain Club (Old Greenwood),1,229,440,0.004,false
-2023,19,AT&T Byron Nelson,TPC Craig Ranch,1,288,480,0.003,false
-2020,47,Shriners Hospitals for Children Open,TPC Summerlin,1,287,420,0.003,false
-2025,6,Sony Open in Hawaii,Waialae Country Club,1,289,436,0.003,false
-2024,19,THE CJ CUP Byron Nelson,TPC Craig Ranch,1,292,441,0.003,false
-2023,34,Travelers Championship,TPC River Highlands,1,295,442,0.003,false
-2024,5,AT&T Pebble Beach Pro-Am,Pebble Beach Golf Links,0,84,160,0.0,false
-2017,28,BMW Championship,Conway Farms GC,0,150,276,0.0,false
-2022,2,The American Express,La Quinta Country Club,0,66,156,0.0,false
-2023,16,Sentry Tournament of Champions,Plantation Course at Kapalua,0,86,153,0.0,false
-2022,27,FedEx St. Jude Championship,TPC Southwind,0,215,375,0.0,false
-2017,16,SBS Tournament of Champions,Plantation Course at Kapalua,0,44,128,0.0,false
-2022,478,Hero World Challenge,"Albany, Bahamas",0,25,80,0.0,false
-2025,21,Charles Schwab Challenge,Colonial Country Club,0,170,424,0.0,false
-2019,3,Waste Management Phoenix Open,TPC Scottsdale,0,160,409,0.0,false
-2017,457,OHL Classic at Mayakoba,El Camaleon GC,0,175,415,0.0,false
-2025,2,The American Express,La Quinta Country Club,0,108,155,0.0,false
-2024,524,Rocket Mortgage Classic,Detroit Golf Club,0,164,458,0.0,false
-2024,16,The Sentry,Plantation Course at Kapalua,0,156,236,0.0,false
-2021,524,Rocket Mortgage Classic,Detroit Golf Club,0,167,465,0.0,false
-2017,13,Wyndham Championship,Sedgefield CC,0,279,466,0.0,false
-2017,6,Sony Open in Hawaii,Waialae CC,0,300,443,0.0,false
-2022,34,Travelers Championship,TPC River Highlands,0,232,451,0.0,false
-2022,47,Shriners Children's Open,TPC Summerlin,0,261,441,0.0,false
-2023,27,FedEx St. Jude Championship,TPC Southwind,0,185,280,0.0,false
-2020,34,Travelers Championship,TPC River Highlands,0,297,446,0.0,false
-2025,553,ONEflight Myrtle Beach Classic,Dunes Golf and Beach Club,0,168,402,0.0,false
-2018,494,CIMB Classic,TPC Kuala Lumpur,0,161,312,0.0,false
-2018,28,BMW Championship,Aronimink GC,0,205,275,0.0,false
-2020,493,The RSM Classic,Sea Island GC (Seaside),0,179,285,0.0,false
-2025,5,AT&T Pebble Beach Pro-Am,Spyglass Hill Golf Course,0,35,80,0.0,false
-2019,490,A Military Tribute at The Greenbrier,The Old White TPC,0,262,445,0.0,false
-2023,547,World Wide Technology Championship #2,El Cardonal at Diamante,0,238,410,0.0,false
-2022,28,BMW Championship,Wilmington Country Club,0,122,270,0.0,false
-2019,478,Hero World Challenge,Albany,0,35,72,0.0,false
-2020,2,The American Express,La Quinta Country Club,0,82,153,0.0,false
-2023,5,AT&T Pebble Beach Pro-Am,Spyglass Hill Golf Course,0,16,151,0.0,false
-2018,60,TOUR Championship,East Lake GC,0,64,120,0.0,false
-2017,493,The RSM Classic,Sea Island Resort (Plantation),0,60,155,0.0,false
-2019,457,Mayakoba Golf Classic,El Camaleon Golf Club,0,174,427,0.0,false
-2021,472,Barracuda Championship,Tahoe Mt. Club (Old Greenwood),0,176,403,0.0,false
-2024,60,TOUR Championship,East Lake Golf Club,0,77,120,0.0,false
-2017,518,Barbasol Championship,RTJ Trail (Grand National),0,234,417,0.0,false
-2024,32,RBC Canadian Open,Hamilton Golf & Country Club,0,172,448,0.0,false
-2024,3,WM Phoenix Open,TPC Scottsdale (Stadium Course),0,197,409,0.0,false
-2021,527,ZOZO CHAMPIONSHIP,Accordia Golf Narashino CC,0,116,310,0.0,false
-2018,490,A Military Tribute at The Greenbrier,The Old White TPC,0,253,464,0.0,false
-2020,60,TOUR Championship,East Lake Golf Club,0,65,120,0.0,false
-2022,19,AT&T Byron Nelson,TPC Craig Ranch,0,255,479,0.0,false
-2021,3,Waste Management Phoenix Open,TPC Scottsdale,0,201,396,0.0,false
-2019,518,Barbasol Championship,Keene Trace Golf Club,0,208,414,0.0,false
-2020,476,World Golf Championships-FedEx St. Jude Invitational,TPC Southwind,0,160,312,0.0,false
-2019,493,The RSM Classic,Sea Island GC (Seaside),0,179,306,0.0,false
-2024,28,BMW Championship,Castle Pines Golf Club,0,46,195,0.0,false
-2025,10,Cognizant Classic in The Palm Beaches,PGA National Resort (The Champion Course),0,234,424,0.0,false
-2019,60,TOUR Championship,East Lake Golf Club,0,43,120,0.0,false
-2020,524,Rocket Mortgage Classic,Detroit Golf Club,0,196,450,0.0,false
-2021,476,World Golf Championships-FedEx St. Jude Invitational,TPC Southwind,0,156,263,0.0,false
-2021,27,THE NORTHERN TRUST,Liberty National Golf Club,0,173,395,0.0,false
-2023,2,The American Express,Nicklaus Tournament Course,0,95,156,0.0,false
-2022,493,The RSM Classic,Sea Island Golf Club (Seaside),0,177,293,0.0,false
-2021,4,Farmers Insurance Open,Torrey Pines GC (North),0,59,153,0.0,false
-2018,478,Hero World Challenge,Albany,0,35,72,0.0,false
-2022,60,TOUR Championship,East Lake Golf Club,0,84,116,0.0,false
-2024,54,Sanderson Farms Championship,The Country Club of Jackson,0,209,395,0.0,false
-2021,30,John Deere Classic,TPC Deere Run,0,226,448,0.0,false
-2017,60,TOUR Championship,East Lake GC,0,66,120,0.0,false
-2021,6,Sony Open in Hawaii,Waialae Country Club,0,324,434,0.0,false
-2018,476,World Golf Championships-Bridgestone Invitational,Firestone CC (South),0,130,284,0.0,false
-2019,32,RBC Canadian Open,Hamilton Golf & Country Club,0,220,454,0.0,false
-2024,478,Hero World Challenge,Albany GC,0,33,80,0.0,false
-2022,493,The RSM Classic,Sea Island Golf Club (Plantation),0,74,152,0.0,false
-2024,2,The American Express,La Quinta Country Club,0,109,155,0.0,false
-2025,20,Texas Children's Houston Open,Memorial Park Golf Course,0,264,443,0.0,false
-2022,13,Wyndham Championship,Sedgefield Country Club,0,258,476,0.0,false
-2022,521,THE CJ CUP in South Carolina,Congaree Golf Club,0,131,312,0.0,false
-2025,483,Puerto Rico Open,Grand Reserve Golf Club,0,210,419,0.0,false
-2018,6,Sony Open in Hawaii,Waialae CC,0,258,439,0.0,false
-2022,527,ZOZO CHAMPIONSHIP,Accordia Golf Narashino Country Club,0,181,312,0.0,false
-2020,5,AT&T Pebble Beach Pro-Am,Monterey Peninsula CC,0,79,155,0.0,false
-2022,6,Sony Open in Hawaii,Waialae Country Club,0,297,417,0.0,false
-2021,478,Hero World Challenge,Albany,0,40,80,0.0,false
-2024,553,Myrtle Beach Classic,The Dunes Golf and Beach Club,0,187,404,0.0,false
-2023,13,Wyndham Championship,Sedgefield Country Club,0,234,458,0.0,false
-2022,16,Sentry Tournament of Champions,Plantation Course at Kapalua,0,112,152,0.0,false
-2022,518,Barbasol Championship,Keene Trace Golf Club,0,216,470,0.0,false
-2017,478,Hero World Challenge,Albany,0,27,72,0.0,false
-2023,88,PGA TOUR Q-School presented by Korn Ferry,Dye's Valley Course,0,133,310,0.0,false
-2024,7,The Genesis Invitational,The Riviera Country Club,0,98,241,0.0,false
-2019,30,John Deere Classic,TPC Deere Run,0,235,459,0.0,false
-2018,518,Barbasol Championship,Keene Trace Golf Club,0,196,402,0.0,false
-2023,524,Rocket Mortgage Classic,Detroit Golf Club,0,216,479,0.0,false
-2024,541,Genesis Scottish Open,The Renaissance Club,0,281,457,0.0,false
-2021,457,World Wide Technology Championship at Mayakoba,El Camaleon Golf Club,0,243,403,0.0,false
-2021,521,THE CJ CUP @ SUMMIT,The Summit Club,0,201,311,0.0,false
-2025,12,RBC Heritage,Harbour Town Golf Links,0,154,288,0.0,false
-2018,16,Sentry Tournament of Champions,Plantation Course at Kapalua,0,32,136,0.0,false
-2024,4,Farmers Insurance Open,Torrey Pines Golf Course (North Course),0,79,156,0.0,false
-2025,480,Truist Championship,The Philadelphia Cricket Club (Wissahickon Course),0,159,283,0.0,false
-2022,5,AT&T Pebble Beach Pro-Am,Pebble Beach Golf Links,0,68,217,0.0,false
-2019,2,Desert Classic,Stadium Course,0,93,227,0.0,false
-2017,4,Farmers Insurance Open,Torrey Pines (North),0,34,155,0.0,false
-2017,2,CareerBuilder Challenge,La Quinta CC,0,72,156,0.0,false
-2021,47,Shriners Children's Open,TPC Summerlin,0,255,430,0.0,false
-2021,493,The RSM Classic,Sea Island GC (Seaside),0,171,297,0.0,false
-2024,2,The American Express,Pete Dye Stadium Course,0,125,223,0.0,false
-2025,3,WM Phoenix Open,TPC Scottsdale (Stadium Course),0,185,416,0.0,false
-2018,5,AT&T Pebble Beach Pro-Am,Monterey Peninsula CC,0,75,155,0.0,false
-2019,13,Wyndham Championship,Sedgefield Country Club,0,332,468,0.0,false
-2022,4,Farmers Insurance Open,Torrey Pines (North),0,93,156,0.0,false
-2022,2,The American Express,Nicklaus Tournament Course,0,68,156,0.0,false
-2017,493,The RSM Classic,Sea Island Resort (Seaside),0,165,301,0.0,false
-2021,28,BMW Championship,Caves Valley Golf Club,0,152,276,0.0,false
-2022,2,The American Express,Pete Dye Stadium Course,0,87,226,0.0,false
-2020,11,THE PLAYERS Championship,TPC Sawgrass,0,36,143,0.0,false
-2021,13,Wyndham Championship,Sedgefield Country Club,0,280,460,0.0,false
-2020,3,Waste Management Phoenix Open,TPC Scottsdale,0,162,397,0.0,false
-2022,5,AT&T Pebble Beach Pro-Am,Monterey Peninsula CC,0,73,154,0.0,false
-2021,519,Olympic Men's Golf Competition,Kasumigaseki Country Club,0,135,240,0.0,false
-2020,21,Charles Schwab Challenge,Colonial Country Club,0,223,430,0.0,false
-2018,13,Wyndham Championship,Sedgefield CC,0,287,455,0.0,false
-2023,549,The RSM Classic #2,Sea Island Golf Club (Seaside Course),0,241,310,0.0,false
-2019,4,Farmers Insurance Open,Torrey Pines GC (North),0,73,156,0.0,false
-2019,28,BMW Championship,Medinah Country Club (No. 3),0,122,276,0.0,false
-2024,27,FedEx St. Jude Championship,TPC Southwind,0,153,280,0.0,false
-2023,2,The American Express,Pete Dye Stadium Course,0,121,225,0.0,false
-2024,527,ZOZO CHAMPIONSHIP,ACCORDIA GOLF Narashino Country Club,0,201,309,0.0,false
-2024,493,The RSM Classic,Sea Island Golf Club (Seaside Course),0,134,291,0.0,false
-2025,19,THE CJ CUP Byron Nelson,TPC Craig Ranch,0,262,451,0.0,false
-2019,2,Desert Classic,Nicklaus Tournament Course,0,93,156,0.0,false
-2019,476,World Golf Championships-FedEx St. Jude Invitational,TPC Southwind,0,134,252,0.0,false
-2018,27,THE NORTHERN TRUST,Ridgewood CC,0,167,397,0.0,false
-2024,34,Travelers Championship,TPC River Highlands,0,205,280,0.0,false
-2018,473,World Golf Championships-Mexico Championship,Club de Golf Chapultepec,0,105,256,0.0,false
-2025,2,The American Express,Nicklaus Tournament Course,0,108,154,0.0,false
-2021,60,TOUR Championship,East Lake Golf Club,0,75,118,0.0,false
-2021,16,Sentry Tournament of Champions,Plantation Course at Kapalua,0,96,168,0.0,false
-2023,549,The RSM Classic #2,Sea Island Golf Club (Plantation Course),0,54,154,0.0,false
-2019,2,Desert Classic,La Quinta Country Club,0,101,156,0.0,false
-2024,5,AT&T Pebble Beach Pro-Am,Spyglass Hill Golf Course,0,27,80,0.0,false
-2024,540,Mexico Open at Vidanta,Vidanta Vallarta,0,167,390,0.0,false
-2024,518,ISCO Championship,Keene Trace Golf Club (Champion Trace),0,236,444,0.0,false
-2017,2,CareerBuilder Challenge,Stadium Course,0,50,233,0.0,false
-2023,60,TOUR Championship,East Lake Golf Club,0,67,120,0.0,false
-2023,5,AT&T Pebble Beach Pro-Am,Monterey Peninsula CC,0,64,148,0.0,false
+year,event_id,event_name,course_name,course_num,over_80,sub_70,total_rounds,scoring_average,pti,major_championship
+2021,33,PGA Championship,Ocean Course at Kiawah Island,697,39,30,472,74.37711864406779,1.3,true
+2018,26,U.S. Open,Shinnecock Hills GC,618,45,36,446,74.65022421524664,1.25,true
+2024,14,Masters Tournament,Augusta National Golf Club,14,20,21,298,73.90604026845638,0.952,true
+2025,26,U.S. Open,Oakmont Country Club,608,34,36,444,74.17792792792793,0.944,true
+2020,9,Arnold Palmer Invitational presented by Mastercard,Bay Hill Club & Lodge,9,21,26,378,74.1058201058201,0.808,false
+2022,14,The Masters,Augusta National Golf Club,14,16,21,283,73.95053003533569,0.762,true
+2024,100,The Open Championship,Royal Troon,709,30,48,470,73.85106382978724,0.625,true
+2020,26,U.S. Open,Winged Foot GC,891,19,32,409,74.0,0.594,true
+2020,23,the Memorial Tournament presented by Nationwide,Muirfield Village Golf Club,23,21,36,406,74.00738916256158,0.583,false
+2023,4,Farmers Insurance Open,Torrey Pines Golf Course (South Course),4,17,30,302,73.62251655629139,0.567,false
+2025,4,Farmers Insurance Open,Torrey Pines Golf Course (South Course),4,12,23,292,73.68493150684931,0.522,false
+2018,489,World Golf Championships-HSBC Champions,Sheshan International GC,766,18,38,308,73.25649350649351,0.474,false
+2017,33,PGA Championship,Quail Hollow-PGA Championship,241,26,56,459,73.46840958605665,0.464,true
+2022,9,Arnold Palmer Invitational presented by Mastercard,Bay Hill Club & Lodge,9,16,36,394,73.88578680203045,0.444,false
+2023,23,the Memorial Tournament presented by Workday,Muirfield Village Golf Club,23,14,37,368,73.52173913043478,0.378,false
+2016,26,U.S. Open,Oakmont CC,608,18,52,443,73.56207674943566,0.346,true
+2024,23,the Memorial Tournament presented by Workday,Muirfield Village Golf Club,23,9,26,250,73.504,0.346,false
+2021,536,The Masters #2,Augusta National Golf Club,14,10,30,284,73.08450704225352,0.333,true
+2014,26,U.S. Open,Pinehurst Resort (No. 2),528,16,49,446,73.0762331838565,0.327,true
+2017,521,THE CJ CUP @ NINE BRIDGES,Club at Nine Bridges,242,14,44,310,73.18709677419355,0.318,false
+2004,100,The Open Championship,Royal Troon GC,709,18,59,458,73.2117903930131,0.305,true
+2017,14,Masters Tournament,Augusta National GC,14,10,33,292,73.88698630136986,0.303,true
+2017,26,U.S. Open,Erin Hills,236,17,57,447,73.20357941834452,0.298,true
+2016,100,The Open Championship,Royal Troon GC,709,17,64,471,73.16135881104034,0.266,true
+2023,100,The Open Championship,Royal Liverpool,724,19,73,464,72.74568965517241,0.26,true
+2021,4,Farmers Insurance Open,Torrey Pines GC (South),4,8,31,312,73.33974358974359,0.258,false
+2017,11,THE PLAYERS Championship,TPC Sawgrass,11,12,48,440,73.2909090909091,0.25,false
+2022,23,the Memorial Tournament presented by Workday,Muirfield Village Golf Club,23,13,52,377,73.06366047745358,0.25,false
+2018,4,Farmers Insurance Open,Torrey Pines GC (South),4,10,41,310,72.81290322580645,0.244,false
+2017,4,Farmers Insurance Open,Torrey Pines GC (South),4,11,46,308,72.76623376623377,0.239,false
+2021,5,AT&T Pebble Beach Pro-Am,Spyglass Hill Golf Course,205,5,21,156,72.78846153846153,0.238,false
+2021,535,U.S. Open #2,Torrey Pines (South),744,11,48,453,73.45033112582782,0.229,false
+2025,23,the Memorial Tournament presented by Workday,Muirfield Village Golf Club,23,6,27,257,73.38132295719845,0.222,false
+2024,26,U.S. Open,Pinehurst Resort & Country Club (Course No. 2),528,13,59,460,72.8913043478261,0.22,true
+2021,11,THE PLAYERS Championship,TPC Sawgrass,11,16,76,449,72.42093541202672,0.211,false
+2025,4,Farmers Insurance Open,Torrey Pines Golf Course (North Course),104,8,39,147,72.57142857142857,0.205,false
+2017,9,Arnold Palmer Invitational presented by Mastercard,Bay Hill Club & Lodge,9,10,49,382,72.89005235602095,0.204,false
+2017,41,Valero Texas Open,TPC San Antonio - AT&T Oaks,770,13,65,462,72.85281385281385,0.2,false
+2018,14,Masters Tournament,Augusta National GC,14,9,47,280,72.92857142857143,0.191,true
+2018,100,The Open Championship,Carnoustie GC,658,14,74,469,72.55863539445629,0.189,true
+2023,33,PGA Championship,Oak Hill Country Club,514,14,78,464,72.72198275862068,0.179,true
+2025,9,Arnold Palmer Invitational presented by Mastercard,Arnold Palmer's Bay Hill Club & Lodge,9,8,45,246,72.57723577235772,0.178,false
+2022,11,THE PLAYERS Championship,TPC Sawgrass,11,13,74,423,72.6193853427896,0.176,false
+2021,9,Arnold Palmer Invitational presented by Mastercard,Bay Hill Club & Lodge,9,9,51,389,73.06426735218508,0.176,false
+2021,23,the Memorial Tournament presented by Nationwide,Muirfield Village Golf Club,23,9,51,372,72.97311827956989,0.176,false
+2018,41,Valero Texas Open,TPC San Antonio - AT&T Oaks,770,13,76,463,72.36717062634989,0.171,false
+2019,9,Arnold Palmer Invitational presented by Mastercard,Bay Hill Club & Lodge,9,10,64,384,72.37760416666667,0.156,false
+2023,9,Arnold Palmer Invitational presented by Mastercard,Arnold Palmer's Bay Hill Club & Lodge,9,8,52,383,72.66840731070496,0.154,false
+2021,41,Valero Texas Open,TPC San Antonio (Oaks Course),770,10,66,443,72.49209932279909,0.152,false
+2025,33,PGA Championship,Quail Hollow-PGA Championship,241,13,87,459,72.50544662309368,0.149,true
+2023,14,Masters Tournament,Augusta National Golf Club,14,5,34,277,72.96028880866426,0.147,true
+2023,11,THE PLAYERS Championship,TPC Sawgrass (THE PLAYERS Stadium Course),11,13,89,437,72.44622425629291,0.146,false
+2024,9,Arnold Palmer Invitational presented by Mastercard,Arnold Palmer's Bay Hill Club & Lodge,9,6,41,254,72.33070866141732,0.146,false
+2018,5,AT&T Pebble Beach Pro-Am,Pebble Beach GL,5,6,44,231,72.02164502164503,0.136,false
+2017,23,the Memorial Tournament presented by Nationwide,Muirfield Village GC,23,8,59,390,72.7974358974359,0.136,false
+2019,26,U.S. Open,Pebble Beach Golf Links,666,11,81,470,72.3531914893617,0.136,true
+2025,11,THE PLAYERS Championship,TPC Sawgrass (THE PLAYERS Stadium Course),11,11,83,431,72.39443155452436,0.133,false
+2018,10,The Honda Classic,PGA National (Champion),734,10,76,435,72.30344827586207,0.132,false
+2022,4,Farmers Insurance Open,Torrey Pines (South),4,7,54,314,72.35031847133757,0.13,false
+2017,480,Wells Fargo Championship,Eagle Point Golf Club,235,6,46,461,72.82429501084599,0.13,false
+2020,5,AT&T Pebble Beach Pro-Am,Pebble Beach Golf Links,5,5,41,223,72.51569506726457,0.122,false
+2024,88,PGA TOUR Q-School presented by Korn Ferry,Sawgrass Country Club,927,9,74,326,72.30674846625767,0.122,false
+2019,33,PGA Championship,Bethpage Black,880,10,88,475,72.54315789473684,0.114,true
+2018,480,Wells Fargo Championship,Quail Hollow Club,872,10,90,470,72.13191489361702,0.111,false
+2022,26,U.S. Open,The Country Club,654,9,81,440,72.50681818181818,0.111,true
+2019,5,AT&T Pebble Beach Pro-Am,Pebble Beach Golf Links,5,5,49,215,72.13023255813954,0.102,false
+2025,14,Masters Tournament,Augusta National Golf Club,14,4,40,296,72.80743243243244,0.1,true
+2014,33,PGA Championship,Valhalla GC,671,13,131,453,71.53863134657837,0.099,true
+2019,100,The Open Championship,Royal Portrush Golf Club,885,9,93,458,72.17467248908297,0.097,true
+2021,538,Palmetto Championship at Congaree,Congaree Golf Club,902,11,115,440,71.74318181818182,0.096,false
+2017,489,World Golf Championships-HSBC Champions,Sheshan International GC,766,6,64,310,72.28709677419354,0.094,false
+2021,480,Wells Fargo Championship,Quail Hollow Club,872,8,85,463,72.25701943844493,0.094,false
+2024,41,Valero Texas Open,TPC San Antonio (Oaks Course),770,6,69,473,72.51374207188161,0.087,false
+2020,528,Bermuda Championship,Port Royal Golf Course,765,12,138,398,71.15075376884423,0.087,false
+2025,41,Valero Texas Open,TPC San Antonio (Oaks Course),770,5,58,420,72.47619047619048,0.086,false
+2022,33,PGA Championship,Southern Hills Country Club,611,7,84,469,72.45842217484008,0.083,true
+2024,480,Wells Fargo Championship,Quail Hollow Club,872,4,49,272,71.73161764705883,0.082,false
+2020,533,Workday Charity Open,Muirfield Village Golf Club,893,9,111,442,71.8529411764706,0.081,false
+2021,534,Corales Puntacana Resort & Club Championship #2,Corales Golf Club,244,5,62,403,72.48387096774194,0.081,false
+2020,16,Sentry Tournament of Champions,Plantation Course at Kapalua,656,2,25,136,72.2279411764706,0.08,false
+2020,5,AT&T Pebble Beach Pro-Am,Spyglass Hill Golf Course,205,2,25,154,72.87662337662337,0.08,false
+2019,14,The Masters,Augusta National GC,14,5,63,304,71.86513157894737,0.079,true
+2019,23,the Memorial Tournament presented by Nationwide,Muirfield Village Golf Club,23,6,77,384,72.08072916666667,0.078,false
+2018,5,AT&T Pebble Beach Pro-Am,Spyglass Hill GC,205,3,39,154,71.77922077922078,0.077,false
+2017,100,The Open Championship,Royal Birkdale GC,541,8,115,466,71.8519313304721,0.07,true
+2018,9,Arnold Palmer Invitational presented by Mastercard,Bay Hill Club & Lodge,9,5,73,393,72.02290076335878,0.068,false
+2021,493,The RSM Classic,Sea Island GC (Plantation),889,4,60,155,70.67096774193548,0.067,false
+2018,23,the Memorial Tournament presented by Nationwide,Muirfield Village GC,23,8,119,394,71.39593908629442,0.067,false
+2017,20,Shell Houston Open,GC of Houston,729,6,91,437,71.9816933638444,0.066,false
+2017,5,AT&T Pebble Beach Pro-Am,Pebble Beach GL,5,3,48,220,71.9,0.062,false
+2025,2,The American Express,Pete Dye Stadium Course,704,4,64,227,71.34801762114537,0.062,false
+2019,20,Houston Open,Golf Club of Houston,729,6,97,437,72.01144164759725,0.062,false
+2022,483,Puerto Rico Open,Grand Reserve Golf Club,742,7,115,380,71.33947368421053,0.061,false
+2021,473,World Golf Championships-Workday Championship at The Concession,The Concession Golf Club,898,5,83,285,71.62105263157895,0.06,false
+2022,5,AT&T Pebble Beach Pro-Am,Spyglass Hill Golf Course,205,2,34,156,72.17948717948718,0.059,false
+2020,10,The Honda Classic,PGA National (Champion),734,5,85,425,71.90352941176471,0.059,false
+2024,11,THE PLAYERS Championship,TPC Sawgrass (THE PLAYERS Stadium Course),11,7,120,431,71.47099767981439,0.058,false
+2022,464,Fortinet Championship,Silverado Resort and Spa (North Course),552,6,106,456,71.51754385964912,0.057,false
+2022,541,Genesis Scottish Open,The Renaissance Club,977,6,108,463,71.7451403887689,0.056,false
+2020,4,Farmers Insurance Open,Torrey Pines GC (South),4,3,55,313,72.53354632587859,0.055,false
+2020,522,Corales Puntacana Resort & Club Championship,Corales Golf Club,244,7,128,434,71.11751152073732,0.055,false
+2023,475,Valspar Championship,Innisbrook Resort (Copperhead Course),665,4,76,432,71.93518518518519,0.053,false
+2017,471,Quicken Loans National,TPC Potomac at Avenel Farm,237,5,99,382,71.45811518324608,0.051,false
+2017,464,Safeway Open,Silverado Resort and Spa North,552,5,98,436,71.75688073394495,0.051,false
+2022,10,The Honda Classic,PGA National (Champion),734,6,120,434,71.3410138248848,0.05,false
+2022,100,The Open Championship,St. Andrews Links (Old Course),668,7,139,478,71.61924686192468,0.05,true
+2019,493,The RSM Classic,Sea Island GC (Plantation),889,3,61,155,70.43870967741935,0.049,false
+2023,41,Valero Texas Open,TPC San Antonio (Oaks Course),770,4,81,425,72.09176470588235,0.049,false
+2023,4,Farmers Insurance Open,Torrey Pines Golf Course (North Course),104,2,42,156,71.4551282051282,0.048,false
+2018,11,THE PLAYERS Championship,TPC Sawgrass,11,6,126,438,71.40867579908675,0.048,false
+2020,20,Vivint Houston Open,Memorial Park Golf Course,897,7,150,397,71.02518891687657,0.047,false
+2022,522,Corales Puntacana Championship,Corales Golf Club,244,5,107,368,71.29891304347827,0.047,false
+2023,32,RBC Canadian Open,Oakdale Golf & Country Club,908,5,109,460,71.76521739130435,0.046,false
+2020,14,The Masters,Augusta National Golf Club,14,3,65,302,71.75165562913908,0.046,true
+2019,489,World Golf Championships-HSBC Champions,Sheshan International GC,766,4,93,310,71.4258064516129,0.043,false
+2021,528,Butterfield Bermuda Championship,Port Royal Golf Course,765,7,161,400,70.765,0.043,false
+2020,33,PGA Championship,TPC Harding Park,895,7,161,469,70.7547974413646,0.043,true
+2019,4,Farmers Insurance Open,Torrey Pines GC (South),4,3,69,310,71.72903225806452,0.043,false
+2024,475,Valspar Championship,Innisbrook Resort (Copperhead Course),665,5,117,453,71.4083885209713,0.043,false
+2025,7,The Genesis Invitational,Torrey Pines Golf Course (South Course),939,2,48,252,72.21428571428571,0.042,false
+2018,521,THE CJ CUP @ NINE BRIDGES,Nine Bridges,242,4,99,312,70.94551282051282,0.04,false
+2024,88,PGA TOUR Q-School presented by Korn Ferry,Dye's Valley Course,922,4,102,327,71.09174311926606,0.039,false
+2017,2,CareerBuilder Challenge,Nicklaus Tournament Course,233,2,52,156,70.74358974358974,0.038,false
+2022,480,Wells Fargo Championship,TPC Potomac at Avenel Farm,237,5,133,438,71.4771689497717,0.038,false
+2019,480,Wells Fargo Championship,Quail Hollow Club,872,4,106,458,71.76200873362446,0.038,false
+2022,472,Barracuda Championship,Tahoe Mt. Club (Old Greenwood),890,5,132,449,71.12026726057907,0.038,false
+2019,475,Valspar Championship,Innisbrook Resort (Copperhead),665,3,82,427,71.98126463700234,0.037,false
+2017,54,Sanderson Farms Championship,CC of Jackson,746,3,82,408,71.82843137254902,0.037,false
+2021,2,The American Express,Nicklaus Tournament Course,233,2,54,156,70.94871794871794,0.037,false
+2017,5,AT&T Pebble Beach Pro-Am,Spyglass Hill GC,205,1,27,153,72.20261437908496,0.037,false
+2024,33,PGA Championship,Valhalla Golf Club,671,7,193,465,70.5741935483871,0.036,true
+2024,464,Procore Championship,Silverado Resort (North Course),926,4,113,416,71.23798076923077,0.035,false
+2023,88,PGA TOUR Q-School presented by Korn Ferry,Sawgrass Country Club,927,3,92,308,71.4448051948052,0.033,false
+2023,5,AT&T Pebble Beach Pro-Am,Pebble Beach Golf Links,5,2,60,226,71.53097345132744,0.033,false
+2019,522,Corales Puntacana Resort & Club Championship,Corales Golf Club,244,4,122,408,71.07352941176471,0.033,false
+2020,28,BMW Championship,Olympia Fields CC (North),896,2,63,276,71.81521739130434,0.032,false
+2020,521,THE CJ CUP @ SHADOW CREEK,Shadow Creek Golf Course,878,3,95,311,71.32797427652733,0.032,false
+2018,493,The RSM Classic,Sea Island GC (Plantation),231,2,64,155,70.44516129032257,0.031,false
+2022,32,RBC Canadian Open,St. George's G&CC,772,5,161,447,70.77852348993288,0.031,false
+2019,473,World Golf Championships-Mexico Championship,Club de Golf Chapultepec,240,3,100,287,70.86062717770035,0.03,false
+2018,2,CareerBuilder Challenge,Stadium Course,704,2,66,232,71.18103448275862,0.03,false
+2025,475,Valspar Championship,Innisbrook Resort (Copperhead Course),665,3,101,460,71.86521739130434,0.03,false
+2017,34,Travelers Championship,TPC River Highlands,503,6,204,468,70.19871794871794,0.029,false
+2022,525,3M Open,TPC Twin Cities,883,4,136,458,71.45196506550218,0.029,false
+2020,473,World Golf Championships-Mexico Championship,Club de Golf Chapultepec,240,3,104,288,70.50347222222223,0.029,false
+2017,475,Valspar Championship,Innisbrook Resort (Copperhead),665,3,103,424,71.51179245283019,0.029,false
+2021,2,The American Express,Stadium Course,704,3,103,298,70.80872483221476,0.029,false
+2018,4,Farmers Insurance Open,Torrey Pines (North),104,1,36,156,71.41025641025641,0.028,false
+2018,54,Sanderson Farms Championship,CC of Jackson,746,3,112,407,71.24570024570025,0.027,false
+2023,550,Hero World Challenge #2,Albany GC,232,1,39,80,69.9375,0.026,false
+2019,41,Valero Texas Open,TPC San Antonio (Oaks Course),770,3,115,434,71.24193548387096,0.026,false
+2019,5,AT&T Pebble Beach Pro-Am,Spyglass Hill Golf Course,205,1,39,155,71.72258064516129,0.026,false
+2020,54,Sanderson Farms Championship,Country Club of Jackson,746,3,120,420,71.08095238095238,0.025,false
+2023,480,Wells Fargo Championship,Quail Hollow Club,872,3,122,444,71.22972972972973,0.025,false
+2021,12,RBC Heritage,Harbour Town Golf Links,12,4,160,397,70.33249370277078,0.025,false
+2021,483,Puerto Rico Open,Grand Reserve Country Club,742,3,118,414,71.23429951690821,0.025,false
+2024,457,World Wide Technology Championship,El Cardonal at Diamante,919,4,168,375,70.256,0.024,false
+2020,6,Sony Open in Hawaii,Waialae Country Club,6,4,170,419,70.51312649164677,0.024,false
+2024,4,Farmers Insurance Open,Torrey Pines Golf Course (South Course),4,1,42,313,72.40255591054313,0.024,false
+2018,475,Valspar Championship,Innisbrook Resort (Copperhead),665,2,83,443,71.96839729119638,0.024,false
+2019,16,Sentry Tournament of Champions,Plantation Course at Kapalua,656,1,44,132,70.92424242424242,0.023,false
+2018,2,CareerBuilder Challenge,Nicklaus Tournament Course,233,2,88,155,69.44516129032257,0.023,false
+2017,5,AT&T Pebble Beach Pro-Am,Monterey Peninsula CC,769,1,43,154,71.25974025974025,0.023,false
+2019,54,Sanderson Farms Championship,Country Club of Jackson,746,3,131,444,70.8963963963964,0.023,false
+2023,518,Barbasol Championship,Keene Trace Golf Club (Champions Course),884,4,186,444,70.42567567567568,0.022,false
+2018,7,Genesis Open,Riviera CC,500,2,93,436,71.7591743119266,0.022,false
+2021,10,The Honda Classic,PGA National (Champion),734,3,136,421,71.1021377672209,0.022,false
+2019,483,Puerto Rico Open,Coco Beach Golf & CC,742,2,89,411,71.96593673965937,0.022,false
+2024,528,Butterfield Bermuda Championship,Port Royal Golf Course,765,4,185,385,69.97402597402598,0.022,false
+2023,10,The Honda Classic,PGA National Resort (The Champion),734,4,183,446,70.35874439461884,0.022,false
+2018,2,CareerBuilder Challenge,La Quinta CC,202,2,97,154,68.83116883116882,0.021,false
+2017,7,Genesis Open,Riviera CC,500,3,143,424,71.01179245283019,0.021,false
+2024,493,The RSM Classic,Sea Island Golf Club (Plantation Course),889,1,48,156,70.80128205128206,0.021,false
+2018,12,RBC Heritage,Harbour Town GL,12,3,140,417,70.84652278177458,0.021,false
+2019,521,THE CJ CUP @ NINE BRIDGES,Nine Bridges,242,2,102,308,70.84415584415585,0.02,false
+2023,472,Barracuda Championship,Tahoe Mountain Club (Old Greenwood),890,4,202,444,70.17342342342343,0.02,false
+2020,493,The RSM Classic,Sea Island GC (Plantation),889,1,50,154,71.34415584415585,0.02,false
+2022,12,RBC Heritage,Harbour Town Golf Links,12,3,151,403,70.73945409429281,0.02,false
+2023,522,Corales Puntacana Championship,Puntacana Resort & Club (Corales Golf Course),244,2,104,383,71.32375979112271,0.019,false
+2020,525,3M Open,TPC Twin Cities,883,4,209,443,69.94808126410835,0.019,false
+2019,5,AT&T Pebble Beach Pro-Am,Monterey Peninsula CC,769,1,52,155,70.65161290322581,0.019,false
+2017,19,AT&T Byron Nelson,TPC Four Seasons Resort,19,3,162,460,70.81739130434782,0.019,false
+2020,7,The Genesis Invitational,Riviera Country Club,500,2,104,376,71.25531914893617,0.019,false
+2023,26,U.S. Open,The Los Angeles Country Club (North Course),43,2,103,442,71.77601809954751,0.019,true
+2018,522,Corales Puntacana Resort & Club Championship,Corales Golf Club,244,2,106,421,71.49881235154395,0.019,false
+2023,483,Puerto Rico Open,Grand Reserve Golf Club,742,2,104,378,71.25132275132275,0.019,false
+2020,472,Barracuda Championship,Old Greenwood Golf Course at Tahoe Mountain Club,890,3,154,392,70.67857142857143,0.019,false
+2017,21,DEAN & DELUCA Invitational,Colonial CC,21,2,113,383,71.15404699738903,0.018,false
+2022,30,John Deere Classic,TPC Deere Run,669,4,219,446,69.88340807174887,0.018,false
+2019,11,THE PLAYERS Championship,TPC Sawgrass,11,2,113,437,71.51258581235697,0.018,false
+2022,528,Butterfield Bermuda Championship,Port Royal Golf Course,765,4,222,397,69.15869017632242,0.018,false
+2020,4,Farmers Insurance Open,Torrey Pines GC (North),104,1,55,155,70.5741935483871,0.018,false
+2025,522,Corales Puntacana Championship,Puntacana Resort (Corales Golf Course),244,2,110,403,71.17617866004963,0.018,false
+2021,100,The Open Championship,Royal St. George's GC,778,3,169,465,70.52688172043011,0.018,true
+2023,544,Sanderson Farms Championship #2,The Country Club of Jackson,746,3,178,444,70.24549549549549,0.017,false
+2018,25,FedEx St. Jude Classic,TPC Southwind,513,3,173,454,70.51982378854626,0.017,false
+2023,546,ZOZO CHAMPIONSHIP #2,Accordia Golf Narashino Country Club,875,2,116,309,70.50809061488673,0.017,false
+2023,7,The Genesis Invitational,The Riviera Country Club,500,2,115,393,71.07124681933843,0.017,false
+2018,34,Travelers Championship,TPC River Highlands,503,4,238,460,69.59565217391304,0.017,false
+2024,525,3M Open,TPC Twin Cities,883,3,178,460,70.4,0.017,false
+2017,505,Dell Technologies Championship,TPC Boston,700,2,122,347,70.78097982708934,0.016,false
+2017,27,THE NORTHERN TRUST,Glen Oaks Club,238,2,122,379,70.99472295514512,0.016,false
+2019,525,3M Open,TPC Twin Cities,883,4,255,466,69.45493562231759,0.016,false
+2019,7,Genesis Open,Riviera Country Club,500,2,129,438,71.1986301369863,0.016,false
+2019,12,RBC Heritage,Harbour Town Golf Links,12,2,125,400,71.17,0.016,false
+2022,21,Charles Schwab Challenge,Colonial Country Club,21,2,126,377,70.72148541114058,0.016,false
+2022,54,Sanderson Farms Championship,The Country Club of Jackson,746,2,122,444,71.15315315315316,0.016,false
+2018,21,Fort Worth Invitational,Colonial CC,21,3,191,395,69.83037974683545,0.016,false
+2019,21,Charles Schwab Challenge,Colonial Country Club,21,2,128,385,70.85974025974026,0.016,false
+2021,464,Fortinet Championship,Silverado Resort & Spa (North),552,2,124,452,71.04867256637168,0.016,false
+2023,543,Fortinet Championship #2,Silverado Resort (North Course),926,2,132,447,71.1565995525727,0.015,false
+2019,10,The Honda Classic,PGA National (Champion),734,2,136,438,71.01598173515981,0.015,false
+2024,21,Charles Schwab Challenge,Colonial Country Club,21,2,135,403,70.82382133995037,0.015,false
+2021,20,Hewlett Packard Enterprise Houston Open,Memorial Park Golf Course,897,2,132,394,70.7994923857868,0.015,false
+2017,12,RBC Heritage,Harbour Town GL,12,2,141,411,70.67639902676399,0.014,false
+2024,522,Corales Puntacana Championship,Puntacana Resort & Club (Corales Golf Course),244,2,148,404,70.4628712871287,0.014,false
+2023,545,Shriners Children's Open #2,TPC Summerlin,538,3,217,396,69.29545454545455,0.014,false
+2023,525,3M Open,TPC Twin Cities,883,3,223,455,69.71428571428571,0.013,false
+2018,505,Dell Technologies Championship,TPC Boston,700,2,155,346,70.14450867052022,0.013,false
+2022,457,World Wide Technology Championship at Mayakoba,El Camaleón Golf Course at Mayakoba,733,3,229,398,69.14824120603015,0.013,false
+2023,2,The American Express,La Quinta Country Club,202,1,83,156,69.58333333333333,0.012,false
+2017,10,The Honda Classic,PGA National (Champion),734,2,161,421,70.55581947743468,0.012,false
+2017,3,Waste Management Phoenix Open,TPC Scottsdale,510,2,164,412,70.19174757281553,0.012,false
+2018,3,Waste Management Phoenix Open,TPC Scottsdale,510,2,167,404,70.32425742574257,0.012,false
+2019,27,THE NORTHERN TRUST,Liberty National Golf Club,886,2,168,407,70.24570024570025,0.012,false
+2021,21,Charles Schwab Challenge,Colonial Country Club,21,2,161,390,70.21282051282051,0.012,false
+2017,25,FedEx St. Jude Classic,TPC Southwind,513,2,175,467,70.62955032119915,0.011,false
+2020,2,The American Express,Stadium Course,704,1,89,228,70.3640350877193,0.011,false
+2022,41,Valero Texas Open,TPC San Antonio (Oaks Course),770,1,88,426,71.76291079812206,0.011,false
+2019,524,Rocket Mortgage Classic,Detroit Golf Club,876,2,186,452,70.11283185840708,0.011,false
+2024,10,Cognizant Classic in The Palm Beaches,PGA National Resort (The Champion),928,2,182,423,70.096926713948,0.011,false
+2021,5,AT&T Pebble Beach Pro-Am,Pebble Beach Golf Links,5,1,89,289,71.19723183391004,0.011,false
+2020,2,The American Express,Nicklaus Tournament Course,233,1,93,154,69.23376623376623,0.011,false
+2021,54,Sanderson Farms Championship,Country Club of Jackson,746,2,187,424,69.87028301886792,0.011,false
+2025,32,RBC Canadian Open,TPC Toronto at Osprey Valley (North Course),935,3,280,444,68.74549549549549,0.011,false
+2022,540,Mexico Open at Vidanta,Vidanta Vallarta,978,2,180,435,70.31724137931035,0.011,false
+2021,7,The Genesis Invitational,The Riviera Country Club,500,1,102,373,71.27077747989276,0.01,false
+2018,32,RBC Canadian Open,Glen Abbey GC,32,2,196,463,70.44060475161987,0.01,false
+2017,473,World Golf Championships-Mexico Championship,Club de Golf Chapultepec,240,1,99,304,71.04934210526316,0.01,false
+2024,30,John Deere Classic,TPC Deere Run,669,3,287,465,68.78064516129032,0.01,false
+2024,20,Texas Children's Houston Open,Memorial Park Golf Course,897,2,193,453,70.24724061810154,0.01,false
+2025,5,AT&T Pebble Beach Pro-Am,Pebble Beach Golf Links,5,1,103,236,70.10169491525424,0.01,false
+2023,28,BMW Championship,Olympia Fields Country Club (North Course),896,1,104,197,69.36548223350253,0.01,false
+2019,464,Safeway Open,Silverado Resort & Spa (North),552,1,109,422,71.24407582938389,0.009,false
+2018,47,Shriners Hospitals for Children Open,TPC Summerlin,538,2,220,412,69.36893203883496,0.009,false
+2021,34,Travelers Championship,TPC River Highlands,503,2,233,470,69.67234042553191,0.009,false
+2018,33,PGA Championship,Bellerive CC,534,2,214,471,70.12526539278132,0.009,true
+2017,47,Shriners Hospitals for Children Open,TPC Summerlin,538,1,108,441,71.54195011337869,0.009,false
+2024,2,The American Express,Nicklaus Tournament Course,233,1,115,155,68.08387096774193,0.009,false
+2024,519,Olympic Men's Golf Competition,Le Golf National,250,1,112,238,69.90336134453781,0.009,false
+2017,490,The Greenbrier Classic,The Old White TPC,771,2,213,454,69.86123348017621,0.009,false
+2017,494,CIMB Classic,TPC Kuala Lumpur,800,1,111,312,70.66346153846153,0.009,false
+2023,3,WM Phoenix Open,TPC Scottsdale (Stadium Course),510,1,119,398,70.97989949748744,0.008,false
+2018,19,AT&T Byron Nelson,Trinity Forest Golf Club,243,2,248,460,69.41521739130435,0.008,false
+2023,21,Charles Schwab Challenge,Colonial Country Club,21,1,132,384,70.734375,0.008,false
+2021,475,Valspar Championship,Innisbrook Resort (Copperhead),665,1,131,450,70.96666666666667,0.008,false
+2017,476,World Golf Championships-Bridgestone Invitational,Firestone CC (South),36,1,126,304,70.4967105263158,0.008,false
+2018,464,Safeway Open,Silverado Resort and Spa North,552,1,133,448,71.10267857142857,0.008,false
+2025,16,The Sentry,Plantation Course at Kapalua,656,1,146,235,68.74468085106383,0.007,false
+2024,12,RBC Heritage,Harbour Town Golf Links,12,1,151,276,69.35144927536231,0.007,false
+2023,548,Butterfield Bermuda Championship #2,Port Royal Golf Course,765,2,275,426,68.74647887323944,0.007,false
+2022,20,Cadence Bank Houston Open,Memorial Park Golf Course,897,1,148,395,70.56455696202532,0.007,false
+2019,47,Shriners Hospitals for Children Open,TPC Summerlin,538,2,277,440,68.85909090909091,0.007,false
+2022,7,The Genesis Invitational,The Riviera Country Club,500,1,145,389,70.48071979434447,0.007,false
+2020,483,Puerto Rico Open,Grand Reserve Country Club,742,1,137,377,70.64190981432361,0.007,false
+2019,472,Barracuda Championship,Montreux Golf & Country Club,660,1,142,402,70.97512437810946,0.007,false
+2024,483,Puerto Rico Open,Grand Reserve Golf Club,742,1,167,408,70.06862745098039,0.006,false
+2022,3,WM Phoenix Open,TPC Scottsdale,510,1,169,398,70.28894472361809,0.006,false
+2023,12,RBC Heritage,Harbour Town Golf Links,12,1,171,428,70.22196261682242,0.006,false
+2018,20,Houston Open,GC of Houston,729,1,169,452,70.59955752212389,0.006,false
+2020,527,ZOZO CHAMPIONSHIP @ SHERWOOD,Sherwood Country Club,2000,1,173,308,69.25974025974025,0.006,false
+2017,483,Puerto Rico Open,Coco Beach Golf & CC,742,1,165,415,70.23132530120482,0.006,false
+2019,527,ZOZO CHAMPIONSHIP,Accordia Golf Narashino CC,875,1,165,306,69.51633986928104,0.006,false
+2020,457,Mayakoba Golf Classic presented by UNIFIN,El Camaleon Golf Club,733,1,175,404,70.06683168316832,0.006,false
+2022,524,Rocket Mortgage Classic,Detroit Golf Club,876,1,177,458,70.39737991266375,0.006,false
+2018,471,Quicken Loans National,TPC Potomac at Avenel Farm,237,1,166,388,69.89432989690722,0.006,false
+2022,475,Valspar Championship,Innisbrook Resort (Copperhead),665,1,180,432,70.23148148148148,0.006,false
+2021,518,Barbasol Championship,Keene Trace Golf Club,884,1,196,410,69.88536585365854,0.005,false
+2017,30,John Deere Classic,TPC Deere Run,669,1,222,462,69.75324675324676,0.005,false
+2021,525,3M Open,TPC Twin Cities,883,1,185,452,70.4358407079646,0.005,false
+2020,27,THE NORTHERN TRUST,TPC Boston,700,1,205,383,69.39425587467363,0.005,false
+2023,540,Mexico Open at Vidanta,Vidanta Vallarta,978,1,195,434,70.09677419354838,0.005,false
+2020,464,Safeway Open,Silverado Resort and Spa North,552,1,189,458,70.2117903930131,0.005,false
+2019,528,Bermuda Championship,Port Royal Golf Course,765,1,182,372,69.83333333333333,0.005,false
+2024,47,Shriners Children's Open,TPC Summerlin,538,1,203,394,69.51776649746193,0.005,false
+2017,32,RBC Canadian Open,Glen Abbey GC,32,1,195,463,70.37149028077754,0.005,false
+2018,493,The RSM Classic,Sea Island GC (Seaside),776,1,186,311,68.83922829581994,0.005,false
+2024,6,Sony Open in Hawaii,Waialae Country Club,6,1,271,451,68.82039911308205,0.004,false
+2023,30,John Deere Classic,TPC Deere Run,669,1,231,449,69.47216035634744,0.004,false
+2025,540,Mexico Open at VidantaWorld,Vidanta Vallarta,978,1,223,418,69.50956937799043,0.004,false
+2021,19,AT&T Byron Nelson,TPC Craig Ranch,894,1,223,455,69.57362637362637,0.004,false
+2019,34,Travelers Championship,TPC River Highlands,503,1,233,464,69.72413793103448,0.004,false
+2023,6,Sony Open in Hawaii,Waialae Country Club,6,1,279,440,68.86590909090908,0.004,false
+2020,13,Wyndham Championship,Sedgefield Country Club,752,1,285,462,68.77922077922078,0.004,false
+2020,12,RBC Heritage,Harbour Town Golf Links,12,1,264,451,69.13747228381375,0.004,false
+2019,6,Sony Open in Hawaii,Waialae Country Club,6,1,271,440,68.92045454545455,0.004,false
+2024,472,Barracuda Championship,Tahoe Mountain Club (Old Greenwood),931,1,229,440,69.48181818181818,0.004,false
+2024,13,Wyndham Championship,Sedgefield Country Club,752,1,265,442,68.94796380090497,0.004,false
+2024,554,Black Desert Championship,Black Desert Resort,930,1,243,396,69.06060606060606,0.004,false
+2018,30,John Deere Classic,TPC Deere Run,669,1,240,453,69.37527593818984,0.004,false
+2023,541,Genesis Scottish Open,The Renaissance Club,977,1,225,462,69.67748917748918,0.004,false
+2019,19,AT&T Byron Nelson,Trinity Forest Golf Club,243,1,236,462,69.65151515151516,0.004,false
+2018,457,Mayakoba Golf Classic,El Camaleon GC,733,1,228,405,69.24691358024691,0.004,false
+2023,34,Travelers Championship,TPC River Highlands,503,1,295,442,68.40045248868778,0.003,false
+2023,19,AT&T Byron Nelson,TPC Craig Ranch,921,1,288,480,68.9125,0.003,false
+2024,19,THE CJ CUP Byron Nelson,TPC Craig Ranch,921,1,292,441,68.49659863945578,0.003,false
+2020,47,Shriners Hospitals for Children Open,TPC Summerlin,538,1,287,420,68.34285714285714,0.003,false
+2025,6,Sony Open in Hawaii,Waialae Country Club,6,1,289,436,68.7270642201835,0.003,false
+2024,7,The Genesis Invitational,The Riviera Country Club,500,0,98,241,70.11618257261411,0.0,false
+2018,518,Barbasol Championship,Keene Trace Golf Club,823,0,196,402,69.90547263681592,0.0,false
+2025,21,Charles Schwab Challenge,Colonial Country Club,21,0,170,424,70.26179245283019,0.0,false
+2022,493,The RSM Classic,Sea Island Golf Club (Plantation),889,0,74,152,69.76315789473684,0.0,false
+2017,2,CareerBuilder Challenge,Stadium Course,704,0,50,233,71.58798283261802,0.0,false
+2025,12,RBC Heritage,Harbour Town Golf Links,12,0,154,288,69.36805555555556,0.0,false
+2019,60,TOUR Championship,East Lake Golf Club,688,0,43,120,70.03333333333333,0.0,false
+2022,5,AT&T Pebble Beach Pro-Am,Pebble Beach Golf Links,5,0,68,217,70.7557603686636,0.0,false
+2023,549,The RSM Classic #2,Sea Island Golf Club (Plantation Course),889,0,54,154,70.41558441558442,0.0,false
+2022,19,AT&T Byron Nelson,TPC Craig Ranch,894,0,255,479,69.21711899791232,0.0,false
+2018,494,CIMB Classic,TPC Kuala Lumpur,800,0,161,312,69.40064102564102,0.0,false
+2022,478,Hero World Challenge,"Albany, Bahamas",232,0,25,80,71.0625,0.0,false
+2024,27,FedEx St. Jude Championship,TPC Southwind,513,0,153,280,68.94642857142857,0.0,false
+2024,28,BMW Championship,Castle Pines Golf Club,406,0,46,195,71.37435897435897,0.0,false
+2024,34,Travelers Championship,TPC River Highlands,503,0,205,280,67.62857142857143,0.0,false
+2022,6,Sony Open in Hawaii,Waialae Country Club,6,0,297,417,67.99760191846522,0.0,false
+2020,2,The American Express,La Quinta Country Club,202,0,82,153,69.17647058823529,0.0,false
+2019,3,Waste Management Phoenix Open,TPC Scottsdale,510,0,160,409,70.51100244498778,0.0,false
+2018,27,THE NORTHERN TRUST,Ridgewood CC,873,0,167,397,70.42569269521411,0.0,false
+2022,60,TOUR Championship,East Lake Golf Club,688,0,84,116,67.90517241379311,0.0,false
+2022,521,THE CJ CUP in South Carolina,Congaree Golf Club,902,0,131,312,70.46474358974359,0.0,false
+2020,21,Charles Schwab Challenge,Colonial Country Club,21,0,223,430,69.56744186046511,0.0,false
+2022,4,Farmers Insurance Open,Torrey Pines (North),104,0,93,156,68.76923076923077,0.0,false
+2021,527,ZOZO CHAMPIONSHIP,Accordia Golf Narashino CC,875,0,116,310,70.48387096774194,0.0,false
+2024,3,WM Phoenix Open,TPC Scottsdale (Stadium Course),510,0,197,409,69.89486552567237,0.0,false
+2020,60,TOUR Championship,East Lake Golf Club,688,0,65,120,68.91666666666667,0.0,false
+2020,34,Travelers Championship,TPC River Highlands,503,0,297,446,68.62556053811659,0.0,false
+2019,4,Farmers Insurance Open,Torrey Pines GC (North),104,0,73,156,69.83974358974359,0.0,false
+2022,2,The American Express,La Quinta Country Club,202,0,66,156,69.91666666666667,0.0,false
+2017,16,SBS Tournament of Champions,Plantation Course at Kapalua,656,0,44,128,70.375,0.0,false
+2021,6,Sony Open in Hawaii,Waialae Country Club,6,0,324,434,67.97465437788019,0.0,false
+2023,5,AT&T Pebble Beach Pro-Am,Monterey Peninsula CC,769,0,64,148,70.04054054054055,0.0,false
+2017,2,CareerBuilder Challenge,La Quinta CC,202,0,72,156,69.63461538461539,0.0,false
+2024,5,AT&T Pebble Beach Pro-Am,Spyglass Hill Golf Course,205,0,27,80,70.575,0.0,false
+2023,547,World Wide Technology Championship #2,El Cardonal at Diamante,919,0,238,410,68.99268292682927,0.0,false
+2024,32,RBC Canadian Open,Hamilton Golf & Country Club,874,0,172,448,70.28794642857143,0.0,false
+2018,490,A Military Tribute at The Greenbrier,The Old White TPC,771,0,253,464,69.3103448275862,0.0,false
+2025,480,Truist Championship,The Philadelphia Cricket Club (Wissahickon Course),379,0,159,283,69.00353356890459,0.0,false
+2018,6,Sony Open in Hawaii,Waialae CC,6,0,258,439,68.89521640091117,0.0,false
+2025,5,AT&T Pebble Beach Pro-Am,Spyglass Hill Golf Course,205,0,35,80,69.9875,0.0,false
+2018,16,Sentry Tournament of Champions,Plantation Course at Kapalua,656,0,32,136,71.22058823529412,0.0,false
+2022,527,ZOZO CHAMPIONSHIP,Accordia Golf Narashino Country Club,875,0,181,312,69.1474358974359,0.0,false
+2022,2,The American Express,Nicklaus Tournament Course,233,0,68,156,70.25641025641026,0.0,false
+2017,457,OHL Classic at Mayakoba,El Camaleon GC,733,0,175,415,70.32289156626506,0.0,false
+2019,490,A Military Tribute at The Greenbrier,The Old White TPC,771,0,262,445,69.06067415730337,0.0,false
+2020,5,AT&T Pebble Beach Pro-Am,Monterey Peninsula CC,769,0,79,155,69.69032258064516,0.0,false
+2022,13,Wyndham Championship,Sedgefield Country Club,752,0,258,476,69.2626050420168,0.0,false
+2020,493,The RSM Classic,Sea Island GC (Seaside),776,0,179,285,68.69122807017544,0.0,false
+2024,2,The American Express,La Quinta Country Club,202,0,109,155,67.90322580645162,0.0,false
+2024,540,Mexico Open at Vidanta,Vidanta Vallarta,978,0,167,390,70.07435897435897,0.0,false
+2018,13,Wyndham Championship,Sedgefield CC,752,0,287,455,68.6901098901099,0.0,false
+2022,27,FedEx St. Jude Championship,TPC Southwind,513,0,215,375,69.15733333333333,0.0,false
+2021,521,THE CJ CUP @ SUMMIT,The Summit Club,899,0,201,311,68.43408360128618,0.0,false
+2019,2,Desert Classic,La Quinta Country Club,202,0,101,156,68.71794871794872,0.0,false
+2022,2,The American Express,Pete Dye Stadium Course,704,0,87,226,70.570796460177,0.0,false
+2022,16,Sentry Tournament of Champions,Plantation Course at Kapalua,656,0,112,152,68.21710526315789,0.0,false
+2021,519,Olympic Men's Golf Competition,Kasumigaseki Country Club,887,0,135,240,69.06666666666666,0.0,false
+2020,524,Rocket Mortgage Classic,Detroit Golf Club,876,0,196,450,70.05111111111111,0.0,false
+2022,5,AT&T Pebble Beach Pro-Am,Monterey Peninsula CC,769,0,73,154,70.1038961038961,0.0,false
+2018,478,Hero World Challenge,Albany,232,0,35,72,69.47222222222223,0.0,false
+2024,5,AT&T Pebble Beach Pro-Am,Pebble Beach Golf Links,5,0,84,160,69.63125,0.0,false
+2025,3,WM Phoenix Open,TPC Scottsdale (Stadium Course),510,0,185,416,69.95913461538461,0.0,false
+2021,457,World Wide Technology Championship at Mayakoba,El Camaleon Golf Club,733,0,243,403,69.09677419354838,0.0,false
+2025,483,Puerto Rico Open,Grand Reserve Golf Club,940,0,210,419,69.61575178997613,0.0,false
+2018,28,BMW Championship,Aronimink GC,773,0,205,275,67.88,0.0,false
+2019,518,Barbasol Championship,Keene Trace Golf Club,884,0,208,414,69.58937198067633,0.0,false
+2018,476,World Golf Championships-Bridgestone Invitational,Firestone CC (South),36,0,130,284,69.90492957746478,0.0,false
+2017,4,Farmers Insurance Open,Torrey Pines (North),104,0,34,155,71.27741935483871,0.0,false
+2021,524,Rocket Mortgage Classic,Detroit Golf Club,876,0,167,465,70.5505376344086,0.0,false
+2021,47,Shriners Children's Open,TPC Summerlin,538,0,255,430,68.92558139534884,0.0,false
+2022,493,The RSM Classic,Sea Island Golf Club (Seaside),776,0,177,293,68.9863481228669,0.0,false
+2020,476,World Golf Championships-FedEx St. Jude Invitational,TPC Southwind,513,0,160,312,69.55448717948718,0.0,false
+2024,478,Hero World Challenge,Albany GC,232,0,33,80,69.9375,0.0,false
+2017,478,Hero World Challenge,Albany,232,0,27,72,70.33333333333333,0.0,false
+2021,476,World Golf Championships-FedEx St. Jude Invitational,TPC Southwind,513,0,156,263,69.04562737642586,0.0,false
+2024,4,Farmers Insurance Open,Torrey Pines Golf Course (North Course),104,0,79,156,69.5,0.0,false
+2021,28,BMW Championship,Caves Valley Golf Club,882,0,152,276,69.20289855072464,0.0,false
+2024,493,The RSM Classic,Sea Island Golf Club (Seaside Course),776,0,134,291,70.01718213058419,0.0,false
+2019,478,Hero World Challenge,Albany,232,0,35,72,69.79166666666667,0.0,false
+2023,2,The American Express,Nicklaus Tournament Course,233,0,95,156,68.72435897435898,0.0,false
+2019,476,World Golf Championships-FedEx St. Jude Invitational,TPC Southwind,513,0,134,252,69.50396825396825,0.0,false
+2017,13,Wyndham Championship,Sedgefield CC,752,0,279,466,68.81330472103004,0.0,false
+2023,2,The American Express,Pete Dye Stadium Course,704,0,121,225,69.19555555555556,0.0,false
+2024,527,ZOZO CHAMPIONSHIP,ACCORDIA GOLF Narashino Country Club,875,0,201,309,68.63754045307444,0.0,false
+2018,473,World Golf Championships-Mexico Championship,Club de Golf Chapultepec,240,0,105,256,70.34765625,0.0,false
+2021,493,The RSM Classic,Sea Island GC (Seaside),776,0,171,297,68.96969696969697,0.0,false
+2023,88,PGA TOUR Q-School presented by Korn Ferry,Dye's Valley Course,922,0,133,310,70.27741935483871,0.0,false
+2017,518,Barbasol Championship,RTJ Trail (Grand National),819,0,234,417,69.29496402877697,0.0,false
+2024,16,The Sentry,Plantation Course at Kapalua,656,0,156,236,68.36440677966101,0.0,false
+2024,60,TOUR Championship,East Lake Golf Club,933,0,77,120,68.61666666666666,0.0,false
+2025,2,The American Express,La Quinta Country Club,202,0,108,155,68.59354838709677,0.0,false
+2019,28,BMW Championship,Medinah Country Club (No. 3),348,0,122,276,69.92753623188406,0.0,false
+2024,518,ISCO Championship,Keene Trace Golf Club (Champion Trace),884,0,236,444,69.36261261261261,0.0,false
+2024,541,Genesis Scottish Open,The Renaissance Club,977,0,281,457,68.7527352297593,0.0,false
+2023,524,Rocket Mortgage Classic,Detroit Golf Club,876,0,216,479,69.91858037578288,0.0,false
+2022,518,Barbasol Championship,Keene Trace Golf Club,884,0,216,470,69.81702127659574,0.0,false
+2025,553,ONEflight Myrtle Beach Classic,Dunes Golf and Beach Club,925,0,168,402,70.27114427860697,0.0,false
+2017,28,BMW Championship,Conway Farms GC,789,0,150,276,69.1159420289855,0.0,false
+2023,13,Wyndham Championship,Sedgefield Country Club,752,0,234,458,69.46724890829694,0.0,false
+2023,60,TOUR Championship,East Lake Golf Club,688,0,67,120,68.75833333333334,0.0,false
+2017,493,The RSM Classic,Sea Island Resort (Plantation),231,0,60,155,70.54193548387097,0.0,false
+2020,11,THE PLAYERS Championship,TPC Sawgrass,11,0,36,143,71.3006993006993,0.0,false
+2021,472,Barracuda Championship,Tahoe Mt. Club (Old Greenwood),890,0,176,403,69.81885856079404,0.0,false
+2017,493,The RSM Classic,Sea Island Resort (Seaside),776,0,165,301,69.23920265780731,0.0,false
+2025,20,Texas Children's Houston Open,Memorial Park Golf Course,897,0,264,443,68.86455981941309,0.0,false
+2021,3,Waste Management Phoenix Open,TPC Scottsdale,510,0,201,396,69.45454545454545,0.0,false
+2019,13,Wyndham Championship,Sedgefield Country Club,752,0,332,468,68.17521367521367,0.0,false
+2021,4,Farmers Insurance Open,Torrey Pines GC (North),104,0,59,153,70.13071895424837,0.0,false
+2025,19,THE CJ CUP Byron Nelson,TPC Craig Ranch,921,0,262,451,69.12638580931264,0.0,false
+2021,478,Hero World Challenge,Albany,232,0,40,80,69.475,0.0,false
+2019,457,Mayakoba Golf Classic,El Camaleon Golf Club,733,0,174,427,70.08665105386417,0.0,false
+2023,16,Sentry Tournament of Champions,Plantation Course at Kapalua,656,0,86,153,68.92156862745098,0.0,false
+2018,5,AT&T Pebble Beach Pro-Am,Monterey Peninsula CC,769,0,75,155,70.05806451612904,0.0,false
+2025,10,Cognizant Classic in The Palm Beaches,PGA National Resort (The Champion Course),928,0,234,424,69.26179245283019,0.0,false
+2024,2,The American Express,Pete Dye Stadium Course,704,0,125,223,69.14798206278027,0.0,false
+2017,6,Sony Open in Hawaii,Waialae CC,6,0,300,443,68.30925507900677,0.0,false
+2019,493,The RSM Classic,Sea Island GC (Seaside),776,0,179,306,68.89869281045752,0.0,false
+2021,60,TOUR Championship,East Lake Golf Club,688,0,75,118,68.80508474576271,0.0,false
+2022,28,BMW Championship,Wilmington Country Club,901,0,122,270,70.24814814814815,0.0,false
+2021,27,THE NORTHERN TRUST,Liberty National Golf Club,886,0,173,395,69.81012658227849,0.0,false
+2019,30,John Deere Classic,TPC Deere Run,669,0,235,459,69.50980392156863,0.0,false
+2024,54,Sanderson Farms Championship,The Country Club of Jackson,746,0,209,395,69.41518987341772,0.0,false
+2024,524,Rocket Mortgage Classic,Detroit Golf Club,876,0,164,458,70.53930131004367,0.0,false
+2018,60,TOUR Championship,East Lake GC,688,0,64,120,69.61666666666666,0.0,false
+2024,553,Myrtle Beach Classic,The Dunes Golf and Beach Club,925,0,187,404,69.8490099009901,0.0,false
+2022,34,Travelers Championship,TPC River Highlands,503,0,232,451,69.39024390243902,0.0,false
+2019,2,Desert Classic,Nicklaus Tournament Course,233,0,93,156,69.0576923076923,0.0,false
+2022,47,Shriners Children's Open,TPC Summerlin,538,0,261,441,69.00453514739229,0.0,false
+2020,3,Waste Management Phoenix Open,TPC Scottsdale,510,0,162,397,70.31738035264483,0.0,false
+2023,27,FedEx St. Jude Championship,TPC Southwind,513,0,185,280,68.63571428571429,0.0,false
+2023,5,AT&T Pebble Beach Pro-Am,Spyglass Hill Golf Course,205,0,16,151,72.80132450331126,0.0,false
+2021,16,Sentry Tournament of Champions,Plantation Course at Kapalua,656,0,96,168,69.31547619047619,0.0,false
+2025,2,The American Express,Nicklaus Tournament Course,233,0,108,154,68.24675324675324,0.0,false
+2017,60,TOUR Championship,East Lake GC,688,0,66,120,69.38333333333334,0.0,false
+2023,549,The RSM Classic #2,Sea Island Golf Club (Seaside Course),776,0,241,310,67.58387096774193,0.0,false
+2019,32,RBC Canadian Open,Hamilton Golf & Country Club,874,0,220,454,69.66299559471365,0.0,false
+2021,13,Wyndham Championship,Sedgefield Country Club,752,0,280,460,68.87826086956522,0.0,false
+2021,30,John Deere Classic,TPC Deere Run,669,0,226,448,69.51339285714286,0.0,false
+2019,2,Desert Classic,Stadium Course,704,0,93,227,70.23788546255507,0.0,false
