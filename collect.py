@@ -179,12 +179,12 @@ def collect_raw_event_data(event: dict) -> list[ScoreObject]:
                     course_num=round_data["course_num"],
                     course_par=round_data["course_par"],
                     score=round_data["score"],
-                    sg_app=round_data["sg_app"],
-                    sg_arg=round_data["sg_arg"],
-                    sg_ott=round_data["sg_ott"],
-                    sg_putt=round_data["sg_putt"],
-                    sg_t2g=round_data["sg_t2g"],
-                    sg_total=round_data["sg_total"],
+                    sg_app=round_data.get("sg_app"),
+                    sg_arg=round_data.get("sg_arg"),
+                    sg_ott=round_data.get("sg_ott"),
+                    sg_putt=round_data.get("sg_putt"),
+                    sg_t2g=round_data.get("sg_t2g"),
+                    sg_total=round_data.get("sg_total"),
                 )
                 # Make the assumption that round 1 is always on a Thursday
                 # Account for Monday finishes

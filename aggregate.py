@@ -41,6 +41,12 @@ def read_scoring_data() -> pl.DataFrame:
                     "course_num": pl.Int32,
                     "course_par": pl.Int32,
                     "score": pl.Int32,
+                    "sg_app": pl.Float64,
+                    "sg_arg": pl.Float64,
+                    "sg_ott": pl.Float64,
+                    "sg_putt": pl.Float64,
+                    "sg_t2g": pl.Float64,
+                    "sg_total": pl.Float64,
                     "teetime": pl.Datetime,
                 },
             )
@@ -122,7 +128,13 @@ def gen_rolling_ppi(scoring_data: pl.DataFrame, course_factor: pl.DataFrame, per
                     pl.col("score"),
                     pl.col("day_average"),
                     pl.col("course_factor")
-                ).alias("ppi")
+                ).alias("ppi"),
+                pl.mean("sg_app"),
+                pl.mean("sg_arg"),
+                pl.mean("sg_ott"),
+                pl.mean("sg_putt"),
+                pl.mean("sg_t2g"),
+                pl.mean("sg_total")
             ]
         )
         .drop_nans("ppi")  # All the leading rounds that don't have enough data
@@ -148,6 +160,12 @@ def gen_static_ppi(scoring_data: pl.DataFrame, course_factor: pl.DataFrame) -> p
                     pl.col("day_average"),
                     pl.col("course_factor")
                 ).alias("ppi"),
+                pl.mean("sg_app"),
+                pl.mean("sg_arg"),
+                pl.mean("sg_ott"),
+                pl.mean("sg_putt"),
+                pl.mean("sg_t2g"),
+                pl.mean("sg_total"),
                 pl.len().alias("rounds")
             ]
         )

@@ -209,31 +209,58 @@ $$
 \text{Proper Player Index} = \frac{\sum (\text{Score} - \text{Round Scoring Average}) \times \text{Course Factor}}{\sum \text{Course Factor}}
 $$
 
+The interesting comparison here is with Strokes Gained (Total). In theory, these metrics operate on the same scale, right?
+The only thing we've done is weight the *BDE* rounds.
+
 ```{python}
 ppi = (
     pl.read_csv("../../data/ppi-static.csv")
+    .with_columns(
+        category=(
+            pl.when(
+                pl.col("sg_total") >= 0,
+                pl.col("ppi") > pl.col("sg_total")
+            )
+            .then(pl.lit("Proper"))
+            .when(
+                pl.col("sg_total") >= 0,
+                pl.col("ppi") <= pl.col("sg_total")
+            )
+            .then(pl.lit("Fluffer"))
+        )
+    )
 )
 
 ppi_plot = (
     ggplot(ppi) +
     geom_point(
-        aes(x="rounds", y="ppi"),
+        aes(x="sg_total", y="ppi"),
         tooltips=(
             layer_tooltips()
             .line("@player_name")
-            .line("Rounds|@rounds")
+            .line("S.G. Total|@sg_total")
             .line("PPI|@ppi")
-        )
+        ),
+        alpha=0.25
     ) +
+    geom_abline(slope=1) +
     geom_hline(
-        yintercept=ppi["ppi"].mean(),
-        linetype="longdash"
+        yintercept=0,
+        linestyle="longdash",
+        color="black"
     ) +
-    ggsize(800, 600) +
+    geom_vline(
+        xintercept=0,
+        linestyle="longdash",
+        color="black",
+    ) +
+    scale_x_continuous(limits=[-2.5, 2.5]) +
+    scale_y_continuous(limits=[-2.5, 2.5]) +
+    ggsize(800, 800) +
     labs(
-        title="Proper Player Index by number of rounds",
-        subtitle="Min. 100 rounds",
-        x="Number of rounds",
+        title="Proper player index and strokes gained",
+        subtitle="Lifetime average; minimum 100 rounds",
+        x="Strokes Gained (Total)",
         y="Proper Player Index"
     ) +
     article_theme()
@@ -242,7 +269,13 @@ ppi_plot
 ```
 
 ```{python}
-ppi.head(n=10)
+from itables import show
+
+show(
+    ppi.select(
+        "player_name", pl.col("sg_total").round(3), pl.col("ppi").round(3), "category"
+    )
+)
 ```
 
 ```{python}
