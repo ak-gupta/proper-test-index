@@ -89,6 +89,7 @@ def gen_course_factor(pti: pl.DataFrame) -> pl.DataFrame:
             course_name=pl.col("course_name").first(),
             total_over_80=pl.col("over_80").sum(),
             total_sub_70=pl.col("sub_70").sum(),
+            total_rounds=pl.col("total_rounds").sum(),
             scoring_average=(pl.col("scoring_average") * pl.col("total_rounds")).sum() / pl.col("total_rounds").sum()
         )
         .with_columns(
@@ -119,7 +120,14 @@ def gen_rolling_ppi(scoring_data: pl.DataFrame, course_factor: pl.DataFrame, per
         .drop_nulls("score")  # ZURICH
         .join(course_factor.lazy(), on="course_num", how="left")
         .with_columns(
-            day_average=pl.col("score").mean().over(["event_id", "year", "round"])
+            wave=(
+                pl.when(pl.col("teetime").dt.hour() < 12)
+                .then(pl.lit("morning"))
+                .otherwise(pl.lit("afternoon"))
+            )
+        )
+        .with_columns(
+            day_average=pl.col("score").mean().over(["event_id", "year", "round", "wave"])
         )
         .sort("teetime", descending=False)
         .rolling("teetime", period=period, group_by=["dg_id", "player_name"]).agg(
@@ -129,6 +137,7 @@ def gen_rolling_ppi(scoring_data: pl.DataFrame, course_factor: pl.DataFrame, per
                     pl.col("day_average"),
                     pl.col("course_factor")
                 ).alias("ppi"),
+                pl.len().alias("rounds"),
                 pl.mean("sg_app"),
                 pl.mean("sg_arg"),
                 pl.mean("sg_ott"),
@@ -186,7 +195,9 @@ if __name__ == "__main__":
     course_factor.write_csv(CURR_DIR / "course_factor.csv")
 
     rolling_ppi = gen_rolling_ppi(scoring_data, course_factor)
-    rolling_ppi.write_csv(DATA_DIR / "ppi-rolling.csv")
+    rolling_ppi.write_csv(DATA_DIR / "ppi-rolling-6mo.csv", datetime_format="%Y-%m-%dT%H:%M:%S%.3fZ")
+    rolling_ppi = gen_rolling_ppi(scoring_data, course_factor, "1y")
+    rolling_ppi.write_csv(DATA_DIR / "ppi-rolling-1y.csv", datetime_format="%Y-%m-%dT%H:%M:%S%.3fZ")
 
     static_ppi = gen_static_ppi(scoring_data, course_factor)
     static_ppi.write_csv(DATA_DIR / "ppi-static.csv")
