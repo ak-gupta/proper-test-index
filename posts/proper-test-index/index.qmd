@@ -37,7 +37,7 @@ $$
 PTI = \frac{\text{Number of rounds with a score >= 80}}{\text{Number of rounds with a score of < 70}}
 $$
 
-He ran through some of the numbers across past U.S. Opens; what does it look like when we
+He ran through some of the numbers across past U.S. Opens, but what does it look like when we
 extend the metric to the PGA Tour? Using Data Golf's API, I pulled the scoring data for
 their entire archive and calculated the event-level PTI:
 
@@ -75,8 +75,8 @@ initial_plot = (
     labs(
         title="Rounds over 80 against sub-70 rounds",
         subtitle="All available events in Data Golf's archives",
-        x="Count of rounds with a score of 80+",
-        y="Count of rounds with a score of <70",
+        x="# of rounds with a score of 80+",
+        y="# of rounds with a score of <70",
         color="Is it a major championship?",
         size="Proper Test Index"
     )
@@ -84,8 +84,10 @@ initial_plot = (
 initial_plot
 ```
 
-Some miscellaneous notes.
+A few things stood out to me.
 
+* The pros are *really* good. Across the entire dataset, only `{python} round((pti["over_80"].sum() / pti["total_rounds"].sum()) * 100, 1)`% of rounds have a score of 80 or over.
+  That's compared to a healthy `{python} round((pti["sub_70"].sum() / pti["total_rounds"].sum()) * 100, 1)`% of rounds falling in the 60s (or lower!).
 * There are `{python} pti.filter(pl.col("over_80") == pl.lit(0)).shape[0]` events that had **0 rounds of 80 or over**.
 * What were we doing at the `{python} easiest_event["year"][0]` `{python} easiest_event["event_name"][0]`?
   `{python} easiest_event["sub_70"][0]` rounds below 70 and 0 above 80. Not Proper.
@@ -131,7 +133,7 @@ unbelievable performance in the `{python} hardest_major["year"][0]` `{python} ha
 at `{python} hardest_major["course_name"][0]` was undeniable. Proper.
 
 
-## Sabermetrics can help us identify *Proper Players*
+## Sabermetrics can help us identify *Proper Venues*
 
 PTI tells us something about the balance of extreme rounds at the event level. What if we adopt
 Baseball's *park factor* to figure out if a low round really matters?
@@ -174,10 +176,14 @@ course_factor_plot = (
 course_factor_plot
 ```
 
-Wow. The scale of course factor is pretty intense. An above average round at `{python} hardest_course["course_name"][0]`
+Wow. _Course Factor_ has some range! According to this metric, An above average round at `{python} hardest_course["course_name"][0]`
 is worth `{python} int(hardest_course["course_factor"][0] / easiest_course["course_factor"][0])` times more than a
-similarly above average round at `{python} easiest_course["course_name"][0]`. A logarithmic scale gives us a bit
-more insight into how the course factor relates to pure scoring average.
+similarly above average round at `{python} easiest_course["course_name"][0]`. Remember what we're talking about
+_rare_ events here; so if `{python} round((hardest_course["total_over_80"][0] / hardest_course["total_rounds"][0]) * 100, 1)`%
+of rounds at `{python} hardest_course["course_name"][0]` are over 80 (and only `{python} round((hardest_course["total_sub_70"][0] / hardest_course["total_rounds"][0]) * 100, 1)`%
+below 70), we will see some extreme values.
+
+A logarithmic scale gives us a bit more insight into how the course factor relates to pure scoring average.
 
 ```{python}
 (
@@ -202,33 +208,47 @@ more insight into how the course factor relates to pure scoring average.
 )
 ```
 
+## Can measuring venue difficulty help us understand player performance?
+
 Ok, enough about venues. How do we convert this into a measure of player performance? Simple,
-a weighted average of a player's score against the round average.
+a weighted average of a player's score against the wave average (where tee times are available).
 
 $$
-\text{Proper Player Index} = \frac{\sum (\text{Score} - \text{Round Scoring Average}) \times \text{Course Factor}}{\sum \text{Course Factor}}
+\text{Proper Player Index} = \frac{\sum (\text{Score} - \text{Wave Scoring Average}) \times \text{Course Factor}}{\sum \text{Course Factor}}
 $$
 
 The interesting comparison here is with Strokes Gained (Total). In theory, these metrics operate on the same scale, right?
-The only thing we've done is weight the *BDE* rounds.
+The only thing we've done is weight the *Proper* rounds. I'm proposing 4 different categories:
 
 ```{python}
 ppi = (
-    pl.read_csv("../../data/ppi-static.csv")
+    pl.scan_csv("../../data/ppi-rolling-1y.csv")
+    .filter(
+        pl.col("teetime") == pl.col("teetime").max().over(["dg_id"]),
+        pl.col("rounds") >= 25
+    )
     .with_columns(
         category=(
             pl.when(
                 pl.col("sg_total") >= 0,
                 pl.col("ppi") > pl.col("sg_total")
             )
-            .then(pl.lit("Proper"))
+            .then(pl.lit("Proper Player"))
             .when(
                 pl.col("sg_total") >= 0,
                 pl.col("ppi") <= pl.col("sg_total")
             )
-            .then(pl.lit("Fluffer"))
-        )
+            .then(pl.lit("Imposter"))
+            .when(
+                pl.col("sg_total") < 0,
+                pl.col("ppi") > pl.col("sg_total")
+            )
+            .then(pl.lit("Gamer"))
+            .otherwise(pl.lit("The Dire Straits"))
+        ),
+        ppi_sg_diff=pl.col("ppi") - pl.col("sg_total")
     )
+    .collect()
 )
 
 ppi_plot = (
@@ -238,28 +258,58 @@ ppi_plot = (
         tooltips=(
             layer_tooltips()
             .line("@player_name")
-            .line("S.G. Total|@sg_total")
+            .line("SG (Total)|@sg_total")
             .line("PPI|@ppi")
         ),
         alpha=0.25
     ) +
     geom_abline(slope=1) +
-    geom_hline(
-        yintercept=0,
-        linestyle="longdash",
-        color="black"
-    ) +
     geom_vline(
         xintercept=0,
         linestyle="longdash",
         color="black",
     ) +
-    scale_x_continuous(limits=[-2.5, 2.5]) +
-    scale_y_continuous(limits=[-2.5, 2.5]) +
+    geom_label(
+        x=1,
+        y=2.5,
+        label="Proper Players",
+    ) +
+    geom_label(
+        x=2,
+        y=-1,
+        label="Imposters"
+    ) +
+    geom_label(
+        x=-2,
+        y=-3,
+        label="The Dire Straits"
+    ) +
+    geom_label(
+        x=-2.5,
+        y=0,
+        label="Gamers",
+    ) +
+    geom_label(
+        x=2.75,
+        y=1.5,
+        label="Scottie... relax",
+        hjust=1,
+        label_size=0,
+    ) +
+    geom_curve(
+        x=2.75,
+        y=1.5,
+        xend=2.7,
+        yend=2.7,
+        curvature=0.2,
+        arrow=arrow()
+    ) +
+    scale_x_continuous(limits=[-3, 3]) +
+    scale_y_continuous(limits=[-3, 3]) +
     ggsize(800, 800) +
     labs(
         title="Proper player index and strokes gained",
-        subtitle="Lifetime average; minimum 100 rounds",
+        subtitle="1-year average; minimum 25 rounds, latest round in 2025",
         x="Strokes Gained (Total)",
         y="Proper Player Index"
     ) +
@@ -273,11 +323,46 @@ from itables import show
 
 show(
     ppi.select(
-        "player_name", pl.col("sg_total").round(3), pl.col("ppi").round(3), "category"
+        "player_name", pl.col("sg_total").round(3), pl.col("ppi").round(3), "category", "rounds"
     )
+    .sort("ppi", descending=True)
 )
 ```
 
-```{python}
-ggplot(ppi) + geom_histogram(aes(x="ppi"))
+```{ojs}
+data = FileAttachment("../../data/ppi-rolling-6mo.csv").csv({ typed: true })
+players = [
+    18417,  // Scottie Scheffler
+    10091,  // Rory McIlroy
+    19895,  // Xander Schauffele
+    14139,  // Justin Thomas
+    22085,  // Collin Morikawa
+    14578,  // Russell Henley
+    13872,  // Keegan Bradley
+    17536,  // JJ Spaun
+    17511,  // Sepp Straka
+    18841,  // Viktor Hovland
+]
+data2 = data.filter(d => players.includes(d.dg_id) && d.rounds >= 25)
+viewof player_name = Inputs.search(
+    data2,
+    {label: "Player Name", columns: ["player_name", "teetime", "ppi", "sg_total"], "placeholder": "Search Players...", "autocomplete": true, "autocapitalize": true}
+)
+```
+
+```{ojs}
+d3 = require("d3@7")
+
+Plot.plot({
+    y: {
+        grid: true,
+    },
+    marks: [
+        Plot.axisX({tickFormat: d3.utcFormat("%Y-%m-%dT%H:%MZ").getUTCYear}),
+        Plot.ruleY([0]),
+        Plot.lineY(player_name, {x: "teetime", y: "ppi", z: "player_name", "stroke": "blue"}),
+        Plot.text(player_name, Plot.selectLast({x: "teetime", y: "ppi", z: "player_name", text: "PPI", textAnchor: "ppi"})),
+        Plot.lineY(player_name, {x: "teetime", y: "sg_total", z: "player_name", "stroke": "red"})
+    ]
+})
 ```
