@@ -113,7 +113,7 @@ def ppi(score: pl.Expr, day_average: pl.Expr, course_factor: pl.Expr) -> pl.Expr
     )
 
 
-def gen_rolling_ppi(scoring_data: pl.DataFrame, course_factor: pl.DataFrame, period: str = "6mo") -> pl.DataFrame:
+def gen_rolling_ppi(scoring_data: pl.DataFrame, course_factor: pl.DataFrame, period: int = 25) -> pl.DataFrame:
     """Generate a rolling proper player index."""
     return (
         scoring_data.lazy()
@@ -129,24 +129,40 @@ def gen_rolling_ppi(scoring_data: pl.DataFrame, course_factor: pl.DataFrame, per
         .with_columns(
             day_average=pl.col("score").mean().over(["event_id", "year", "round", "wave"])
         )
-        .sort("teetime", descending=False)
-        .rolling("teetime", period=period, group_by=["dg_id", "player_name"]).agg(
+        .sort("dg_id", "teetime", descending=False)
+        .with_row_index()
+        .rolling("index", period=f"{period}i", group_by=["dg_id", "player_name"]).agg(
             [
                 ppi(
                     pl.col("score"),
                     pl.col("day_average"),
-                    pl.col("course_factor")
+                    (pl.lit(1.0) + pl.col("course_factor")).log10()
                 ).alias("ppi"),
+                pl.col("teetime").last(),
+                pl.col("teetime").first().alias("first_tee_time_in_group"),
                 pl.len().alias("rounds"),
-                pl.mean("sg_app"),
-                pl.mean("sg_arg"),
-                pl.mean("sg_ott"),
-                pl.mean("sg_putt"),
-                pl.mean("sg_t2g"),
-                pl.mean("sg_total")
+                pl.mean("sg_total"),
+                pl.col("score").last(),
+                pl.col("event_name").last(),
+                pl.col("day_average").last().alias("wave_average"),
+                (pl.lit(1.0) + pl.col("course_factor").last()).log10().alias("log_course_factor"),
             ]
         )
-        .drop_nans("ppi")  # All the leading rounds that don't have enough data
+        .filter(pl.col("rounds") == period)
+        .select(
+            [
+                "dg_id",
+                "player_name",
+                "ppi",
+                "teetime",
+                "first_tee_time_in_group",
+                "sg_total",
+                "score",
+                "event_name",
+                "wave_average",
+                "log_course_factor"
+            ]
+        )
         .sort("dg_id", "player_name", "teetime", descending=True)
         .collect()
     )
@@ -195,9 +211,11 @@ if __name__ == "__main__":
     course_factor.write_csv(CURR_DIR / "course_factor.csv")
 
     rolling_ppi = gen_rolling_ppi(scoring_data, course_factor)
-    rolling_ppi.write_csv(DATA_DIR / "ppi-rolling-6mo.csv", datetime_format="%Y-%m-%dT%H:%M:%S%.3fZ")
-    rolling_ppi = gen_rolling_ppi(scoring_data, course_factor, "1y")
-    rolling_ppi.write_csv(DATA_DIR / "ppi-rolling-1y.csv", datetime_format="%Y-%m-%dT%H:%M:%S%.3fZ")
+    rolling_ppi.write_csv(DATA_DIR / "ppi-rolling-25.csv", datetime_format="%Y-%m-%dT%H:%M:%S%.3fZ")
+    rolling_ppi = gen_rolling_ppi(scoring_data, course_factor, 50)
+    rolling_ppi.write_csv(DATA_DIR / "ppi-rolling-50.csv", datetime_format="%Y-%m-%dT%H:%M:%S%.3fZ")
+    rolling_ppi = gen_rolling_ppi(scoring_data, course_factor, 100)
+    rolling_ppi.write_csv(DATA_DIR / "ppi-rolling-100.csv", datetime_format="%Y-%m-%dT%H:%M:%S%.3fZ")
 
     static_ppi = gen_static_ppi(scoring_data, course_factor)
     static_ppi.write_csv(DATA_DIR / "ppi-static.csv")
