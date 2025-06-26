@@ -1,0 +1,210 @@
+---
+title: "The Proper Player Index"
+author: "Akshay Gupta"
+date: "2025-06-26"
+categories: [golf]
+jupyter: python3
+execute:
+    echo: false
+draft: true
+subtitle: Can we use the proper test index to measure player performance?
+---
+
+In my [previous blog post](../proper-test-index/), we looked at the Proper Test Index and a corresponding
+look at identifying the most _proper_ venues. What if we apply those learnings to player performance?
+
+The theory is simple: let's weight player scoring by the difficulty of the venue:
+
+$$
+\text{Proper Player Index} = \frac{\sum (\text{Wave Scoring Average} - \text{Score}) \times \text{Course Factor}^{*}}{\sum \text{Course Factor}^{*}}
+$$
+
+The interesting comparison here is with Strokes Gained (Total). In theory, these metrics operate on the same scale, right?
+
+```{python}
+import polars as pl
+from lets_plot import *
+
+LetsPlot.setup_html()
+
+def article_theme():
+    return theme(
+        plot_title=element_text(family="Arial", face="bold", size=33),
+        plot_subtitle=element_text(family="Arial", size=26),
+        legend_position="top",
+        panel_grid_minor="blank",
+        panel_grid_major_x="blank",
+    )
+
+ppi = (
+    pl.scan_csv("../../data/ppi-rolling-50.csv")
+    .with_columns([pl.col("teetime").cast(pl.Datetime), pl.col("first_tee_time_in_group").cast(pl.Datetime)])
+    .filter(
+        pl.col("teetime") == pl.col("teetime").max().over(["dg_id"]),
+        pl.col("teetime").dt.year() == 2025,
+        (pl.col("teetime") - pl.col("first_tee_time_in_group")).dt.total_days() <= 365
+    )
+    .with_columns(
+        category=(
+            pl.when(
+                pl.col("sg_total") >= 0,
+                pl.col("ppi") > pl.col("sg_total")
+            )
+            .then(pl.lit("Proper Player"))
+            .when(
+                pl.col("sg_total") >= 0,
+                pl.col("ppi") <= pl.col("sg_total")
+            )
+            .then(pl.lit("Imposter"))
+            .when(
+                pl.col("sg_total") < 0,
+                pl.col("ppi") > pl.col("sg_total")
+            )
+            .then(pl.lit("Gamer"))
+            .otherwise(pl.lit("Death Watch"))
+        ),
+        ppi_sg_diff=pl.col("ppi") - pl.col("sg_total")
+    )
+    .collect()
+)
+
+ppi_plot = (
+    ggplot(ppi) +
+    geom_point(
+        aes(x="sg_total", y="ppi", color="category"),
+        tooltips=(
+            layer_tooltips()
+            .line("@player_name")
+            .line("SG (Total)|@sg_total")
+            .line("PPI|@ppi")
+        ),
+        alpha=0.75
+    ) +
+    geom_abline(slope=1, alpha=0.5, color="black", linetype="longdash") +
+    geom_vline(
+        xintercept=0,
+        linetype="longdash",
+        color="black",
+        alpha=0.5,
+    ) +
+    geom_label(
+        x=1,
+        y=2.5,
+        label="Proper Players",
+    ) +
+    geom_label(
+        x=2,
+        y=-1,
+        label="Imposters"
+    ) +
+    geom_label(
+        x=-2,
+        y=-3,
+        label="Death Watch"
+    ) +
+    geom_label(
+        x=-2.5,
+        y=0,
+        label="Gamers",
+    ) +
+    geom_label(
+        x=2.75,
+        y=1.5,
+        label="Scottie... relax",
+        hjust=1,
+        label_size=0,
+    ) +
+    geom_curve(
+        x=2.75,
+        y=1.5,
+        xend=2.7,
+        yend=2.7,
+        curvature=0.2,
+        arrow=arrow()
+    ) +
+    scale_x_continuous(limits=[-3, 3]) +
+    scale_y_continuous(limits=[-3, 3]) +
+    ggsize(800, 800) +
+    labs(
+        title="Proper player index and strokes gained",
+        subtitle="50-round average; latest round in 2025",
+        x="Strokes Gained (Total)",
+        y="Proper Player Index"
+    ) +
+    article_theme()
+)
+ppi_plot
+```
+
+There are 4 categories in this visualization:
+
+#. **Proper Players**: above average players that rise when the conditions get the toughest
+#. **Imposters**: above average players that fall apart in _conditties_
+#. **Gamers**: below average players that outperform their profile when the test gets tougher
+#. **Death Watch**: below average players that get worse when the going gets tough
+
+```{python}
+(
+    ggplot(
+        ppi.sort("ppi_sg_diff", descending=False)
+        .with_row_index()
+    ) +
+    geom_point(
+        aes(x="index", y="ppi_sg_diff"),
+        tooltips=(
+            layer_tooltips()
+            .line("@player_name")
+            .line("SG (Total)|@sg_total")
+            .line("PPI|@ppi")
+        ),
+        alpha=0.25
+    ) +
+    ggsize(800, 600) +
+    article_theme()
+)
+```
+
+```{python}
+ppi_jt = (
+    pl.scan_csv("../../data/ppi-rolling-50.csv")
+    .with_columns([pl.col("teetime").cast(pl.Datetime)])
+    .filter(pl.col("dg_id") == 14139)
+    .with_columns(weighted_score=(pl.col("wave_average") - pl.col("score")) * pl.col("log_course_factor"))
+    .collect()
+)
+
+(
+    ggplot(ppi_jt) +
+    geom_line(
+        aes(x="teetime", y="ppi"),
+        color="red",
+        tooltips=(
+            layer_tooltips()
+            .line("Event|@event_name")
+            .line("Score|@score")
+            .format("@wave_average", ".1f")
+            .line("Wave average|@wave_average")
+            .format("@weighted_score", ".1f")
+            .line("Weighted round gain|@weighted_score")
+        )
+    ) +
+    geom_line(
+        aes(x="teetime", y="sg_total"),
+        color="black",
+        alpha=0.5,
+        linetype="longdash",
+        tooltips=(
+            layer_tooltips()
+            .line("SG (Total)|@sg_total")
+        )
+    ) +
+    ggsize(800, 600) +
+    labs(
+        title="Justin Thomas",
+        subtitle="50-round rolling average",
+        x="Date",
+        y="Metric"
+    ) +
+    article_theme()
+)
+```
