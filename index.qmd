@@ -1,5 +1,5 @@
 ---
-title: "proper-test-index"
+title: "Proper Test Index"
 listing:
   contents: posts
   sort: "date desc"
