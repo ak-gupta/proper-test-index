@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "posts/proper-test-index/index.html",
+    "href": "posts/proper-test-index/index.html",
+    "title": "The Proper Test Index",
+    "section": "",
+    "text": "In No Laying Up’s coverage of the 125th U.S. Open at Oakmont, the Big Man himself introduced a metric that has lodged itself in my brain: the Proper Test Index (PTI). It’s defined as\n\\[\nPTI = \\frac{\\text{Number of rounds with a score &gt;= 80}}{\\text{Number of rounds with a score of &lt; 70}}\n\\]\nHe ran through some of the numbers across past U.S. Opens, but what does it look like when we extend the metric to the PGA Tour? Using Data Golf’s API, I pulled historical scoring data and calculated the event-level PTI:\nA few things stood out to me.\nNow when it comes to majors…\nAs much as I like Brooks Koepka, the 2018 PGA Championship at Bellerive CC wasn’t particularly proper. But good news for Big! Phil the Thrill’s unbelievable performance in the 2021 PGA Championship at Ocean Course at Kiawah Island was undeniably a Proper Victory. Soly’s right, we somehow don’t talk about that win enough."
+  },
+  {
+    "objectID": "posts/proper-test-index/index.html#sabermetrics-can-help-us-identify-proper-venues",
+    "href": "posts/proper-test-index/index.html#sabermetrics-can-help-us-identify-proper-venues",
+    "title": "The Proper Test Index",
+    "section": "Sabermetrics can help us identify Proper Venues",
+    "text": "Sabermetrics can help us identify Proper Venues\nPTI tells us something about the balance of extreme rounds at the event level. What if we adopt Baseball’s park factor to figure out if a low round really matters?\n\\[\n\\text{Course Factor} = \\frac{\\frac{\\text{Total scores &gt;= 80 at the course}}{\\text{Total scores &lt; 70 at the course}}}{\\frac{\\text{Total scores &gt;= 80 at all other courses}}{\\text{Total scores &lt; 70 at all other courses}}}\n\\]\nThe larger the course factor, the more impressive a 65 is! Let’s plot out the course factor across the available venues.\n\n\n   \n   \n\n\nWow. Course Factor has some range! According to this metric, An above average round at Ocean Course at Kiawah Island is worth 1954 times more than a similarly above average round at Sea Island GC (Seaside). Sure.\nWe’re seeing the effects of rare events; only 1.0% of rounds come in over 80, so if 8.3% of rounds at Ocean Course at Kiawah Island are over 80 (and only 6.4% below 70), we will see extreme values.\nWhat we need is a monotonic transformation that can compress the scale a bit. Using \\(\\log\\), we can get something a bit more readable.\n\n\n   \n   \n\n\nThis chart is more legible. Due to the strict scarcity of rounds in the 80s, we’ll be using a logarithmic transformation of course factor (\\(\\text{Course Factor}^{*}\\)) to convey the relative difficulty of each venue.\nNow comes the real question, however: Did Big Cook?\nLooking at the distribution of scores across each venue,\n\n\n   \n   \n\n\nI think Big might have cooked here! \\(\\text{Course Factor}^{*}\\) seems to correlate not only with average difficulty, but variance. In a proper test, we want to see separation between the “Men” and the “Little Boys”.\nThere’s certainly more to be said on this topic. However, next up: the Proper Player Index. Stay tuned."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Proper Test Index",
+    "section": "",
+    "text": "The Proper Test Index\n\n\nWhat does Big Randy’s metric tell us about the PGA Tour?\n\n\n\ngolf\n\n\n\n\n\n\n\n\n\nJun 26, 2025\n\n\nAkshay Gupta\n\n\n\n\n\nNo matching items"
+  }
+]
