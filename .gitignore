@@ -3,5 +3,7 @@ data/*
 .env
 .devcontainer/
 /.quarto/
+
 /.venv/
 *.egg-info/
+__pycache__/
