@@ -1,0 +1,120 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+
+requires = [ "setuptools>=64.0.0" ]
+
+[project]
+name = "proper-test-index"
+description = "Data Golf-powered statistics"
+license = { text = "MIT license" }
+authors = [
+    { name = "Akshay Gupta", email = "akgcodes@gmail.com" },
+]
+requires-python = ">=3.10.0"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dynamic = [ "readme", "version" ]
+
+dependencies = [
+    "attrs>=21.2.0,<=25.1.0",
+    "jupyter==1.1.1",
+    "polars[arrow]>=1.2.0,<=1.31.0",
+    "python-dotenv>=1.0.0,<=1.1.1",
+    "python-slugify>=5.0.0,<=8.0.4",
+    "requests>=2.32.2,<=2.32.4",
+    "urllib3>=2.4.0,<=2.5.0",
+]
+
+optional-dependencies.build = [
+    "build",
+    "commitizen",
+    "twine",
+    "wheel",
+]
+optional-dependencies.dev = [
+    "proper-test-index[build]",
+    "proper-test-index[qa]",
+    "proper-test-index[tests]",
+]
+optional-dependencies.qa = [
+    "edgetest",
+    "mypy",
+    "pre-commit",
+    "pyproject-fmt",
+    "ruff",
+    "types-python-slugify",
+    "uv",
+]
+optional-dependencies.tests = [
+    "pytest",
+    "pytest-cov",
+]
+urls."Documentation" = "https://ak-gupta.github.io/proper-test-index"
+urls."Repository" = "https://github.com/ak-gupta/proper-test-index"
+
+[tool.setuptools]
+include-package-data = true
+zip-safe = false
+packages = [ "proper_test_index" ]
+
+[tool.setuptools.dynamic]
+version = { attr = "proper_test_index._meta.__version__" }
+readme = { file = [ "README.md" ], content-type = "text/markdown" }
+
+[tool.ruff]
+target-version = "py313"
+
+lint.select = [
+    "B",      # flake8-bugbear
+    "C",      # flake8-comprehensions
+    "D",      # pydocstyle
+    "E",      # pycodestyle errors
+    "F",      # pyflakes
+    "I",      # isort
+    "LOG",    # flake8-logging
+    "RUF",    # Ruff errors
+    "SIM",    # flake8-simplify
+    "T20",    # flake8-print
+    "TID252", # flake8-tidy-imports ban relative imports
+    "UP",     # pyupgrade
+    "W",      # pycodestyle warnings
+]
+lint.ignore = [
+    "C901", # Function/method is too complex. (Add back in later.)
+    "E501", # Line too long. Using formatter instead.
+]
+lint.per-file-ignores."**/{tests,docs}/*" = [ "ARG", "D", "E402", "F841" ]
+lint.per-file-ignores."__init__.py" = [ "E402" ]
+lint.per-file-ignores."tutorials/*" = [ "D", "T201" ]
+lint.flake8-tidy-imports.ban-relative-imports = "all"
+lint.pydocstyle.convention = "numpy"
+lint.preview = true
+
+[tool.pyproject-fmt]
+column_width = 88
+indent = 4
+keep_full_version = true
+max_supported_python = "3.12"
+
+[tool.mypy]
+python_version = "3.13"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
+allow_redefinition = true
+check_untyped_defs = true
+
+[tool.commitizen]
+version = "0.1.0"
+tag_format = "v$version"
+update_changelog_on_bump = true
+version_files = [
+    "proper_test_index/_meta.py:__version__",
+]
