@@ -1,0 +1,38 @@
+[
+     {
+          "calendar_year": 2021,
+          "date": "2021-06-20",
+          "event_id": 146,
+          "event_name": "Wichita Open Benefitting KU Wichita Pediatrics",
+          "sg_categories": "no",
+          "traditional_stats": "no",
+          "tour": "kft"
+     },
+     {
+          "calendar_year": 2021,
+          "date": "2021-06-20",
+          "event_id": 535,
+          "event_name": "U.S. Open",
+          "sg_categories": "yes",
+          "traditional_stats": "yes",
+          "tour": "pga"
+     },
+     {
+          "calendar_year": 2021,
+          "date": "2021-06-06",
+          "event_id": 2021116,
+          "event_name": "Porsche European Open",
+          "sg_categories": "no",
+          "traditional_stats": "no",
+          "tour": "euro"
+     },
+     {
+          "calendar_year": 2021,
+          "date": "2021-06-20",
+          "event_id": 8154,
+          "event_name": "Samsø Pro-Am Classic - by Samsø Festival",
+          "sg_categories": "no",
+          "traditional_stats": "no",
+          "tour": "ngl"
+     }
+]
