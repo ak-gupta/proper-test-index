@@ -27,8 +27,7 @@ def calc_pti(scoring: FrameType) -> FrameType:
         The polars dataframe/lazyframe with the proper test index.
     """
     return (
-        scoring.lazy()
-        .group_by("year", "event_id", "event_name", "course_name", "course_num")
+        scoring.group_by("year", "event_id", "event_name", "course_name", "course_num")
         .agg(
             [
                 (pl.col("score") >= 80).sum().alias("over_80"),
