@@ -2,6 +2,8 @@
 
 import inspect
 from datetime import datetime
+from types import UnionType
+from typing import get_args, get_origin
 
 import polars as pl
 from attrs import define
@@ -42,7 +44,11 @@ def to_schema(obj) -> pl.Schema:
     out: dict[str, pl.DataType] = {}
     sig = inspect.signature(obj)
     for name, info in sig.parameters.items():
-        out[name] = pl.datatypes.DataType.from_python(info.annotation)
+        if get_origin(info.annotation) == UnionType:
+            # Get the first argument
+            out[name] = pl.datatypes.DataType.from_python(get_args(info.annotation)[0])
+        else:
+            out[name] = pl.datatypes.DataType.from_python(info.annotation)
 
     return pl.Schema(out)
 
@@ -70,7 +76,7 @@ class ScoreObject:
     sg_putt: float
     sg_t2g: float
     sg_total: float
-    teetime: datetime
+    teetime: datetime | None = None
 
 
 @define(auto_attribs=True)
