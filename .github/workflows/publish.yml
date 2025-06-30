@@ -22,11 +22,11 @@ jobs:
         with:
           python-version: '3.13'
           cache: 'pip'
-      - run: pip install -r requirements.txt
+      - run: pip install -r requirements.txt .
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
