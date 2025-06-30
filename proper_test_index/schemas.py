@@ -3,10 +3,17 @@
 import inspect
 from datetime import datetime
 from types import UnionType
-from typing import get_args, get_origin
+from typing import Any, get_args, get_origin
 
 import polars as pl
-from attrs import define
+from attrs import Attribute, define
+
+
+def serializer(inst: type, field: Attribute, value: Any) -> Any:
+    """Datetime converter for :py:meth:`attrs.asdict`."""
+    if isinstance(value, datetime):
+        return value.isoformat(timespec="seconds")
+    return value
 
 
 def to_schema(obj) -> pl.Schema:
