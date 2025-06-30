@@ -81,7 +81,7 @@ Yikes. Not a good look for Philly Cricket Club.
 
 ## Comparison with Strokes Gained
 
-From a Golf Sicko perspective, the most interesting comparative metric for the PPI is Strokes Gained (Total).
+From a Golf Sicko perspective, the most natural comparative metric for the PPI is Strokes Gained (Total).
 In theory, these metrics operate on the same scale, right? Let's take a look at a 50-round rolling
 average of both to see if the PPI delivers any insight.
 
@@ -183,8 +183,8 @@ ppi_plot = (
     geom_curve(
         x=0.5,
         y=1.75,
-        xend=1.4,
-        yend=1.6,
+        xend=1.3,
+        yend=1.55,
         curvature=-0.2,
         arrow=arrow()
     ) +
@@ -213,6 +213,8 @@ There are 4 categories in this visualization:
 In this visualization, there is one name that stands out to me: Justin Thomas. At the time of publication, he is the
 single player that suffers the most when we compare PPI to Strokes Gained. So what happened? Let's look at a 50-round
 rolling PPI (red) alongside his Strokes Gained (Total; in black).
+
+[In the hover for this chart you'll see "gain". That's just the difference between the wave average and the posted score with course factor applied. For example, if you shoot 68 with a wave average of 70 on a course with an adjusted course factor of 2, the "gain" is 4 ((70 - 68) * 2)]{.aside}
 
 ```{python}
 schema_["weighted_score"] = pl.Float64
