@@ -61,8 +61,7 @@ def calc_course_factor(pti: FrameType) -> FrameType:
         The course-level dataset with course factor and log course factor.
     """
     return (
-        pti.lazy()
-        .group_by("course_num")
+        pti.group_by("course_num")
         .agg(
             course_name=pl.col("course_name").first(),
             total_over_80=pl.col("over_80").sum(),
