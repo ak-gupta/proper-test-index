@@ -7,8 +7,15 @@ listing:
   categories: true
   sort-ui: false
   filter-ui: false
+  fields:
+    - date
+    - reading-time
+    - title
+    - subtitle
+    - image
+    - image-alt
+    - categories
+  max-description-length: 250
 page-layout: full
 title-block-banner: true
 ---
-
-
