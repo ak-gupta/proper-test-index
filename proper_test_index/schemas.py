@@ -109,3 +109,4 @@ class ProperPlayerIndexDataset:
     wave_average: float
     course_factor_star: float
     category: str
+    ppi_sg_diff: float
