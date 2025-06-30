@@ -106,7 +106,7 @@ def gen_rolling_ppi(
                 .then(pl.lit("Imposter"))
                 .when(pl.col("sg_total") < 0, pl.col("ppi") > pl.col("sg_total"))
                 .then(pl.lit("Gamer"))
-                .otherwise(pl.lit("Death Watch"))
+                .otherwise(pl.lit("Mule"))
             ),
             ppi_sg_diff=pl.col("ppi") - pl.col("sg_total"),
         )

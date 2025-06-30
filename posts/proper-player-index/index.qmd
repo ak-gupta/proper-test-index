@@ -1,7 +1,7 @@
 ---
 title: "The Proper Player Index"
 author: "Akshay Gupta"
-date: "2025-06-26"
+date: "2025-06-30"
 categories: [golf]
 jupyter: python3
 execute:
@@ -9,22 +9,37 @@ execute:
 subtitle: Can we use the proper test index to measure player performance?
 ---
 
-In my [previous blog post](../proper-test-index/), we looked at the Proper Test Index and a corresponding
-look at identifying the most _proper_ venues. What if we apply those learnings to player performance?
+::: callout-note
+This analysis is for fun! Please don't take anything in this article _too_ seriously.
+At some point, I'd love to do a deep dive on what makes a "proper" test and what it means
+for measuring player performance. For now, let's get into the _takes_.
+:::
 
-The theory is simple: let's weight player scoring by the difficulty of the venue:
+In my [previous blog post](../proper-test-index/), we looked at the Proper Test Index and a corresponding
+analysis identifying the most _proper_ venues. What if we apply those learnings to player performance?
+
+The theory is simple. let's weight player scoring by the difficulty of the venue:
 
 $$
 \text{Proper Player Index} = \frac{\sum (\text{Wave Scoring Average} - \text{Score}) \times \text{Course Factor}^{*}}{\sum \text{Course Factor}^{*}}
 $$
 
-The interesting comparison here is with Strokes Gained (Total). In theory, these metrics operate on the same scale, right?
-
 ```{python}
+from datetime import datetime, timedelta
+
+from IPython.display import display, HTML
 import polars as pl
 from lets_plot import *
 
+from proper_test_index.schemas import ProperPlayerIndexDataset, to_schema
+
 LetsPlot.setup_html()
+
+cfg = pl.Config()
+cfg.set_tbl_rows(15)
+cfg.set_tbl_hide_column_data_types(True)
+cfg.set_tbl_hide_dataframe_shape(True)
+
 
 def article_theme():
     return theme(
@@ -35,17 +50,44 @@ def article_theme():
         panel_grid_major_x="blank",
     )
 
-ppi = (
+best_no_impact_ = (
     pl.scan_parquet("../../data/ppi-rolling-50.parquet")
-    .sort("dg_id", "teetime", descending=False)
-    .group_by("dg_id")
-    .last()
-    .filter(
-        pl.col("teetime").dt.year() == 2025,
-        (pl.col("teetime") - pl.col("first_tee_time_in_group")).dt.total_days() <= 730
+    .filter(pl.col("course_factor_star") == 0.0, pl.col("teetime").dt.year() == 2025)
+    .sort("score", descending=False)
+    .select(
+        [
+            pl.col("player_name").alias("Name"),
+            pl.col("score").alias("Score"),
+            pl.col("event_name").alias("Event")
+        ]
     )
     .collect()
 )
+```
+
+When we do this type of analysis, there are some interesting consequences. Namely, there are
+some really low scores that don't contribute to PPI because they come at courses that have
+*never seen a score of 80+ from the professionals*. In 2025 alone, there are
+`{python} best_no_impact_.filter(pl.col("Score") < 65).shape[0]` rounds below 65 that
+contribute *nothing* to a player's PPI. Here are the lowest 10:
+
+```{python}
+display(
+    HTML(best_no_impact_.head(n=10)._repr_html_())
+)
+```
+
+Yikes. Not a good look for Philly Cricket Club.
+
+## Comparison with Strokes Gained
+
+From a Golf Sicko perspective, the most interesting comparative metric for the PPI is Strokes Gained (Total).
+In theory, these metrics operate on the same scale, right? Let's take a look at a 50-round rolling
+average of both to see if the PPI delivers any insight.
+
+```{python}
+schema_ = to_schema(ProperPlayerIndexDataset)
+ppi = pl.read_csv("ppi-curr.csv", schema=schema_)
 
 ppi_plot = (
     ggplot(ppi) +
@@ -79,7 +121,7 @@ ppi_plot = (
     geom_label(
         x=-2,
         y=-3,
-        label="Death Watch"
+        label="Mules"
     ) +
     geom_label(
         x=-2.5,
@@ -96,9 +138,54 @@ ppi_plot = (
     geom_curve(
         x=2.75,
         y=1.5,
-        xend=2.7,
-        yend=2.7,
+        xend=2.75,
+        yend=2.65,
         curvature=0.2,
+        arrow=arrow()
+    ) +
+    geom_label(
+        x=1.75,
+        y=0.75,
+        label="Sorry TC.",
+        hjust=0,
+        label_size=0,
+    ) +
+    geom_curve(
+        x=1.75,
+        y=0.75,
+        xend=1.45,
+        yend=1.2,
+        curvature=-0.2,
+        arrow=arrow()
+    ) +
+    geom_label(
+        x=-1,
+        y=0.75,
+        label="HogeCoin!",
+        hjust=1,
+        label_size=0,
+    ) +
+    geom_curve(
+        x=-1,
+        y=0.75,
+        xend=-0.02,
+        yend=0.425,
+        curvature=-0.2,
+        arrow=arrow()
+    ) +
+    geom_label(
+        x=0.5,
+        y=1.75,
+        label="He was a loan officer!",
+        hjust=1,
+        label_size=0,
+    ) +
+    geom_curve(
+        x=0.5,
+        y=1.75,
+        xend=1.4,
+        yend=1.6,
+        curvature=-0.2,
         arrow=arrow()
     ) +
     scale_x_continuous(limits=[-3, 3]) +
@@ -108,7 +195,8 @@ ppi_plot = (
         title="Proper player index and strokes gained",
         subtitle="50-round average; latest round in 2025",
         x="Strokes Gained (Total)",
-        y="Proper Player Index"
+        y="Proper Player Index",
+        color="Category",
     ) +
     article_theme()
 )
@@ -117,53 +205,33 @@ ppi_plot
 
 There are 4 categories in this visualization:
 
-#. **Proper Players**: above average players that rise when the conditions get the toughest
-#. **Imposters**: above average players that fall apart in _conditties_
-#. **Gamers**: below average players that outperform their profile when the test gets tougher
-#. **Death Watch**: below average players that get worse when the going gets tough
+#. **Proper Players**: above average players that rise to the moment
+#. **Imposters**: above average players that fall apart in difficult conditions
+#. **Gamers**: below average players that Step Up
+#. **Mules**: below average players that get worse when the going gets tough
+
+In this visualization, there is one name that stands out to me: Justin Thomas. At the time of publication, he is the
+single player that suffers the most when we compare PPI to Strokes Gained. So what happened? Let's look at a 50-round
+rolling PPI (red) alongside his Strokes Gained (Total; in black).
 
 ```{python}
-(
-    ggplot(
-        ppi.sort("ppi_sg_diff", descending=False)
-        .with_row_index()
-    ) +
-    geom_point(
-        aes(x="index", y="ppi_sg_diff"),
-        tooltips=(
-            layer_tooltips()
-            .line("@player_name")
-            .line("SG (Total)|@sg_total")
-            .line("PPI|@ppi")
-        ),
-        alpha=0.25
-    ) +
-    ggsize(800, 600) +
-    article_theme()
-)
-```
+schema_["weighted_score"] = pl.Float64
+ppi_jt = pl.read_csv("ppi-jt.csv", schema=schema_)
 
-```{python}
-ppi_jt = (
-    pl.scan_parquet("../../data/ppi-rolling-50.parquet")
-    .filter(pl.col("dg_id") == 14139)
-    .with_columns(weighted_score=(pl.col("wave_average") - pl.col("score")) * pl.col("course_factor_star"))
-    .collect()
-)
-
-(
+jt_plot_ = (
     ggplot(ppi_jt) +
     geom_line(
         aes(x="teetime", y="ppi"),
         color="red",
         tooltips=(
             layer_tooltips()
-            .line("Event|@event_name")
             .line("Score|@score")
             .format("@wave_average", ".1f")
-            .line("Wave average|@wave_average")
+            .line("Avg.|@wave_average")
             .format("@weighted_score", ".1f")
-            .line("Weighted round gain|@weighted_score")
+            .line("Gain|@weighted_score")
+            .format("@ppi", ".1f")
+            .line("PPI|@ppi")
         )
     ) +
     geom_line(
@@ -173,16 +241,72 @@ ppi_jt = (
         linetype="longdash",
         tooltips=(
             layer_tooltips()
-            .line("SG (Total)|@sg_total")
+            .line("SG|@sg_total")
         )
+    )
+)
+
+main_plot_ = (
+    jt_plot_ +
+    geom_rect(
+        xmin=datetime(2025, 4, 1),
+        xmax=datetime(2025, 6, 30),
+        ymin=0.75,
+        ymax=1.8,
+        alpha=0.4,
+        inherit_aes=False,
+        fill="white"
+    )
+)
+cutout_plot_ = (
+    jt_plot_ +
+    theme_minimal() +
+    coord_cartesian(
+        xlim=[datetime(2025, 4, 1), datetime(2025, 6, 30)],
+        ylim=[0.75, 1.8]
     ) +
-    ggsize(800, 600) +
-    labs(
-        title="Justin Thomas",
-        subtitle="50-round rolling average",
-        x="Date",
-        y="Metric"
+    theme_void() +
+    theme(legend_position='none', plot_inset=0)
+)
+
+(
+    ggbunch(
+        plots=[
+            (
+                main_plot_ +
+                geom_segment(x=datetime(2025, 6, 30), y=0.75, xend=datetime(2025, 9, 10), yend=0, inherit_aes=False) +
+                geom_segment(x=datetime(2025, 6, 30), y=1.8, xend=datetime(2025, 9, 10), yend=2.5, inherit_aes=False) +
+                scale_x_datetime(
+                    limits=[
+                        ppi_jt["teetime"].min(),
+                        ppi_jt["teetime"].max() + timedelta(days=120)
+                    ]
+                ) +
+                labs(x="Date", y="Metric")
+            ),
+            cutout_plot_ + theme(plot_background=element_rect(size=2, fill='rgba(255, 255, 255, 0.7)'))
+        ],
+        regions=[
+            (0, 0, 0.75, 1),
+            (0.7, 0.05, 0.3, 0.75)
+        ]
     ) +
-    article_theme()
+    ggsize(1800, 800) +
+    ggtitle("Justin Thomas 50-day rolling average") +
+    theme(
+        plot_title=element_text(family="Arial", face="bold", size=16),
+        plot_subtitle=element_text(family="Arial", size=26),
+        legend_position="top",
+        panel_grid_minor="blank",
+        panel_grid_major_x="blank",
+    )
 )
 ```
+
+Oof. I know his pain. What we are seeing here is a combination of factors. First, there
+are 3 excellent rounds that fall off his 50-round average in this time: a 64 at the ZOZO,
+63 at The Sentry, and 64 at the AmEx. Second, a good performance at the Truist went completely
+unrewarded (as mentioned up top). Finally, some poor play. 80 at The Memorial is punished
+massively; same with a 73 at The Travelers.
+
+The PPI is unforgiving!
