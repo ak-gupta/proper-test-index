@@ -142,6 +142,8 @@ jupyterlab-server==2.27.3
     #   notebook
 jupyterlab-widgets==3.0.15
     # via ipywidgets
+lets-plot==4.6.2
+    # via proper-test-index (pyproject.toml)
 markupsafe==3.0.2
     # via
     #   jinja2
@@ -181,6 +183,8 @@ packaging==25.0
     #   jupyterlab
     #   jupyterlab-server
     #   nbconvert
+palettable==3.3.3
+    # via lets-plot
 pandocfilters==1.5.1
     # via nbconvert
 parso==0.8.4
@@ -205,6 +209,8 @@ ptyprocess==0.7.0
     #   terminado
 pure-eval==0.2.3
     # via stack-data
+pyarrow==20.0.0
+    # via polars
 pycparser==2.22
     # via cffi
 pygments==2.19.2
@@ -213,6 +219,8 @@ pygments==2.19.2
     #   ipython-pygments-lexers
     #   jupyter-console
     #   nbconvert
+pypng==0.20220715.0
+    # via lets-plot
 python-dateutil==2.9.0.post0
     # via
     #   arrow

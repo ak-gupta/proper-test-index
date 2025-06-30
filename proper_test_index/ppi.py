@@ -111,5 +111,4 @@ def gen_rolling_ppi(
             ppi_sg_diff=pl.col("ppi") - pl.col("sg_total"),
         )
         .sort("dg_id", "player_name", "teetime", descending=True)
-        .collect()
     )

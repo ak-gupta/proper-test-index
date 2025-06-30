@@ -18,6 +18,13 @@
     "href": "index.html",
     "title": "Proper Test Index",
     "section": "",
-    "text": "The Proper Test Index\n\n\nWhat does Big Randy’s metric tell us about the PGA Tour?\n\n\n\ngolf\n\n\n\n\n\n\n\n\n\nJun 26, 2025\n\n\nAkshay Gupta\n\n\n\n\n\nNo matching items"
+    "text": "The Proper Player Index\n\n\nCan we use the proper test index to measure player performance?\n\n\n\ngolf\n\n\n\n\n\n\n\n\n\nJun 26, 2025\n\n\nAkshay Gupta\n\n\n\n\n\n\n\n\n\n\n\n\nThe Proper Test Index\n\n\nWhat does Big Randy’s metric tell us about the PGA Tour?\n\n\n\ngolf\n\n\n\n\n\n\n\n\n\nJun 26, 2025\n\n\nAkshay Gupta\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/proper-player-index/index.html",
+    "href": "posts/proper-player-index/index.html",
+    "title": "The Proper Player Index",
+    "section": "",
+    "text": "In my previous blog post, we looked at the Proper Test Index and a corresponding look at identifying the most proper venues. What if we apply those learnings to player performance?\nThe theory is simple: let’s weight player scoring by the difficulty of the venue:\n\\[\n\\text{Proper Player Index} = \\frac{\\sum (\\text{Wave Scoring Average} - \\text{Score}) \\times \\text{Course Factor}^{*}}{\\sum \\text{Course Factor}^{*}}\n\\]\nThe interesting comparison here is with Strokes Gained (Total). In theory, these metrics operate on the same scale, right?\n\n\n\n            \n            \n            \n\n\n   \n   \n\n\nThere are 4 categories in this visualization:\n\nProper Players: above average players that rise when the conditions get the toughest\nImposters: above average players that fall apart in conditties\nGamers: below average players that outperform their profile when the test gets tougher\nDeath Watch: below average players that get worse when the going gets tough"
   }
 ]

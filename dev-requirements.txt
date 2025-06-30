@@ -195,6 +195,8 @@ jupyterlab-widgets==3.0.15
     # via ipywidgets
 keyring==25.6.0
     # via twine
+lets-plot==4.6.2
+    # via proper-test-index (pyproject.toml)
 markdown-it-py==3.0.0
     # via rich
 markupsafe==3.0.2
@@ -255,6 +257,8 @@ packaging==24.2
     #   nbconvert
     #   pytest
     #   twine
+palettable==3.3.3
+    # via lets-plot
 pandocfilters==1.5.1
     # via nbconvert
 parso==0.8.4
@@ -291,6 +295,8 @@ ptyprocess==0.7.0
     #   terminado
 pure-eval==0.2.3
     # via stack-data
+pyarrow==20.0.0
+    # via polars
 pycparser==2.22
     # via cffi
 pygments==2.19.2
@@ -302,6 +308,8 @@ pygments==2.19.2
     #   pytest
     #   readme-renderer
     #   rich
+pypng==0.20220715.0
+    # via lets-plot
 pyproject-fmt==2.6.0
     # via proper-test-index (pyproject.toml)
 pyproject-hooks==1.2.0
