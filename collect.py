@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 from slugify import slugify
 
 from proper_test_index.collect import collect_raw_event_data, retrieve_event_list
-from proper_test_index.schemas import ScoreObject, serializer, to_schema
+from proper_test_index.schemas import ScoreObject, to_schema
 
 LOG = logging.getLogger(__name__)
 
@@ -95,7 +95,7 @@ if __name__ == "__main__":
             continue
         score_raw_ = collect_raw_event_data(evt)
         score_data = pl.DataFrame(
-            [asdict(obj, value_serializer=serializer) for obj in score_raw_],
+            [asdict(obj) for obj in score_raw_],
             schema=to_schema(ScoreObject),
         )
         score_data.write_parquet(fpath, use_pyarrow=True)

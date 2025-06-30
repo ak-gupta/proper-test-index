@@ -25,7 +25,8 @@ dynamic = [ "readme", "version" ]
 dependencies = [
     "attrs>=21.2.0,<=25.1.0",
     "jupyter==1.1.1",
-    "polars[arrow]>=1.2.0,<=1.31.0",
+    "lets-plot>=4.6.0,<=4.6.2",
+    "polars[pyarrow]>=1.2.0,<=1.31.0",
     "python-dotenv>=1.0.0,<=1.1.1",
     "python-slugify>=5.0.0,<=8.0.4",
     "requests>=2.32.2,<=2.32.4",

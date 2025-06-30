@@ -6,7 +6,6 @@ categories: [golf]
 jupyter: python3
 execute:
     echo: false
-draft: true
 subtitle: Can we use the proper test index to measure player performance?
 ---
 
@@ -37,33 +36,13 @@ def article_theme():
     )
 
 ppi = (
-    pl.scan_csv("../../data/ppi-rolling-50.csv")
-    .with_columns([pl.col("teetime").cast(pl.Datetime), pl.col("first_tee_time_in_group").cast(pl.Datetime)])
+    pl.scan_parquet("../../data/ppi-rolling-50.parquet")
+    .sort("dg_id", "teetime", descending=False)
+    .group_by("dg_id")
+    .last()
     .filter(
-        pl.col("teetime") == pl.col("teetime").max().over(["dg_id"]),
         pl.col("teetime").dt.year() == 2025,
-        (pl.col("teetime") - pl.col("first_tee_time_in_group")).dt.total_days() <= 365
-    )
-    .with_columns(
-        category=(
-            pl.when(
-                pl.col("sg_total") >= 0,
-                pl.col("ppi") > pl.col("sg_total")
-            )
-            .then(pl.lit("Proper Player"))
-            .when(
-                pl.col("sg_total") >= 0,
-                pl.col("ppi") <= pl.col("sg_total")
-            )
-            .then(pl.lit("Imposter"))
-            .when(
-                pl.col("sg_total") < 0,
-                pl.col("ppi") > pl.col("sg_total")
-            )
-            .then(pl.lit("Gamer"))
-            .otherwise(pl.lit("Death Watch"))
-        ),
-        ppi_sg_diff=pl.col("ppi") - pl.col("sg_total")
+        (pl.col("teetime") - pl.col("first_tee_time_in_group")).dt.total_days() <= 730
     )
     .collect()
 )
@@ -166,10 +145,9 @@ There are 4 categories in this visualization:
 
 ```{python}
 ppi_jt = (
-    pl.scan_csv("../../data/ppi-rolling-50.csv")
-    .with_columns([pl.col("teetime").cast(pl.Datetime)])
+    pl.scan_parquet("../../data/ppi-rolling-50.parquet")
     .filter(pl.col("dg_id") == 14139)
-    .with_columns(weighted_score=(pl.col("wave_average") - pl.col("score")) * pl.col("log_course_factor"))
+    .with_columns(weighted_score=(pl.col("wave_average") - pl.col("score")) * pl.col("course_factor_star"))
     .collect()
 )
 

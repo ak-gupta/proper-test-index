@@ -22,14 +22,13 @@ if __name__ == "__main__":
         list(DATA_DIR.glob("**/*-scoring-data.parquet")), schema=to_schema(ScoreObject)
     )
     pti = calc_pti(scoring_data)
-    pti.write_csv(CURR_DIR / "pti.csv")
+    pti.collect().write_csv(CURR_DIR / "pti.csv")
 
     course_factor = calc_course_factor(pti)
-    course_factor.write_csv(CURR_DIR / "course_factor.csv")
+    course_factor.collect().write_csv(CURR_DIR / "course_factor.csv")
 
-    rolling_ppi = gen_rolling_ppi(scoring_data, course_factor)
-    rolling_ppi.write_parquet(DATA_DIR / "ppi-rolling-25.parquet", use_pyarrow=True)
-    rolling_ppi = gen_rolling_ppi(scoring_data, course_factor, 50)
-    rolling_ppi.write_csv(DATA_DIR / "ppi-rolling-50.parquet", use_pyarrow=True)
-    rolling_ppi = gen_rolling_ppi(scoring_data, course_factor, 100)
-    rolling_ppi.write_csv(DATA_DIR / "ppi-rolling-100.parquet", use_pyarrow=True)
+    for value in [25, 50, 75, 100]:
+        rolling_ppi = gen_rolling_ppi(scoring_data, course_factor, period=value)
+        rolling_ppi.collect().write_parquet(
+            DATA_DIR / f"ppi-rolling-{value}.parquet", use_pyarrow=True
+        )
