@@ -92,3 +92,20 @@ class CourseInfo:
     latitude: float
     longitude: float
     location: str
+
+
+@define(auto_attribs=True)
+class ProperPlayerIndexDataset:
+    """Proper Player Index (PPI) dataset schema."""
+
+    dg_id: int
+    player_name: str
+    ppi: float
+    teetime: datetime
+    first_tee_time_in_group: datetime
+    sg_total: float
+    score: int
+    event_name: str
+    wave_average: float
+    course_factor_star: float
+    category: str
