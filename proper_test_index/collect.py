@@ -104,6 +104,8 @@ def collect_raw_event_data(event: dict) -> list[ScoreObject]:
                     sg_ott=round_data.get("sg_ott"),
                     sg_putt=round_data.get("sg_putt"),
                     sg_t2g=round_data.get("sg_t2g"),
+                    driving_dist=round_data.get("driving_dist"),
+                    driving_acc=round_data.get("driving_acc"),
                     sg_total=round_data.get("sg_total"),
                 )
                 # Make the assumption that round 1 is always on a Thursday
