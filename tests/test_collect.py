@@ -60,6 +60,8 @@ def test_retrieve_raw_event_data(mock_req):
             sg_putt=1.51,
             sg_t2g=3.21,
             sg_total=4.718,
+            driving_dist=311.5,
+            driving_acc=0.714,
             teetime=datetime(2021, 6, 17, 15, 6, 0),
         ),
         ScoreObject(
@@ -79,6 +81,8 @@ def test_retrieve_raw_event_data(mock_req):
             sg_putt=1.33,
             sg_t2g=2.48,
             sg_total=3.787,
+            driving_dist=315.7,
+            driving_acc=0.357,
             teetime=datetime(2021, 6, 18, 7, 51, 0),
         ),
         ScoreObject(
@@ -98,6 +102,8 @@ def test_retrieve_raw_event_data(mock_req):
             sg_putt=-1.7,
             sg_t2g=2.11,
             sg_total=0.408,
+            driving_dist=316.8,
+            driving_acc=0.429,
             teetime=datetime(2021, 6, 19, 13, 13, 0),
         ),
         ScoreObject(
@@ -117,6 +123,8 @@ def test_retrieve_raw_event_data(mock_req):
             sg_putt=2.48,
             sg_t2g=3.69,
             sg_total=6.169,
+            driving_dist=323.1,
+            driving_acc=0.571,
             teetime=datetime(2021, 6, 20, 12, 22, 0),
         ),
     ]

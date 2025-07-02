@@ -76,6 +76,8 @@ class ScoreObject:
     sg_putt: float
     sg_t2g: float
     sg_total: float
+    driving_dist: float
+    driving_acc: float
     teetime: datetime | None = None
 
 
@@ -103,6 +105,13 @@ class ProperPlayerIndexDataset:
     ppi: float
     teetime: datetime
     first_tee_time_in_group: datetime
+    driving_dist: float
+    driving_acc: float
+    sg_app: float
+    sg_arg: float
+    sg_ott: float
+    sg_putt: float
+    sg_t2g: float
     sg_total: float
     score: int
     event_name: str
