@@ -1,0 +1,88 @@
+---
+title: "Is Sam Burns the Scottie Whisperer?"
+author: "Akshay Gupta"
+date: "2025-08-26"
+categories: [golf]
+jupyter: python3
+execute:
+    echo: false
+---
+
+Quick one today. I've been listening to the breathless regarding Keegan
+Bradley's 2025 US Ryder Cup Captain's selections and I had a thought: is
+making Scottie Scheffler perform better enough to warrant a selection for
+Sam Burns?
+
+We know that Burns and Scheffler are close[^1]. Does Scheffler perform better
+when they're together?
+
+```{python}
+import polars as pl
+from lets_plot import *
+
+LetsPlot.setup_html()
+
+def article_theme():
+    return theme(
+        plot_title=element_text(family="Arial", face="bold", size=33),
+        plot_subtitle=element_text(family="Arial", size=26),
+        legend_position="top",
+        panel_grid_minor="blank",
+        panel_grid_major_x="blank",
+    )
+
+df = (
+    pl.scan_parquet("../../data/ppi-rolling-25.parquet")
+    .with_columns(
+        event_year=pl.col("teetime").dt.year()
+    )
+    .filter(pl.col("event_year") > 2022)
+    .with_columns(
+        has_sam_burns=(
+            (pl.col("dg_id") == 19483).sum().over(["event_year", "event_name"]) > 0
+        ),
+    )
+    .filter(pl.col("dg_id") == 18417)
+    .with_columns(
+        event_year=pl.col("event_year").cast(pl.String),
+        has_sam_burns=(
+            pl.when(pl.col("has_sam_burns"))
+            .then(pl.lit("Yes"))
+            .otherwise(pl.lit("No"))
+            .cast(pl.Enum(["Yes", "No"]))
+        )
+    )
+    .select("has_sam_burns", "sg_total")
+    .collect()
+)
+
+violin_plot = (
+    ggplot(df, aes("has_sam_burns", "sg_total")) +
+    geom_violin(aes(fill="has_sam_burns"), show_half=1, size=0) +
+    geom_boxplot(aes(fill="has_sam_burns"), color="white", width=0.1, outlier_alpha=0) +
+    geom_sina(aes(color="has_sam_burns"), show_half=-1, seed=42) +
+    scale_color_brewer(palette="Set2") +
+    scale_fill_brewer(palette="Pastel2") +
+    coord_flip() +
+    ggsize(1200, 800) +
+    labs(
+        title="Scottie Scheffler performances",
+        subtitle="2022-2025",
+        x="Is Sam Burns in the tournament?",
+        y="Strokes Gained (Total)",
+        color="Is Sam Burns in the tournament?",
+        fill="Is Sam Burns in the tournament?"
+    ) +
+    article_theme()
+)
+violin_plot
+```
+
+Seems like Scheffler is better when Burns isn't around. Kinda. Maybe.
+There's a lot of noise here (not like they're apart much!).
+Anyways, let's see what Bradley decides.
+
+(Go Europe)
+
+
+[^1]: [What's it like sharing a rental house with Scottie Scheffler? Ask Sam Burns](https://golf.com/news/sam-burns-sharing-house-scheffler/?srsltid=AfmBOorV6JbCnMDdbct5dCWBk3UeRuGlACPG1MkXdo1o2H3yj0Jfw3oi)
