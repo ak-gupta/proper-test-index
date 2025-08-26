@@ -8,8 +8,8 @@ execute:
     echo: false
 ---
 
-Quick one today. I've been listening to the breathless regarding Keegan
-Bradley's 2025 US Ryder Cup Captain's selections and I had a thought: is
+Quick one today. I've been listening to the breathless coverage regarding
+Keegan Bradley's 2025 Ryder Cup selections for Team USA and I had a thought: is
 making Scottie Scheffler perform better enough to warrant a selection for
 Sam Burns?
 
