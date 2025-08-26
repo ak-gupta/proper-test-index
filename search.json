@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Proper Test Index",
     "section": "",
-    "text": "The Proper Player Index\n\n\nCan we use the proper test index to measure player performance?\n\n\n\ngolf\n\n\n\n\n\n\nJun 30, 2025\n\n11 min\n\n\n\n\n\n\n\n\n\n\n\nThe Proper Test Index\n\n\nWhat does Big Randy’s metric tell us about the PGA Tour?\n\n\n\ngolf\n\n\n\n\n\n\nJun 26, 2025\n\n9 min\n\n\n\n\nNo matching items"
+    "text": "Is Sam Burns the Scottie Whisperer?\n\n\n\n\n\n\ngolf\n\n\n\n\n\n\nAug 26, 2025\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\nThe Proper Player Index\n\n\nCan we use the proper test index to measure player performance?\n\n\n\ngolf\n\n\n\n\n\n\nJun 30, 2025\n\n11 min\n\n\n\n\n\n\n\n\n\n\n\nThe Proper Test Index\n\n\nWhat does Big Randy’s metric tell us about the PGA Tour?\n\n\n\ngolf\n\n\n\n\n\n\nJun 26, 2025\n\n9 min\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/proper-player-index/index.html",
@@ -33,5 +33,19 @@
     "title": "The Proper Test Index",
     "section": "Sabermetrics can help us identify Proper Venues",
     "text": "Sabermetrics can help us identify Proper Venues\nPTI tells us something about the balance of extreme rounds at the event level. What if we adopt Baseball’s park factor to figure out if a low round really matters?\n\\[\n\\text{Course Factor} = \\frac{\\frac{\\text{Total scores &gt;= 80 at the course}}{\\text{Total scores &lt; 70 at the course}}}{\\frac{\\text{Total scores &gt;= 80 at all other courses}}{\\text{Total scores &lt; 70 at all other courses}}}\n\\]\nThe larger the course factor, the more impressive a 65 is! Let’s plot out the course factor across the available venues.\n\n\n   \n   \n\n\nWow. Course Factor has some range! According to this metric, An above average round at Ocean Course at Kiawah Island is worth 1954 times more than a similarly above average round at Sea Island GC (Seaside). Sure.\nWe’re seeing the effects of rare events; only 1.0% of rounds come in over 80, so if 8.3% of rounds at Ocean Course at Kiawah Island are over 80 (and only 6.4% below 70), we will see extreme values.\nWhat we need is a monotonic transformation that can compress the scale a bit. Using \\(\\log\\), we can get something a bit more readable.\n\n\n   \n   \n\n\nThis chart is more legible. Due to the strict scarcity of rounds in the 80s, we’ll be using a logarithmic transformation of course factor (\\(\\text{Course Factor}^{*}\\)) to convey the relative difficulty of each venue.\nNow comes the real question, however: Did Big Cook?\nLooking at the distribution of scores across each venue,\n\n\n   \n   \n\n\nI think Big might have cooked here! \\(\\text{Course Factor}^{*}\\) seems to correlate not only with average difficulty, but variance. In a proper test, we want to see separation between the “Men” and the “Little Boys”.\nThere’s certainly more to be said on this topic. However, next up: the Proper Player Index. Stay tuned."
+  },
+  {
+    "objectID": "posts/scottie-whisperer/index.html",
+    "href": "posts/scottie-whisperer/index.html",
+    "title": "Is Sam Burns the Scottie Whisperer?",
+    "section": "",
+    "text": "Quick one today. I’ve been listening to the breathless regarding Keegan Bradley’s 2025 US Ryder Cup Captain’s selections and I had a thought: is making Scottie Scheffler perform better enough to warrant a selection for Sam Burns?\nWe know that Burns and Scheffler are close1. Does Scheffler perform better when they’re together?\nSeems like Scheffler is better when Burns isn’t around. Kinda. Maybe. There’s a lot of noise here (not like they’re apart much!). Anyways, let’s see what Bradley decides.\n(Go Europe)"
+  },
+  {
+    "objectID": "posts/scottie-whisperer/index.html#footnotes",
+    "href": "posts/scottie-whisperer/index.html#footnotes",
+    "title": "Is Sam Burns the Scottie Whisperer?",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nWhat’s it like sharing a rental house with Scottie Scheffler? Ask Sam Burns↩︎"
   }
 ]
